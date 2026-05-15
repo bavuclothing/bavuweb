@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muscle Fit Tee - Black | BAVU</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --black: #000000;
+            --dark-gray: #121212;
+            --slate: #334155;
+            --white: #ffffff;
+            --accent: #94a3b8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Urbanist', sans-serif;
+            background-color: var(--black);
+            color: var(--white);
+            line-height: 1.6;
+        }
+
+        /* --- NAVEGACIÓN --- */
+        nav {
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #222;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 35px; /* Cambia este número si lo quieres más grande o pequeño */
+            width: auto;
+            object-fit: contain;
+        }
+
+
+        .back-btn {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: color 0.3s;
+        }
+
+        .back-btn:hover {
+            color: var(--white);
+        }
+
+        /* --- PRODUCTO LAYOUT --- */
+        .product-container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 0 5%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+
+        /* GALERÍA DE IMÁGENES */
+        .gallery {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .main-image {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 4/5;
+            object-fit: cover;
+            background: var(--dark-gray);
+            border: 1px solid #222;
+        }
+
+        .thumbnails {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .thumb {
+            width: 100%;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+            background: var(--dark-gray);
+            border: 1px solid #222;
+            cursor: pointer;
+            transition: border-color 0.3s;
+        }
+
+        .thumb:hover {
+            border-color: var(--accent);
+        }
+
+        /* DETALLES DEL PRODUCTO */
+        .product-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .breadcrumb {
+            font-size: 0.8rem;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        .product-title {
+            font-size: 2.5rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            line-height: 1.1;
+        }
+
+        .product-price {
+            font-size: 1.5rem;
+            color: var(--accent);
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+
+        .product-description {
+            color: #aaa;
+            font-size: 1rem;
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+
+        /* SELECTOR DE TALLA */
+        .size-section {
+            margin-bottom: 40px;
+        }
+
+        .size-section h4 {
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .sizes {
+            display: flex;
+            gap: 10px;
+        }
+
+        .size-box {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid #333;
+            cursor: pointer;
+            font-weight: 700;
+            transition: all 0.3s;
+        }
+
+        .size-box:hover {
+            border-color: var(--white);
+        }
+
+        /* ESTADO ACTIVO FALSO PARA DISEÑO */
+        .size-box.active {
+            background: var(--white);
+            color: var(--black);
+            border-color: var(--white);
+        }
+
+        /* BOTÓN DE COMPRA WHATSAPP */
+        .btn-buy {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            padding: 20px;
+            background: var(--white);
+            color: var(--black);
+            text-decoration: none;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 1rem;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.1s;
+        }
+
+        .btn-buy:hover {
+            background: var(--accent);
+        }
+
+        .btn-buy:active {
+            transform: scale(0.98);
+        }
+
+        /* ACORDEÓN DE DETALLES */
+        .details-list {
+            margin-top: 50px;
+            border-top: 1px solid #222;
+        }
+
+        .detail-item {
+            padding: 20px 0;
+            border-bottom: 1px solid #222;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            color: #ddd;
+        }
+
+        .detail-item i {
+            color: var(--accent);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            padding: 50px 5%;
+            text-align: center;
+            border-top: 1px solid #222;
+        }
+
+        .social-links {
+            margin-bottom: 20px;
+        }
+
+        .social-links a {
+            color: var(--white);
+            font-size: 1.5rem;
+            margin: 0 15px;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--accent);
+        }
+
+        /* --- BOTÓN FLOTANTE WHATSAPP --- */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25d366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            z-index: 1000;
+            text-decoration: none;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 900px) {
+            .product-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                margin: 30px auto;
+            }
+
+            .product-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+         <div class="logo">
+            <img src="img/BAVU_white.png" alt="Logo BAVU">
+        </div>
+        <a href="index.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Volver al Catálogo</a>
+    </nav>
+
+    <main class="product-container">
+        <div class="gallery">
+            <img src="img/muscle-tee-black.jpg" alt="Muscle Fit Tee Frontal" class="main-image">
+            <div class="thumbnails">
+                <!--
+                <img src="https://via.placeholder.com/400x400/121212/ffffff?text=Detalle+Logo" alt="Detalle Logo" class="thumb">
+                <img src="https://via.placeholder.com/400x400/121212/ffffff?text=Espalda" alt="Vista Espalda" class="thumb">
+                <img src="https://via.placeholder.com/400x400/121212/ffffff?text=Textura" alt="Textura Tela" class="thumb">
+                -->
+            </div>
+        </div>
+
+        <div class="product-info">
+            <div class="breadcrumb">Drop 01 / Camisetas</div>
+            <h1 class="product-title">Oversize Tree Cover</h1>
+            <div class="product-price">14.90 €</div>
+            
+            <p class="product-description">
+                Diseñada estratégicamente para construir la V-Taper perfecta. Esta camiseta se ajusta milimétricamente en los brazos y el pecho, cayendo de forma relajada sobre la cintura. Estampado central con el Lábaro Afilado en blanco mate. Fuerza bruta, estética pulida.
+            </p>
+
+            <div class="size-section">
+                <h4>Selecciona tu talla:</h4>
+                <div class="sizes">
+                    <div class="size-box">S</div>
+                    <div class="size-box">M</div>
+                    <div class="size-box">L</div>
+                    <div class="size-box">XL</div>
+                    <div class="size-box">2XL</div>
+                </div>
+            </div>
+
+            <a href="https://wa.me/34600000000?text=Hola%20equipo%20BAVU!%20Vengo%20de%20la%20web%20y%20quiero%20pedir%20la%20Muscle%20Fit%20Tee%20Black.%20¿Tenéis%20stock%20en%20talla%20...%20?" class="btn-buy" target="_blank">
+                <i class="fab fa-whatsapp" style="font-size: 1.2rem;"></i>
+                Hacer Pedido por WhatsApp
+            </a>
+
+            <div class="details-list">
+                <div class="detail-item">
+                    <span>Ajuste y Fit</span>
+                    <i class="fa-solid fa-ruler"></i>
+                </div>
+                <div style="font-size: 0.85rem; color: #888; padding-bottom: 15px;">
+                    El modelo mide 1.82m, pesa 85kg y lleva una talla L. Ajuste ceñido en tren superior. Recomendamos tu talla habitual.
+                </div>
+
+                <div class="detail-item">
+                    <span>Materiales</span>
+                    <i class="fa-solid fa-layer-group"></i>
+                </div>
+                <div style="font-size: 0.85rem; color: #888; padding-bottom: 15px;">
+                    95% Algodón de alto gramaje / 5% Elastano (Spandex) para retención de forma.
+                </div>
+
+                <div class="detail-item">
+                    <span>Envíos y Entregas</span>
+                    <i class="fa-solid fa-box-open"></i>
+                </div>
+                <div style="font-size: 0.85rem; color: #888; padding-bottom: 15px;">
+                    Entrega en mano gratuita en Santander. Envíos nacionales 24/48h mediante GLS.
+                </div>
+            </div>
+        </div>
+    </main>
+
+     <footer>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-tiktok"></i></a>
+        </div>
+        <p>© 2026 BAVU ATHLETICS</p>
+        <p class="location">Diseñado en Cantabria, España</p>
+    </footer>
+
+    <a href="https://wa.me/34600000000" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+</body>
+</html>
