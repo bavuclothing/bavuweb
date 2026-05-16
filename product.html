@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muscle Fit Tee - Black | BAVU</title>
+    <title>BAVU | Producto</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,57 +23,65 @@
     </nav>
 
     <main class="product-container">
+        <!-- Galería de Imágenes -->
         <div class="gallery">
-            <img src="img/muscle-tee-black.jpg" alt="Muscle Fit Tee Frontal" class="main-image">
+            <img src="" alt="Imagen de Producto" class="main-image" id="mainImage">
             <div class="thumbnails">
-                <!--
-                <img src="https://via.placeholder.com/400x400/121212/ffffff?text=Detalle+Logo" alt="Detalle Logo" class="thumb">
-                <img src="https://via.placeholder.com/400x400/121212/ffffff?text=Espalda" alt="Vista Espalda" class="thumb">
-                <img src="https://via.placeholder.com/400x400/121212/ffffff?text=Textura" alt="Textura Tela" class="thumb">
-                -->
+                <!-- Se rellena con JS -->
             </div>
         </div>
 
         <div class="product-info">
-            <div class="breadcrumb">Drop 01 / Camisetas</div>
-            <h1 class="product-title">Oversize Tree Cover</h1>
-            <div class="product-price">14.90 €</div>
+            <div class="breadcrumb">Drop 01 / Colección Esencial</div>
+            <h1 class="product-title">Cargando producto...</h1>
+            <div class="product-price">-- €</div>
             
             <p class="product-description">
-                Diseñada estratégicamente para construir la V-Taper perfecta. Esta camiseta se ajusta milimétricamente en los brazos y el pecho, cayendo de forma relajada sobre la cintura. Estampado central con el Lábaro Afilado en blanco mate. Fuerza bruta, estética pulida.
+                Un momento por favor.
             </p>
 
+            <!-- Selector de Color Aesthetic -->
+            <div class="color-section">
+                <h4>Color: <span class="color-name-label" id="colorLabel">-</span></h4>
+                <div class="colors">
+                    <!-- Se rellena con JS -->
+                </div>
+            </div>
+
+            <!-- Selector de Talla -->
             <div class="size-section">
                 <h4>Selecciona tu talla:</h4>
                 <div class="sizes">
                     <div class="size-box">S</div>
-                    <div class="size-box">M</div>
+                    <div class="size-box active">M</div>
                     <div class="size-box">L</div>
                     <div class="size-box">XL</div>
                     <div class="size-box">2XL</div>
                 </div>
             </div>
 
-            <a href="https://wa.me/34600000000?text=Hola%20equipo%20BAVU!%20Vengo%20de%20la%20web%20y%20quiero%20pedir%20la%20Muscle%20Fit%20Tee%20Black.%20¿Tenéis%20stock%20en%20talla%20...%20?" class="btn-buy" target="_blank">
+            <a href="#" class="btn-buy" target="_blank" id="btnBuy">
                 <i class="fab fa-whatsapp" style="font-size: 1.2rem;"></i>
                 Hacer Pedido por WhatsApp
             </a>
 
+            <!-- Detalles del Producto -->
             <div class="details-list">
+                <!-- Cuidado de la Prenda -->
                 <div class="detail-item">
-                    <span>Ajuste y Fit</span>
-                    <i class="fa-solid fa-ruler"></i>
+                    <span>Cuidado de la Prenda</span>
+                    <i class="fa-solid fa-shirt"></i>
                 </div>
-                <div style="font-size: 0.85rem; color: #888; padding-bottom: 15px;">
-                    El modelo mide 1.82m, pesa 85kg y lleva una talla L. Ajuste ceñido en tren superior. Recomendamos tu talla habitual.
+                <div style="font-size: 0.85rem; color: #888; padding-bottom: 15px; line-height: 1.5;">
+                    Para maximizar la durabilidad del tejido y proteger el estampado DTF de alta densidad: Lavar siempre en frío (máx 30ºC) y del revés. Secar al aire. Nunca usar secadora ni planchar directamente sobre el logo.
                 </div>
 
                 <div class="detail-item">
-                    <span>Materiales</span>
+                    <span>Materiales Premium</span>
                     <i class="fa-solid fa-layer-group"></i>
                 </div>
                 <div style="font-size: 0.85rem; color: #888; padding-bottom: 15px;">
-                    95% Algodón de alto gramaje / 5% Elastano (Spandex) para retención de forma.
+                    Tejidos técnicos de alto gramaje con retención de forma tras los entrenamientos pesados. Diseñados para durar.
                 </div>
 
                 <div class="detail-item">
@@ -81,16 +89,22 @@
                     <i class="fa-solid fa-box-open"></i>
                 </div>
                 <div style="font-size: 0.85rem; color: #888; padding-bottom: 15px;">
-                    Entrega en mano gratuita en Santander. Envíos nacionales 24/48h mediante GLS.
+                    Entrega en mano gratuita en Santander. Envíos nacionales 24/48h mediante operador logístico de confianza.
                 </div>
             </div>
         </div>
     </main>
 
+    <!-- Lightbox -->
+    <div id="imageLightbox" class="lightbox">
+        <span class="close-lightbox" id="closeLightbox">&times;</span>
+        <img class="lightbox-content" id="lightboxImg">
+    </div>
+
      <footer>
         <div class="social-links">
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-tiktok"></i></a>
+            <a href="https://www.instagram.com/bavu.clothing"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@bavu.clothing"><i class="fab fa-tiktok"></i></a>
         </div>
         <p>© 2026 BAVU ATHLETICS</p>
         <p class="location">Diseñado en Cantabria, España</p>
@@ -99,6 +113,234 @@
     <a href="https://wa.me/34600000000" class="whatsapp-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
+
+    <!-- SCRIPTS PARA LA INTERACTIVIDAD DINÁMICA -->
+    <script>
+        // 1. LA BASE DE DATOS ACTUALIZADA CON ENLACES ENTRE COLORES
+        const BAVU_PRODUCTS = {
+            "origin-emerald": {
+                title: "The Origin Tee<br>Emerald Edition",
+                price: "14.90 €",
+                description: "Diseñada estratégicamente para construir la V-Taper perfecta. Color verde esmeralda profundo con el logo central de la marca.",
+                mainImage: "img/muscle-tee-black.jpg",
+                thumbnails: ["img/muscle-tee-black.jpg"],
+                colors: [
+                    { hex: "#1a4231", name: "Forest Green", id: "origin-emerald" },
+                    { hex: "#121212", name: "Obsidian Black", id: "origin-blackout" }
+                ],
+                waMessage: "Hola equipo BAVU! Vengo de la web y quiero pedir The Origin Tee Emerald Edition."
+            },
+            "origin-blackout": {
+                title: "The Origin Tee<br>Blackout",
+                price: "14.90 €",
+                description: "Nuestra camiseta fundacional. Construye la V-Taper perfecta ajustándose en pecho y brazos.",
+                mainImage: "img/camiseta-negra.jpg",
+                thumbnails: ["img/camiseta-negra.jpg"],
+                colors: [
+                    { hex: "#121212", name: "Obsidian Black", id: "origin-blackout" },
+                    { hex: "#1a4231", name: "Forest Green", id: "origin-emerald" }
+                ],
+                waMessage: "Hola equipo BAVU! Vengo de la web y quiero pedir The Origin Tee Blackout."
+            },
+            "thermal-obsidian": {
+                title: "Thermal Core<br>Pullover Obsidian",
+                price: "13.90 €",
+                description: "Sudadera ligera de rendimiento con cremallera de 1/4. Ideal para calentamientos exigentes y mantener el pump.",
+                mainImage: "img/larga-negra.jpg",
+                thumbnails: ["img/larga-negra.jpg"],
+                colors: [
+                    { hex: "#121212", name: "Obsidian Black", id: "thermal-obsidian" },
+                    { hex: "#8c8f94", name: "Ash Grey", id: "thermal-ash" }
+                ],
+                waMessage: "Hola equipo BAVU! Me interesa el Thermal Core Pullover Obsidian."
+            },
+            "thermal-ash": {
+                title: "Thermal Core<br>Pullover Ash",
+                price: "13.90 €",
+                description: "Sudadera ligera de rendimiento con cremallera de 1/4. Transpirable, con agujeros para pulgares y ajuste atlético.",
+                mainImage: "img/larga-gris.jpg",
+                thumbnails: [
+                    "img/larga-gris.jpg",
+                    "img/larga-gris-2.jpg",
+                    "img/larga-gris-3.jpg",
+                    "img/larga-gris-4.jpg",
+                ],
+                colors: [
+                    { hex: "#8c8f94", name: "Ash Grey", id: "thermal-ash" },
+                    { hex: "#121212", name: "Obsidian Black", id: "thermal-obsidian" }
+                ],
+                waMessage: "Hola equipo BAVU! Me interesa el Thermal Core Pullover Ash."
+            },
+            "short-black": {
+                title: "The Foundation Short<br>Jet Black",
+                price: "11.90 €",
+                description: "Pantalón de entrenamiento híbrido. Tejido ligero y fluido para máxima movilidad en días pesados de pierna.",
+                mainImage: "img/pantalones-negros.jpg",
+                thumbnails: [
+                    "img/pantalones-negros.jpg",
+                    "img/pantalones-negros-2.jpg"
+                ],
+                colors: [
+                    { hex: "#000000", name: "Jet Black", id: "short-black" },
+                    { hex: "#4b4e53", name: "Iron Grey", id: "short-grey" }
+                ],
+                waMessage: "Buenas! Quería consultar el stock de The Foundation Short Jet Black."
+            },
+            "short-grey": {
+                title: "The Foundation Short<br>Iron Grey",
+                price: "11.90 €",
+                description: "Pantalón de entrenamiento técnico y versátil. Longitud estética ideal para lucir pierna sin sacrificar comodidad.",
+                mainImage: "img/pantalones-grises.jpg",
+                thumbnails: [
+                    "img/pantalones-grises.jpg",
+                    "img/pantalones-grises-2.jpg"
+                ],
+                colors: [
+                    { hex: "#4b4e53", name: "Iron Grey", id: "short-grey" },
+                    { hex: "#000000", name: "Jet Black", id: "short-black" }
+                ],
+                waMessage: "Hola equipo BAVU! Me interesa The Foundation Short Iron Grey."
+            },
+            "tank-blackout": {
+                title: "Origin Ribbed Tank<br>Blackout",
+                price: "7.90 €",
+                description: "Camiseta de tirantes con tejido acanalado premium. Elasticidad y ajuste óptimo para marcar la espalda y hombros.",
+                mainImage: "img/tirantes.jpg",
+                thumbnails: ["img/tirantes.jpg"],
+                colors: [{ hex: "#121212", name: "Obsidian Black", id: "tank-blackout" }],
+                waMessage: "Buenas! Quería consultar disponibilidad de la Origin Ribbed Tank Blackout."
+            },
+            "pump-cover-blackout": {
+                title: "Origin Pump Cover<br>Blackout",
+                price: "19.90 €",
+                description: "Sudadera oversize heavyweight. La capa inicial perfecta y gruesa para romper a sudar rápido y ocultar tu físico hasta el momento clave.",
+                mainImage: "img/sudadera.jpg",
+                thumbnails: ["img/sudadera.jpg"],
+                colors: [{ hex: "#121212", name: "Obsidian Black", id: "pump-cover-blackout" }],
+                waMessage: "Hola! Quisiera saber si tenéis stock del Origin Pump Cover Blackout."
+            },
+            "compression-obsidian": {
+                title: "BAVU Second Skin<br>Obsidian",
+                price: "9.90 €",
+                description: "Camiseta técnica de compresión. Actúa como tu armadura personal, con costuras ranglán que realzan visualmente los hombros.",
+                mainImage: "img/compresion.jpg",
+                thumbnails: ["img/compresion.jpg"],
+                colors: [{ hex: "#121212", name: "Obsidian Black", id: "compression-obsidian" }],
+                waMessage: "Buenas! Quiero pedir la camiseta BAVU Second Skin Obsidian."
+            },
+            "socks-white": {
+                title: "Origin Crew Sock<br>Pure White (3)",
+                price: "8.90 €",
+                description: "Pack de 3 pares. Calcetines estéticos a media pantorrilla con zonas de compresión y tejido de alta densidad para máxima durabilidad.",
+                mainImage: "img/calcetines.jpg",
+                thumbnails: ["img/calcetines.jpg"],
+                colors: [{ hex: "#ffffff", name: "Pure White", id: "socks-white" }],
+                waMessage: "Hola equipo BAVU! Vengo de la web y quiero pedir el pack de calcetines Origin Crew Sock."
+            }
+        };
+
+        // 2. LEER EL ID QUE VIENE EN LA URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const productId = urlParams.get('id');
+
+        // 3. SELECCIONAR LOS ELEMENTOS
+        const productTitle = document.querySelector('.product-title');
+        const productPrice = document.querySelector('.product-price');
+        const productDescription = document.querySelector('.product-description');
+        const mainImage = document.getElementById('mainImage');
+        const thumbnailsContainer = document.querySelector('.thumbnails');
+        const colorsContainer = document.querySelector('.colors');
+        const colorLabel = document.getElementById('colorLabel');
+        const btnBuy = document.getElementById('btnBuy');
+
+        // 4. INYECTAR LA INFORMACIÓN DINÁMICAMENTE
+        if (productId && BAVU_PRODUCTS[productId]) {
+            const product = BAVU_PRODUCTS[productId];
+            
+            document.title = product.title.replace('<br>', ' ') + ' | BAVU';
+            productTitle.innerHTML = product.title;
+            productPrice.textContent = product.price;
+            productDescription.textContent = product.description;
+            mainImage.src = product.mainImage;
+            btnBuy.href = `https://wa.me/34600000000?text=${encodeURIComponent(product.waMessage)}`;
+
+            // Generar Miniaturas
+            thumbnailsContainer.innerHTML = '';
+            product.thumbnails.forEach((imgUrl, index) => {
+                const img = document.createElement('img');
+                img.src = imgUrl;
+                img.className = `thumb ${index === 0 ? 'active-thumb' : ''}`;
+                img.alt = `Vista ${index + 1}`;
+                
+                img.addEventListener('click', function() {
+                    mainImage.src = this.src;
+                    document.querySelectorAll('.thumb').forEach(t => t.classList.remove('active-thumb'));
+                    this.classList.add('active-thumb');
+                });
+                thumbnailsContainer.appendChild(img);
+            });
+
+            // Generar Colores y asignarles enlaces
+            colorsContainer.innerHTML = '';
+            product.colors.forEach((color) => {
+                const circle = document.createElement('div');
+                const isActive = (color.id === productId); // Comprueba si es el color que estamos viendo ahora
+                
+                circle.className = `color-circle ${isActive ? 'active' : ''}`;
+                circle.style.backgroundColor = color.hex;
+                circle.setAttribute('data-name', color.name);
+                
+                if (isActive) {
+                    colorLabel.textContent = color.name;
+                }
+
+                circle.addEventListener('click', function() {
+                    if (!isActive) {
+                        // Si hace clic en un color distinto, redirige a la página de ese producto
+                        window.location.href = `product.html?id=${color.id}`;
+                    }
+                });
+                colorsContainer.appendChild(circle);
+            });
+
+        } else {
+            productTitle.textContent = "Producto no encontrado";
+            productDescription.textContent = "El artículo que buscas no existe o pertenece a un Drop anterior.";
+            document.querySelector('.size-section').style.display = 'none';
+            document.querySelector('.color-section').style.display = 'none';
+            btnBuy.style.display = 'none';
+            mainImage.style.display = 'none';
+        }
+
+        // 5. LIGHTBOX
+        const lightbox = document.getElementById('imageLightbox');
+        const lightboxImg = document.getElementById('lightboxImg');
+        const closeLightbox = document.getElementById('closeLightbox');
+
+        mainImage.addEventListener('click', function() {
+            lightbox.classList.add('show');
+            lightboxImg.src = this.src;
+        });
+
+        closeLightbox.addEventListener('click', function() {
+            lightbox.classList.remove('show');
+        });
+
+        lightbox.addEventListener('click', function(e) {
+            if (e.target !== lightboxImg) {
+                lightbox.classList.remove('show');
+            }
+        });
+
+        // 6. SELECCIÓN DE TALLAS
+        const sizeBoxes = document.querySelectorAll('.size-box');
+        sizeBoxes.forEach(box => {
+            box.addEventListener('click', function() {
+                sizeBoxes.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
 
 </body>
 </html>

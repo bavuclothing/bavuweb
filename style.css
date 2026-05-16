@@ -78,7 +78,7 @@ nav {
     color: var(--white);
 }
 
-/* --- HERO SECTION (Index) --- */
+/* --- HERO SECTION --- */
 .hero {
     height: 80vh;
     display: flex;
@@ -101,13 +101,6 @@ nav {
     filter: drop-shadow(0px 5px 15px rgba(0,0,0,0.7)); 
 }
 
-.hero h1 {
-    font-size: 4rem;
-    font-weight: 900;
-    letter-spacing: 15px;
-    margin-bottom: 10px;
-}
-
 .hero p {
     font-size: 1.2rem;
     letter-spacing: 4px;
@@ -118,8 +111,8 @@ nav {
 /* --- CATÁLOGO --- */
 .container {
     padding: 80px 5%;
-    max-width: 1300px; /* NUEVO: Limita el ancho en pantallas gigantes */
-    margin: 0 auto;    /* NUEVO: Centra el contenedor en la pantalla */
+    max-width: 1300px;
+    margin: 0 auto;
 }
 
 .section-title {
@@ -132,7 +125,6 @@ nav {
 
 .grid {
     display: grid;
-    /* Aumentamos de 280px a 320px para forzar las 3 columnas */
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); 
     gap: 40px;
     margin-bottom: 5vh;
@@ -194,7 +186,7 @@ nav {
     background: var(--accent);
 }
 
-/* --- PROCESO DE COMPRA (Index) --- */
+/* --- PROCESO DE COMPRA --- */
 .steps {
     background: var(--dark-gray);
     padding: 60px 5%;
@@ -224,7 +216,7 @@ nav {
     color: #888;
 }
 
-/* --- PRODUCTO LAYOUT (Product) --- */
+/* --- PRODUCTO LAYOUT --- */
 .product-container {
     max-width: 1200px;
     margin: 50px auto;
@@ -247,6 +239,12 @@ nav {
     object-fit: cover;
     background: var(--dark-gray);
     border: 1px solid #222;
+    cursor: zoom-in;
+    transition: filter 0.3s;
+}
+
+.main-image:hover {
+    filter: brightness(1.1);
 }
 
 .thumbnails {
@@ -262,11 +260,13 @@ nav {
     background: var(--dark-gray);
     border: 1px solid #222;
     cursor: pointer;
-    transition: border-color 0.3s;
+    transition: all 0.3s;
+    filter: grayscale(40%) brightness(0.8);
 }
 
-.thumb:hover {
-    border-color: var(--accent);
+.thumb:hover, .thumb.active-thumb {
+    border-color: var(--white);
+    filter: grayscale(0%) brightness(1);
 }
 
 .product-container .product-info {
@@ -305,6 +305,42 @@ nav {
     font-weight: 300;
 }
 
+/* --- SELECTOR DE COLOR --- */
+.color-section {
+    margin-bottom: 25px;
+}
+
+.color-section h4 {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+.color-name-label {
+    color: var(--accent);
+    font-weight: normal;
+}
+
+.colors {
+    display: flex;
+    gap: 12px;
+}
+
+.color-circle {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid var(--black);
+    box-shadow: 0 0 0 1px #444;
+    transition: all 0.2s ease;
+}
+
+.color-circle.active {
+    box-shadow: 0 0 0 2px var(--white);
+}
+
 .size-section {
     margin-bottom: 40px;
 }
@@ -319,6 +355,7 @@ nav {
 .sizes {
     display: flex;
     gap: 10px;
+    flex-wrap: wrap;
 }
 
 .size-box {
@@ -334,7 +371,7 @@ nav {
 }
 
 .size-box:hover {
-    border-color: var(--white);
+    border-color: #888;
 }
 
 .size-box.active {
@@ -391,6 +428,51 @@ nav {
     color: var(--accent);
 }
 
+/* --- LIGHTBOX --- */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.92);
+    backdrop-filter: blur(5px);
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.lightbox.show {
+    display: flex;
+    opacity: 1;
+}
+
+.lightbox-content {
+    max-width: 90%;
+    max-height: 90vh;
+    object-fit: contain;
+    border: 1px solid #222;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.close-lightbox {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close-lightbox:hover {
+    color: var(--accent);
+}
+
 /* --- FOOTER --- */
 footer {
     padding: 50px 5%;
@@ -419,7 +501,6 @@ footer {
     letter-spacing: 2px;
 }
 
-/* --- BOTÓN FLOTANTE WHATSAPP --- */
 .whatsapp-float {
     position: fixed;
     bottom: 30px;
@@ -438,21 +519,18 @@ footer {
     text-decoration: none;
 }
 
-/* --- RESPONSIVE --- */
 @media (max-width: 900px) {
     .product-container {
         grid-template-columns: 1fr;
         gap: 40px;
         margin: 30px auto;
     }
-
     .product-title {
         font-size: 2rem;
     }
 }
 
 @media (max-width: 768px) {
-    .hero h1 { font-size: 2.5rem; }
     .hero-logo { max-width: 250px; }
     .nav-links { display: none; }
 }
