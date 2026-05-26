@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BAVU | Catálogo</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="static-nav">
+        <div class="logo">
+            <a href="index.html">
+                <img src="img/BAVU_white.png" alt="Logo BAVU">
+            </a>
+        </div>
+        <a href="index.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Volver al Inicio</a>
+    </nav>
+
+    <!-- Header dinámico que cambia de tamaño y fondo según la sección -->
+    <header class="hero" id="catalogHero">
+        <h1 class="section-title" id="catalogTitle" style="margin-bottom: 0; font-size: 3rem; font-weight: 900; letter-spacing: 10px;">COLECCIÓN</h1>
+    </header>
+
+    <!-- Contenedor del catálogo (Ocupa el 80% como el de la Home) -->
+    <main class="container" style="width: 80%; max-width: 1600px; margin: 50px auto;">
+        <div class="grid" id="productsGrid">
+            <!-- Los productos dinámicos se inyectarán aquí mediante JavaScript -->
+        </div>
+    </main>
+
+    <footer>
+        <div class="social-links">
+            <a href="https://www.instagram.com/bavu.clothing"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@bavu.clothing"><i class="fab fa-tiktok"></i></a>
+        </div>
+        <p>© 2026 BAVU ATHLETICS</p>
+        <p class="location">Diseñado en Cantabria, España</p>
+    </footer>
+
+    <a href="https://wa.me/34600000000" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Cargamos primero la base de datos centralizada -->
+    <script src="products-data.js"></script>
+    
+    <!-- Lógica de renderizado dinámico -->
+    <script>
+        // 1. Obtener la categoría de la URL (?cat=hombre o ?cat=mujer)
+        const urlParams = new URLSearchParams(window.location.search);
+        const category = urlParams.get('cat');
+
+        const catalogTitle = document.getElementById('catalogTitle');
+        const catalogHero = document.getElementById('catalogHero');
+        const productsGrid = document.getElementById('productsGrid');
+
+        // 2. Filtrar los productos según la categoría seleccionada
+        let filteredProducts = [];
+
+        if (category === 'hombre') {
+            document.title = "BAVU | Colección Hombre";
+            catalogTitle.textContent = "COLECCIÓN HOMBRE";
+            catalogHero.style.backgroundImage = "linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?q=80&w=1000&auto=format&fit=crop')";
+            
+            // Filtramos los que tengan forMen: true
+            filteredProducts = BAVU_INVENTORY.filter(p => p.forMen);
+
+        } else if (category === 'mujer') {
+            document.title = "BAVU | Colección Mujer";
+            catalogTitle.textContent = "COLECCIÓN MUJER";
+            catalogHero.style.backgroundImage = "linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1518310383802-640c2de311b2?q=80&w=1000&auto=format&fit=crop')";
+            
+            // Filtramos los que tengan forWomen: true
+            filteredProducts = BAVU_INVENTORY.filter(p => p.forWomen);
+
+        } else {
+            // Si entran sin categoría o una rota, mostramos todo
+            catalogTitle.textContent = "CATÁLOGO COMPLETO";
+            filteredProducts = BAVU_INVENTORY;
+        }
+
+        // 3. Renderizar las tarjetas en la cuadrícula
+        if (filteredProducts.length === 0) {
+            productsGrid.innerHTML = '<p style="text-align:center; grid-column: 1/-1; color:#666; padding: 50px 0;">Próximamente disponibles.</p>';
+        } else {
+            productsGrid.innerHTML = ''; // Limpiamos contenedor
+            
+            filteredProducts.forEach(product => {
+                // Creamos el diseño de tarjeta idéntico al antiguo index
+                const card = document.createElement('div');
+                card.className = 'product-card';
+                
+                // Limpiamos el salto de línea <br> del título para mostrarlo en una sola línea en la card si es necesario
+                const cleanTitle = product.title.replace('<br>', ' ');
+
+                card.innerHTML = `
+                    <img src="${product.mainImage}" alt="${cleanTitle}" class="product-img">
+                    <div class="product-info">
+                        <h3>${product.title}</h3>
+                        <span class="price">${product.price}</span>
+                        <a href="product.html?id=${product.id}" class="btn-order">Ver Detalles</a>
+                    </div>
+                `;
+                productsGrid.appendChild(card);
+            });
+        }
+    </script>
+</body>
+</html>

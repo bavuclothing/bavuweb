@@ -10,16 +10,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- Enlace al archivo CSS externo -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <nav class="static-nav">
          <div class="logo">
-            <img src="img/BAVU_white.png" alt="Logo BAVU">
+            <a href="index.html">
+                <img src="img/BAVU_white.png" alt="Logo BAVU">
+            </a>
         </div>
-        <a href="index.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Volver al Catálogo</a>
+        <a href="javascript:history.back()" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Volver</a>
     </nav>
 
     <main class="product-container">
@@ -32,7 +33,7 @@
         </div>
 
         <div class="product-info">
-            <div class="breadcrumb">Drop 01 / Colección Esencial</div>
+            <div class="breadcrumb" id="productBreadcrumb">Drop 01 / Colección Esencial</div>
             <h1 class="product-title">Cargando producto...</h1>
             <div class="product-price">-- €</div>
             
@@ -114,155 +115,41 @@
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <!-- SCRIPTS PARA LA INTERACTIVIDAD DINÁMICA -->
-    <script>
-        // 1. LA BASE DE DATOS ACTUALIZADA CON ENLACES ENTRE COLORES
-        const BAVU_PRODUCTS = {
-            "origin-emerald": {
-                title: "The Origin Tee<br>Emerald Edition",
-                price: "14.90 €",
-                description: "Diseñada estratégicamente para construir la V-Taper perfecta. Color verde esmeralda profundo con el logo central de la marca.",
-                mainImage: "img/muscle-tee-black.jpg",
-                thumbnails: ["img/muscle-tee-black.jpg"],
-                colors: [
-                    { hex: "#1a4231", name: "Forest Green", id: "origin-emerald" },
-                    { hex: "#121212", name: "Obsidian Black", id: "origin-blackout" }
-                ],
-                waMessage: "Hola equipo BAVU! Vengo de la web y quiero pedir The Origin Tee Emerald Edition."
-            },
-            "origin-blackout": {
-                title: "The Origin Tee<br>Blackout",
-                price: "14.90 €",
-                description: "Nuestra camiseta fundacional. Construye la V-Taper perfecta ajustándose en pecho y brazos.",
-                mainImage: "img/camiseta-negra.jpg",
-                thumbnails: ["img/camiseta-negra.jpg"],
-                colors: [
-                    { hex: "#121212", name: "Obsidian Black", id: "origin-blackout" },
-                    { hex: "#1a4231", name: "Forest Green", id: "origin-emerald" }
-                ],
-                waMessage: "Hola equipo BAVU! Vengo de la web y quiero pedir The Origin Tee Blackout."
-            },
-            "thermal-obsidian": {
-                title: "Thermal Core<br>Pullover Obsidian",
-                price: "13.90 €",
-                description: "Sudadera ligera de rendimiento con cremallera de 1/4. Ideal para calentamientos exigentes y mantener el pump.",
-                mainImage: "img/larga-negra.jpg",
-                thumbnails: ["img/larga-negra.jpg"],
-                colors: [
-                    { hex: "#121212", name: "Obsidian Black", id: "thermal-obsidian" },
-                    { hex: "#8c8f94", name: "Ash Grey", id: "thermal-ash" }
-                ],
-                waMessage: "Hola equipo BAVU! Me interesa el Thermal Core Pullover Obsidian."
-            },
-            "thermal-ash": {
-                title: "Thermal Core<br>Pullover Ash",
-                price: "13.90 €",
-                description: "Sudadera ligera de rendimiento con cremallera de 1/4. Transpirable, con agujeros para pulgares y ajuste atlético.",
-                mainImage: "img/larga-gris.jpg",
-                thumbnails: [
-                    "img/larga-gris.jpg",
-                    "img/larga-gris-2.jpg",
-                    "img/larga-gris-3.jpg",
-                    "img/larga-gris-4.jpg",
-                ],
-                colors: [
-                    { hex: "#8c8f94", name: "Ash Grey", id: "thermal-ash" },
-                    { hex: "#121212", name: "Obsidian Black", id: "thermal-obsidian" }
-                ],
-                waMessage: "Hola equipo BAVU! Me interesa el Thermal Core Pullover Ash."
-            },
-            "short-black": {
-                title: "The Foundation Short<br>Jet Black",
-                price: "11.90 €",
-                description: "Pantalón de entrenamiento híbrido. Tejido ligero y fluido para máxima movilidad en días pesados de pierna.",
-                mainImage: "img/pantalones-negros.jpg",
-                thumbnails: [
-                    "img/pantalones-negros.jpg",
-                    "img/pantalones-negros-2.jpg"
-                ],
-                colors: [
-                    { hex: "#000000", name: "Jet Black", id: "short-black" },
-                    { hex: "#4b4e53", name: "Iron Grey", id: "short-grey" }
-                ],
-                waMessage: "Buenas! Quería consultar el stock de The Foundation Short Jet Black."
-            },
-            "short-grey": {
-                title: "The Foundation Short<br>Iron Grey",
-                price: "11.90 €",
-                description: "Pantalón de entrenamiento técnico y versátil. Longitud estética ideal para lucir pierna sin sacrificar comodidad.",
-                mainImage: "img/pantalones-grises.jpg",
-                thumbnails: [
-                    "img/pantalones-grises.jpg",
-                    "img/pantalones-grises-2.jpg"
-                ],
-                colors: [
-                    { hex: "#4b4e53", name: "Iron Grey", id: "short-grey" },
-                    { hex: "#000000", name: "Jet Black", id: "short-black" }
-                ],
-                waMessage: "Hola equipo BAVU! Me interesa The Foundation Short Iron Grey."
-            },
-            "tank-blackout": {
-                title: "Origin Ribbed Tank<br>Blackout",
-                price: "7.90 €",
-                description: "Camiseta de tirantes con tejido acanalado premium. Elasticidad y ajuste óptimo para marcar la espalda y hombros.",
-                mainImage: "img/tirantes.jpg",
-                thumbnails: ["img/tirantes.jpg"],
-                colors: [{ hex: "#121212", name: "Obsidian Black", id: "tank-blackout" }],
-                waMessage: "Buenas! Quería consultar disponibilidad de la Origin Ribbed Tank Blackout."
-            },
-            "pump-cover-blackout": {
-                title: "Origin Pump Cover<br>Blackout",
-                price: "19.90 €",
-                description: "Sudadera oversize heavyweight. La capa inicial perfecta y gruesa para romper a sudar rápido y ocultar tu físico hasta el momento clave.",
-                mainImage: "img/sudadera.jpg",
-                thumbnails: ["img/sudadera.jpg"],
-                colors: [{ hex: "#121212", name: "Obsidian Black", id: "pump-cover-blackout" }],
-                waMessage: "Hola! Quisiera saber si tenéis stock del Origin Pump Cover Blackout."
-            },
-            "compression-obsidian": {
-                title: "BAVU Second Skin<br>Obsidian",
-                price: "9.90 €",
-                description: "Camiseta técnica de compresión. Actúa como tu armadura personal, con costuras ranglán que realzan visualmente los hombros.",
-                mainImage: "img/compresion.jpg",
-                thumbnails: ["img/compresion.jpg"],
-                colors: [{ hex: "#121212", name: "Obsidian Black", id: "compression-obsidian" }],
-                waMessage: "Buenas! Quiero pedir la camiseta BAVU Second Skin Obsidian."
-            },
-            "socks-white": {
-                title: "Origin Crew Sock<br>Pure White (3)",
-                price: "8.90 €",
-                description: "Pack de 3 pares. Calcetines estéticos a media pantorrilla con zonas de compresión y tejido de alta densidad para máxima durabilidad.",
-                mainImage: "img/calcetines.jpg",
-                thumbnails: ["img/calcetines.jpg"],
-                colors: [{ hex: "#ffffff", name: "Pure White", id: "socks-white" }],
-                waMessage: "Hola equipo BAVU! Vengo de la web y quiero pedir el pack de calcetines Origin Crew Sock."
-            }
-        };
+    <!-- ARCHIVO CENTRALIZADO DE DATOS -->
+    <script src="products-data.js"></script>
 
-        // 2. LEER EL ID QUE VIENE EN LA URL
+    <script>
+        // LEER EL ID DE LA URL
         const urlParams = new URLSearchParams(window.location.search);
         const productId = urlParams.get('id');
 
-        // 3. SELECCIONAR LOS ELEMENTOS
+        // SELECCIONAR ELEMENTOS
         const productTitle = document.querySelector('.product-title');
         const productPrice = document.querySelector('.product-price');
         const productDescription = document.querySelector('.product-description');
+        const productBreadcrumb = document.getElementById('productBreadcrumb');
         const mainImage = document.getElementById('mainImage');
         const thumbnailsContainer = document.querySelector('.thumbnails');
         const colorsContainer = document.querySelector('.colors');
         const colorLabel = document.getElementById('colorLabel');
         const btnBuy = document.getElementById('btnBuy');
 
-        // 4. INYECTAR LA INFORMACIÓN DINÁMICAMENTE
-        if (productId && BAVU_PRODUCTS[productId]) {
-            const product = BAVU_PRODUCTS[productId];
-            
+        // RENDERIZADO DESDE LA BASE DE DATOS COMPARTIDA (BAVU_INVENTORY)
+        // Buscamos el producto en el array global que viene de products-data.js
+        const product = BAVU_INVENTORY.find(p => p.id === productId);
+
+        if (productId && product) {
             document.title = product.title.replace('<br>', ' ') + ' | BAVU';
             productTitle.innerHTML = product.title;
             productPrice.textContent = product.price;
             productDescription.textContent = product.description;
             mainImage.src = product.mainImage;
             btnBuy.href = `https://wa.me/34600000000?text=${encodeURIComponent(product.waMessage)}`;
+
+            // Modificar la miga de pan según las etiquetas booleanas
+            if (product.forMen && product.forWomen) productBreadcrumb.textContent = "Drop 01 / Unisex";
+            else if (product.forWomen) productBreadcrumb.textContent = "Drop 01 / Mujer";
+            else productBreadcrumb.textContent = "Drop 01 / Hombre";
 
             // Generar Miniaturas
             thumbnailsContainer.innerHTML = '';
@@ -280,11 +167,11 @@
                 thumbnailsContainer.appendChild(img);
             });
 
-            // Generar Colores y asignarles enlaces
+            // Generar Colores y asignarles enlaces url parametrizados
             colorsContainer.innerHTML = '';
             product.colors.forEach((color) => {
                 const circle = document.createElement('div');
-                const isActive = (color.id === productId); // Comprueba si es el color que estamos viendo ahora
+                const isActive = (color.id === productId);
                 
                 circle.className = `color-circle ${isActive ? 'active' : ''}`;
                 circle.style.backgroundColor = color.hex;
@@ -296,7 +183,6 @@
 
                 circle.addEventListener('click', function() {
                     if (!isActive) {
-                        // Si hace clic en un color distinto, redirige a la página de ese producto
                         window.location.href = `product.html?id=${color.id}`;
                     }
                 });
@@ -312,7 +198,7 @@
             mainImage.style.display = 'none';
         }
 
-        // 5. LIGHTBOX
+        // LIGHTBOX
         const lightbox = document.getElementById('imageLightbox');
         const lightboxImg = document.getElementById('lightboxImg');
         const closeLightbox = document.getElementById('closeLightbox');
@@ -332,7 +218,7 @@
             }
         });
 
-        // 6. SELECCIÓN DE TALLAS
+        // SELECCIÓN DE TALLAS
         const sizeBoxes = document.querySelectorAll('.size-box');
         sizeBoxes.forEach(box => {
             box.addEventListener('click', function() {
@@ -341,6 +227,5 @@
             });
         });
     </script>
-
 </body>
 </html>
