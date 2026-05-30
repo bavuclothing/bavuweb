@@ -10,7 +10,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     
     <style>
         /* --- ESTILOS COMPACTOS CENTRALES --- */
@@ -38,7 +39,7 @@
             align-items: center;
             text-align: center;
             width: 100%;
-            max-width: 600px;
+            max-width: 800px;
         }
 
         /* Entrada suave del logo (2 segundos) */
@@ -50,7 +51,7 @@
             animation: fadeIn 2s ease-in-out;
         }
 
-        /* Texto principal con animación fade añadida (2.2 segundos para escalonar) */
+        /* Texto principal con animación fade */
         .landing-text {
             font-size: 1.5rem;
             font-weight: 300;
@@ -80,18 +81,28 @@
             100% { opacity: 0; }
         }
 
-        /* Animación base que comparte el logo, el texto y las redes */
+        /* Animación base de fundido */
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(-15px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* --- CONTENEDOR DE REDES SOCIALES (2.5 segundos) --- */
+        /* --- CONTENEDOR DE REDES SOCIALES --- */
         .social-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 25px; /* Espacio entre la primera fila y la segunda (Escritorio) */
+            animation: fadeIn 2.5s ease-in-out;
+            width: 100%;
+        }
+
+        /* Filas de redes independientes para controlar el orden */
+        .social-row {
             display: flex;
             justify-content: center;
             gap: 40px;
-            animation: fadeIn 2.5s ease-in-out;
+            width: 100%;
         }
 
         .social-link {
@@ -115,12 +126,23 @@
             font-size: 1.3rem;
         }
 
-        /* Adaptación perfecta para pantallas pequeñas */
+        /* --- Adaptación perfecta para pantallas móviles --- */
         @media (max-width: 600px) {
             .social-container {
-                flex-direction: column;
-                align-items: center;
-                gap: 20px;
+                flex-direction: row; /* Coloca ambas filas una al lado de la otra */
+                justify-content: center;
+                gap: 25px; /* Espaciado uniforme */
+            }
+            .social-row {
+                flex-direction: row; /* Mantiene los iconos en horizontal */
+                gap: 25px; /* Espaciado uniforme */
+                width: auto;
+            }
+            .social-text {
+                display: none; /* Oculta el texto en móviles */
+            }
+            .social-link i {
+                font-size: 1.6rem; /* Hace los iconos un poco más grandes para móvil */
             }
             .logo {
                 max-width: 220px;
@@ -140,17 +162,28 @@
         <img src="img/BAVU_white.png" alt="BAVU Logo" class="logo">
         
         <h1 class="landing-text">
-            IS LANDING
+            LOADING
             <span class="dots"><span>.</span><span>.</span><span>.</span></span>
         </h1>
         
         <div class="social-container">
-            <a href="https://www.instagram.com/bavu.clothing" target="_blank" class="social-link">
-                <i class="fab fa-instagram"></i> @bavu.clothing
-            </a>
-            <a href="https://www.tiktok.com/@bavu.clothing" target="_blank" class="social-link">
-                <i class="fab fa-tiktok"></i> @bavu.clothing
-            </a>
+            <div class="social-row">
+                <a href="https://www.instagram.com/bavu.clothing" target="_blank" class="social-link">
+                    <i class="fab fa-instagram"></i><span class="social-text">@bavu.clothing</span>
+                </a>
+                <a href="https://www.tiktok.com/@bavu.clothing" target="_blank" class="social-link">
+                    <i class="fab fa-tiktok"></i><span class="social-text">@bavu.clothing</span>
+                </a>
+            </div>
+            
+            <div class="social-row">
+                <a href="https://www.facebook.com/clothing.bavu" target="_blank" class="social-link">
+                    <i class="fab fa-facebook"></i><span class="social-text">@clothing.bavu</span>
+                </a>
+                <a href="https://x.com/bavuclothing" target="_blank" class="social-link">
+                    <i class="fab fa-x-twitter"></i><span class="social-text">@bavuclothing</span>
+                </a>
+            </div>
         </div>
     </main>
 
