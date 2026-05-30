@@ -3,142 +3,155 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BAVU | Fuerza Bruta • Aesthetic Gymwear</title>
+    <title>BAVU | Coming Soon</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Enlace al archivo CSS externo -->
-    <link rel="stylesheet" href="style.css">
+    <style>
+        /* --- ESTILOS EXCLUSIVOS PRE-LANZAMIENTO --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Urbanist', sans-serif;
+            background-color: #000000;
+            color: #ffffff;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        /* Contenedor Principal (Centro) */
+        .main-content {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            width: 100%;
+            padding: 20px;
+        }
+
+        /* Animación suave de entrada para el logo */
+        .logo {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            margin-bottom: 30px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        /* Texto principal */
+        .landing-text {
+            font-size: 1.5rem;
+            font-weight: 300;
+            letter-spacing: 10px;
+            text-transform: uppercase;
+            color: #94a3b8; /* El color --accent de tu tema original */
+            display: flex;
+            align-items: center;
+        }
+
+        /* --- ANIMACIÓN DE LOS PUNTOS --- */
+        .dots span {
+            opacity: 0;
+            animation: blink 1.8s infinite;
+            font-weight: 700;
+            color: #ffffff;
+        }
+        /* Retrasamos la animación de cada punto para crear el efecto de escritura */
+        .dots span:nth-child(1) { animation-delay: 0s; }
+        .dots span:nth-child(2) { animation-delay: 0.4s; }
+        .dots span:nth-child(3) { animation-delay: 0.8s; }
+
+        @keyframes blink {
+            0% { opacity: 0; }
+            20% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* --- FOOTER REDES SOCIALES --- */
+        .social-footer {
+            width: 100%;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            border-top: 1px solid #111;
+        }
+
+        .social-link {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 300;
+            letter-spacing: 3px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: color 0.3s ease;
+        }
+
+        .social-link:hover {
+            color: #94a3b8;
+        }
+
+        .social-link i {
+            font-size: 1.4rem;
+        }
+
+        /* Adaptación para móviles */
+        @media (max-width: 600px) {
+            .social-footer {
+                flex-direction: column;
+                align-items: center;
+                gap: 25px;
+            }
+            .logo {
+                max-width: 240px;
+            }
+            .landing-text {
+                font-size: 1.2rem;
+                letter-spacing: 6px;
+            }
+        }
+    </style>
 </head>
 <body>
 
-    <nav class="fixed-nav">
-        <div class="logo">
-            <img src="img/BAVU_white.png" alt="Logo BAVU">
-        </div>
-        <div class="nav-links">
-            <a href="#categorias">Colecciones</a>
-            <a href="#proceso">Cómo Comprar</a>
-            <a href="https://instagram.com/tu_usuario" target="_blank">Instagram</a>
-        </div>
-    </nav>
+    <div style="height: 100px;"></div>
 
-   <header class="hero">
-        <img href="index.html" src="img/BAVU_white.png" alt="BAVU Logo" class="hero-logo">
-        <p>Fuerza Bruta • Diseño Minimalista</p>
-    </header>
+    <main class="main-content">
+        <img src="img/BAVU_white.png" alt="BAVU Logo" class="logo">
+        <h1 class="landing-text">
+            IS LANDING
+            <span class="dots"><span>.</span><span>.</span><span>.</span></span>
+        </h1>
+    </main>
 
-    <!-- SECCIONES DIVIDIDAS (HOMBRE Y MUJER) -->
-    <section class="split-sections" id="categorias">
-        
-        <!-- COLUMNA HOMBRE -->
-        <div class="category-col">
-            <a href="products.html?cat=hombre" class="category-header header-men">
-                <h2>HOMBRE</h2>
-            </a>
-            <div class="mini-grid">
-                <div class="product-card">
-                    <img src="img/camiseta-negra.jpg" alt="Origin Tee Blackout" class="product-img">
-                    <div class="product-info">
-                        <h3>Origin Tee - Blackout</h3>
-                        <span class="price">14.90 €</span>
-                        <a href="product.html?id=origin-blackout" class="btn-order">Ver Detalles</a>
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <img src="img/larga-negra.jpg" alt="Thermal Core" class="product-img">
-                    <div class="product-info">
-                        <h3>Thermal Core - Obsidian</h3>
-                        <span class="price">13.90 €</span>
-                        <a href="product.html?id=thermal-obsidian" class="btn-order">Ver Detalles</a>
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <img src="img/pantalones-negros.jpg" alt="Foundation Short" class="product-img">
-                    <div class="product-info">
-                        <h3>Foundation Short - Jet Black</h3>
-                        <span class="price">11.90 €</span>
-                        <a href="product.html?id=short-black" class="btn-order">Ver Detalles</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- COLUMNA MUJER -->
-        <div class="category-col">
-            <a href="products.html?cat=mujer" class="category-header header-women">
-                <h2>MUJER</h2>
-            </a>
-            <div class="mini-grid">
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1549476464-37392f717541?q=80&w=600&auto=format&fit=crop" alt="Seamless Leggings" class="product-img">
-                    <div class="product-info">
-                        <h3>Seamless Legging - Onyx</h3>
-                        <span class="price">22.90 €</span>
-                        <a href="product.html?id=legging-onyx" class="btn-order">Ver Detalles</a>
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1571945153237-4929e783af4a?q=80&w=600&auto=format&fit=crop" alt="Sports Bra" class="product-img">
-                    <div class="product-info">
-                        <h3>Adapt Sports Bra - Onyx</h3>
-                        <span class="price">16.90 €</span>
-                        <a href="product.html?id=bra-onyx" class="btn-order">Ver Detalles</a>
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=600&auto=format&fit=crop" alt="Crop Top" class="product-img">
-                    <div class="product-info">
-                        <h3>Origin Crop Top - Ash</h3>
-                        <span class="price">14.90 €</span>
-                        <a href="product.html?id=crop-ash" class="btn-order">Ver Detalles</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </section>
-
-    <section class="steps" id="proceso">
-        <h2 class="section-title">¿Cómo hacer tu pedido?</h2>
-        <div class="steps-grid">
-            <div class="step">
-                <i class="fab fa-whatsapp"></i>
-                <h4>1. Contacta</h4>
-                <p>Haz clic en el botón del producto y escríbenos por WhatsApp.</p>
-            </div>
-            <div class="step">
-                <i class="fas fa-check-circle"></i>
-                <h4>2. Reserva</h4>
-                <p>Confirmamos stock de tu talla y te pasamos datos de pago (Bizum/Paypal).</p>
-            </div>
-            <div class="step">
-                <i class="fas fa-truck"></i>
-                <h4>3. Envío</h4>
-                <p>Enviamos en 24/48h o entregamos en mano en Santander.</p>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="social-links">
-            <a href="https://www.instagram.com/bavu.clothing"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.tiktok.com/@bavu.clothing"><i class="fab fa-tiktok"></i></a>
-        </div>
-        <p>© 2026 BAVU ATHLETICS</p>
-        <p class="location">Diseñado en Cantabria, España</p>
+    <footer class="social-footer">
+        <a href="https://www.instagram.com/bavu.clothing" target="_blank" class="social-link">
+            <i class="fab fa-instagram"></i> @bavu.clothing
+        </a>
+        <a href="https://www.tiktok.com/@bavu.clothing" target="_blank" class="social-link">
+            <i class="fab fa-tiktok"></i> @bavu.clothing
+        </a>
     </footer>
-
-    <a href="https://wa.me/34600000000" class="whatsapp-float" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-    </a>
 
 </body>
 </html>
