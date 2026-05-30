@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        /* --- ESTILOS EXCLUSIVOS PRE-LANZAMIENTO CORREGIDOS --- */
+        /* --- ESTILOS COMPACTOS CENTRALES --- */
         * {
             margin: 0;
             padding: 0;
@@ -22,44 +22,43 @@
             font-family: 'Urbanist', sans-serif;
             background-color: #000000;
             color: #ffffff;
-            min-height: 100vh; /* Cambiado a min-height para adaptarse dinámicamente a pantallas cortas */
+            min-height: 100vh;
             display: flex;
-            flex-direction: column;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
-            /* Eliminado overflow: hidden para evitar que corte contenido en móviles */
+            padding: 20px;
         }
 
-        /* Contenedor Principal (Centro) */
+        /* Contenedor Único Central */
         .main-content {
-            flex-grow: 1;
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
             text-align: center;
             width: 100%;
-            padding: 40px 20px; /* Añadido un padding seguro */
+            max-width: 600px;
         }
 
-        /* Animación suave de entrada para el logo */
+        /* Entrada suave del logo (2 segundos) */
         .logo {
             width: 100%;
             max-width: 300px;
             height: auto;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             animation: fadeIn 2s ease-in-out;
         }
 
-        /* Texto principal */
+        /* Texto principal con animación fade añadida (2.2 segundos para escalonar) */
         .landing-text {
             font-size: 1.5rem;
             font-weight: 300;
             letter-spacing: 10px;
             text-transform: uppercase;
-            color: #94a3b8; /* Color --accent original */
+            color: #94a3b8;
             display: flex;
             align-items: center;
+            margin-bottom: 45px;
+            animation: fadeIn 2.2s ease-in-out; /* ¡Animación añadida aquí! */
         }
 
         /* --- ANIMACIÓN DE LOS PUNTOS --- */
@@ -79,20 +78,18 @@
             100% { opacity: 0; }
         }
 
+        /* Animación base que comparte el logo, el texto y las redes */
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-20px); }
+            from { opacity: 0; transform: translateY(-15px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* --- FOOTER REDES SOCIALES --- */
-        .social-footer {
-            width: 100%;
-            padding: 30px 20px;
+        /* --- CONTENEDOR DE REDES SOCIALES (2.5 segundos) --- */
+        .social-container {
             display: flex;
             justify-content: center;
-            gap: 50px;
-            border-top: 1px solid #111;
-            flex-shrink: 0; /* Fuerza al footer a mantener su tamaño y no aplastarse */
+            gap: 40px;
+            animation: fadeIn 2.5s ease-in-out;
         }
 
         .social-link {
@@ -103,9 +100,9 @@
             letter-spacing: 3px;
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
             transition: color 0.3s ease;
-            white-space: nowrap; /* Evita que el texto se parta en dos líneas de forma fea */
+            white-space: nowrap;
         }
 
         .social-link:hover {
@@ -113,24 +110,24 @@
         }
 
         .social-link i {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
         }
 
-        /* Adaptación perfecta para móviles */
+        /* Adaptación perfecta para pantallas pequeñas */
         @media (max-width: 600px) {
-            .social-footer {
+            .social-container {
                 flex-direction: column;
                 align-items: center;
-                gap: 18px; /* Espaciado cómodo entre los dos enlaces */
-                padding: 25px 20px;
+                gap: 20px;
             }
             .logo {
-                max-width: 220px; /* Logo ligeramente más compacto en móvil */
+                max-width: 220px;
                 margin-bottom: 20px;
             }
             .landing-text {
                 font-size: 1.1rem;
                 letter-spacing: 6px;
+                margin-bottom: 35px;
             }
         }
     </style>
@@ -139,20 +136,21 @@
 
     <main class="main-content">
         <img src="img/BAVU_white.png" alt="BAVU Logo" class="logo">
+        
         <h1 class="landing-text">
             IS LANDING
             <span class="dots"><span>.</span><span>.</span><span>.</span></span>
         </h1>
+        
+        <div class="social-container">
+            <a href="https://www.instagram.com/bavu.clothing" target="_blank" class="social-link">
+                <i class="fab fa-instagram"></i> @bavu.clothing
+            </a>
+            <a href="https://www.tiktok.com/@bavu.clothing" target="_blank" class="social-link">
+                <i class="fab fa-tiktok"></i> @bavu.clothing
+            </a>
+        </div>
     </main>
-
-    <footer class="social-footer">
-        <a href="https://www.instagram.com/bavu.clothing" target="_blank" class="social-link">
-            <i class="fab fa-instagram"></i> @bavu.clothing
-        </a>
-        <a href="https://www.tiktok.com/@bavu.clothing" target="_blank" class="social-link">
-            <i class="fab fa-tiktok"></i> @bavu.clothing
-        </a>
-    </footer>
 
 </body>
 </html>
