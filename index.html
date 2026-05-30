@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        /* --- ESTILOS EXCLUSIVOS PRE-LANZAMIENTO --- */
+        /* --- ESTILOS EXCLUSIVOS PRE-LANZAMIENTO CORREGIDOS --- */
         * {
             margin: 0;
             padding: 0;
@@ -22,12 +22,12 @@
             font-family: 'Urbanist', sans-serif;
             background-color: #000000;
             color: #ffffff;
-            height: 100vh;
+            min-height: 100vh; /* Cambiado a min-height para adaptarse dinámicamente a pantallas cortas */
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             align-items: center;
-            overflow: hidden;
+            /* Eliminado overflow: hidden para evitar que corte contenido en móviles */
         }
 
         /* Contenedor Principal (Centro) */
@@ -39,7 +39,7 @@
             align-items: center;
             text-align: center;
             width: 100%;
-            padding: 20px;
+            padding: 40px 20px; /* Añadido un padding seguro */
         }
 
         /* Animación suave de entrada para el logo */
@@ -57,7 +57,7 @@
             font-weight: 300;
             letter-spacing: 10px;
             text-transform: uppercase;
-            color: #94a3b8; /* El color --accent de tu tema original */
+            color: #94a3b8; /* Color --accent original */
             display: flex;
             align-items: center;
         }
@@ -69,7 +69,6 @@
             font-weight: 700;
             color: #ffffff;
         }
-        /* Retrasamos la animación de cada punto para crear el efecto de escritura */
         .dots span:nth-child(1) { animation-delay: 0s; }
         .dots span:nth-child(2) { animation-delay: 0.4s; }
         .dots span:nth-child(3) { animation-delay: 0.8s; }
@@ -88,11 +87,12 @@
         /* --- FOOTER REDES SOCIALES --- */
         .social-footer {
             width: 100%;
-            padding: 40px 20px;
+            padding: 30px 20px;
             display: flex;
             justify-content: center;
             gap: 50px;
             border-top: 1px solid #111;
+            flex-shrink: 0; /* Fuerza al footer a mantener su tamaño y no aplastarse */
         }
 
         .social-link {
@@ -105,6 +105,7 @@
             align-items: center;
             gap: 12px;
             transition: color 0.3s ease;
+            white-space: nowrap; /* Evita que el texto se parta en dos líneas de forma fea */
         }
 
         .social-link:hover {
@@ -115,26 +116,26 @@
             font-size: 1.4rem;
         }
 
-        /* Adaptación para móviles */
+        /* Adaptación perfecta para móviles */
         @media (max-width: 600px) {
             .social-footer {
                 flex-direction: column;
                 align-items: center;
-                gap: 25px;
+                gap: 18px; /* Espaciado cómodo entre los dos enlaces */
+                padding: 25px 20px;
             }
             .logo {
-                max-width: 240px;
+                max-width: 220px; /* Logo ligeramente más compacto en móvil */
+                margin-bottom: 20px;
             }
             .landing-text {
-                font-size: 1.2rem;
+                font-size: 1.1rem;
                 letter-spacing: 6px;
             }
         }
     </style>
 </head>
 <body>
-
-    <div style="height: 100px;"></div>
 
     <main class="main-content">
         <img src="img/BAVU_white.png" alt="BAVU Logo" class="logo">
