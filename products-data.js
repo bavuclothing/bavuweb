@@ -1,5 +1,4 @@
 // BAVU ATHLETICS - BASE DE DATOS CENTRALIZADA DE PRODUCTOS
-// Modifica este archivo una sola vez para añadir, quitar o cambiar productos en toda la web.
 
 const BAVU_INVENTORY = [
     {
@@ -15,7 +14,9 @@ const BAVU_INVENTORY = [
         ],
         waMessage: "Hola equipo BAVU! Vengo de la web y quiero pedir The Origin Tee Emerald Edition.",
         forMen: true,
-        forWomen: false
+        forWomen: false,
+        order: 100,
+        relatedProducts: ["origin-blackout", "short-black", "tank-blackout"]
     },
     {
         id: "origin-blackout",
@@ -30,7 +31,9 @@ const BAVU_INVENTORY = [
         ],
         waMessage: "Hola equipo BAVU! Vengo de la web y quiero pedir The Origin Tee Blackout.",
         forMen: true,
-        forWomen: false
+        forWomen: false,
+        order: 90,
+        relatedProducts: ["origin-emerald", "short-grey", "thermal-obsidian"]
     },
     {
         id: "thermal-obsidian",
@@ -41,26 +44,13 @@ const BAVU_INVENTORY = [
         thumbnails: ["img/larga-negra.jpg"],
         colors: [
             { hex: "#121212", name: "Obsidian Black", id: "thermal-obsidian" },
-            { hex: "#8c8f94", name: "Ash Grey", id: "thermal-ash" }
+            { hex: "#8c8f94", name: "Ash Grey", id: "thermal-ash" } // Asumimos que ash existirá
         ],
         waMessage: "Hola equipo BAVU! Me interesa el Thermal Core Pullover Obsidian.",
         forMen: true,
-        forWomen: false
-    },
-    {
-        id: "thermal-ash",
-        title: "Thermal Core<br>Pullover Ash",
-        price: "13.90 €",
-        description: "Sudadera ligera de rendimiento con cremallera de 1/4. Transpirable, con agujeros para pulgares y ajuste atlético.",
-        mainImage: "img/larga-gris.jpg",
-        thumbnails: ["img/larga-gris.jpg", "img/larga-gris-2.jpg"],
-        colors: [
-            { hex: "#8c8f94", name: "Ash Grey", id: "thermal-ash" },
-            { hex: "#121212", name: "Obsidian Black", id: "thermal-obsidian" }
-        ],
-        waMessage: "Hola equipo BAVU! Me interesa el Thermal Core Pullover Ash.",
-        forMen: true,
-        forWomen: false
+        forWomen: false,
+        order: 80,
+        relatedProducts: ["pump-cover-blackout", "origin-blackout"]
     },
     {
         id: "short-black",
@@ -75,7 +65,9 @@ const BAVU_INVENTORY = [
         ],
         waMessage: "Buenas! Quería consultar el stock de The Foundation Short Jet Black.",
         forMen: true,
-        forWomen: false
+        forWomen: false,
+        order: 85,
+        relatedProducts: ["origin-blackout", "socks-white"]
     },
     {
         id: "short-grey",
@@ -90,7 +82,9 @@ const BAVU_INVENTORY = [
         ],
         waMessage: "Hola equipo BAVU! Me interesa The Foundation Short Iron Grey.",
         forMen: true,
-        forWomen: false
+        forWomen: false,
+        order: 84,
+        relatedProducts: ["origin-emerald", "socks-white"]
     },
     {
         id: "tank-blackout",
@@ -102,7 +96,9 @@ const BAVU_INVENTORY = [
         colors: [{ hex: "#121212", name: "Obsidian Black", id: "tank-blackout" }],
         waMessage: "Buenas! Quería consultar disponibilidad de la Origin Ribbed Tank Blackout.",
         forMen: true,
-        forWomen: false
+        forWomen: false,
+        order: 75,
+        relatedProducts: ["short-grey", "pump-cover-blackout"]
     },
     {
         id: "pump-cover-blackout",
@@ -114,7 +110,9 @@ const BAVU_INVENTORY = [
         colors: [{ hex: "#121212", name: "Obsidian Black", id: "pump-cover-blackout" }],
         waMessage: "Hola! Quisiera saber si tenéis stock del Origin Pump Cover Blackout.",
         forMen: true,
-        forWomen: false
+        forWomen: false,
+        order: 95,
+        relatedProducts: ["tank-blackout", "compression-obsidian"]
     },
     {
         id: "compression-obsidian",
@@ -126,7 +124,9 @@ const BAVU_INVENTORY = [
         colors: [{ hex: "#121212", name: "Obsidian Black", id: "compression-obsidian" }],
         waMessage: "Buenas! Quiero pedir la camiseta BAVU Second Skin Obsidian.",
         forMen: true,
-        forWomen: false
+        forWomen: false,
+        order: 70,
+        relatedProducts: ["short-black", "pump-cover-blackout"]
     },
     {
         id: "socks-white",
@@ -138,115 +138,50 @@ const BAVU_INVENTORY = [
         colors: [{ hex: "#ffffff", name: "Pure White", id: "socks-white" }],
         waMessage: "Hola equipo BAVU! Vengo de la web y quiero pedir el pack de calcetines Origin Crew Sock.",
         forMen: true,
-        forWomen: true // Unisex / va en ambas páginas
+        forWomen: true,
+        order: 60,
+        relatedProducts: ["short-black", "legging-onyx"]
     },
-    // PRODUCTOS DE EJEMPLO PARA LA SECCIÓN DE MUJER
     {
         id: "legging-onyx",
         title: "Seamless Legging<br>Onyx Black",
         price: "22.90 €",
         description: "Mallas de compresión sin costuras con efecto moldeador de alta sujeción. Cintura alta que no se desliza durante las sentadillas pesadas.",
-        mainImage: "img/shortsleeve-black.jpg",
+        mainImage: "img/shortsleeve-black.jpg", // Tienes que cambiar esto a una foto real de leggings
         thumbnails: ["img/shortsleeve-black.jpg"],
         colors: [{ hex: "#121212", name: "Onyx Black", id: "legging-onyx" }],
         waMessage: "Hola BAVU! Me interesan los Seamless Leggings Onyx de mujer.",
         forMen: false,
-        forWomen: true
+        forWomen: true,
+        order: 100,
+        relatedProducts: ["bra-onyx", "crop-ash"]
     },
     {
         id: "bra-onyx",
         title: "Adapt Sports Bra<br>Onyx Black",
         price: "16.90 €",
         description: "Sujetador deportivo de impacto medio-alto con tirantes cruzados ajustables. Espalda descubierta estética para lucir el dorsal.",
-        mainImage: "img/shortsleeve-wine.jpg",
+        mainImage: "img/shortsleeve-wine.jpg", // Actualizar imagen
         thumbnails: ["img/shortsleeve-wine.jpg"],
         colors: [{ hex: "#121212", name: "Onyx Black", id: "bra-onyx" }],
         waMessage: "Buenas! Quería consultar stock del Adapt Sports Bra de mujer.",
         forMen: false,
-        forWomen: true
+        forWomen: true,
+        order: 95,
+        relatedProducts: ["legging-onyx", "crop-ash"]
     },
     {
         id: "crop-ash",
         title: "Origin Crop Top<br>Ash Grey",
         price: "14.90 €",
         description: "Crop top de ajuste ceñido fabricado en tejido acanalado ultra elástico. Transpirable, suave y de secado rápido.",
-        mainImage: "img/shortsleeve-lightpurple.jpg",
+        mainImage: "img/shortsleeve-lightpurple.jpg", // Actualizar imagen
         thumbnails: ["img/shortsleeve-lightpurple.jpg"],
         colors: [{ hex: "#8c8f94", name: "Ash Grey", id: "crop-ash" }],
         waMessage: "Hola equipo BAVU! Quiero pedir el Origin Crop Top Ash de mujer.",
         forMen: false,
-        forWomen: true
-    },
-    {
-        id: "crop-ash",
-        title: "Origin Crop Top<br>Ash Grey",
-        price: "14.90 €",
-        description: "Crop top de ajuste ceñido fabricado en tejido acanalado ultra elástico. Transpirable, suave y de secado rápido.",
-        mainImage: "img/shorts-black.jpg",
-        thumbnails: ["img/shorts-black.jpg"],
-        colors: [{ hex: "#8c8f94", name: "Ash Grey", id: "crop-ash" }],
-        waMessage: "Hola equipo BAVU! Quiero pedir el Origin Crop Top Ash de mujer.",
-        forMen: false,
-        forWomen: true
-    },
-    {
-        id: "crop-ash",
-        title: "Origin Crop Top<br>Ash Grey",
-        price: "14.90 €",
-        description: "Crop top de ajuste ceñido fabricado en tejido acanalado ultra elástico. Transpirable, suave y de secado rápido.",
-        mainImage: "img/shorts-wine.jpg",
-        thumbnails: ["img/shorts-wine.jpg"],
-        colors: [{ hex: "#8c8f94", name: "Ash Grey", id: "crop-ash" }],
-        waMessage: "Hola equipo BAVU! Quiero pedir el Origin Crop Top Ash de mujer.",
-        forMen: false,
-        forWomen: true
-    },
-    {
-        id: "crop-ash",
-        title: "Origin Crop Top<br>Ash Grey",
-        price: "14.90 €",
-        description: "Crop top de ajuste ceñido fabricado en tejido acanalado ultra elástico. Transpirable, suave y de secado rápido.",
-        mainImage: "img/shorts-lightblue.jpg",
-        thumbnails: ["img/shorts-lightblue.jpg"],
-        colors: [{ hex: "#8c8f94", name: "Ash Grey", id: "crop-ash" }],
-        waMessage: "Hola equipo BAVU! Quiero pedir el Origin Crop Top Ash de mujer.",
-        forMen: false,
-        forWomen: true
-    },
-    {
-        id: "crop-ash",
-        title: "Origin Crop Top<br>Ash Grey",
-        price: "14.90 €",
-        description: "Crop top de ajuste ceñido fabricado en tejido acanalado ultra elástico. Transpirable, suave y de secado rápido.",
-        mainImage: "img/leggings-black.jpg",
-        thumbnails: ["img/leggings-black.jpg"],
-        colors: [{ hex: "#8c8f94", name: "Ash Grey", id: "crop-ash" }],
-        waMessage: "Hola equipo BAVU! Quiero pedir el Origin Crop Top Ash de mujer.",
-        forMen: false,
-        forWomen: true
-    },
-    {
-        id: "crop-ash",
-        title: "Origin Crop Top<br>Ash Grey",
-        price: "14.90 €",
-        description: "Crop top de ajuste ceñido fabricado en tejido acanalado ultra elástico. Transpirable, suave y de secado rápido.",
-        mainImage: "img/leggings-wine.jpg",
-        thumbnails: ["img/leggings-wine.jpg"],
-        colors: [{ hex: "#8c8f94", name: "Ash Grey", id: "crop-ash" }],
-        waMessage: "Hola equipo BAVU! Quiero pedir el Origin Crop Top Ash de mujer.",
-        forMen: false,
-        forWomen: true
-    },
-    {
-        id: "crop-ash",
-        title: "Origin Crop Top<br>Ash Grey",
-        price: "14.90 €",
-        description: "Crop top de ajuste ceñido fabricado en tejido acanalado ultra elástico. Transpirable, suave y de secado rápido.",
-        mainImage: "img/leggings-lightpurple.jpg",
-        thumbnails: ["img/leggings-lightpurple.jpg"],
-        colors: [{ hex: "#8c8f94", name: "Ash Grey", id: "crop-ash" }],
-        waMessage: "Hola equipo BAVU! Quiero pedir el Origin Crop Top Ash de mujer.",
-        forMen: false,
-        forWomen: true
+        forWomen: true,
+        order: 90,
+        relatedProducts: ["legging-onyx", "bra-onyx"]
     }
 ];

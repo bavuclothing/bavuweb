@@ -4,141 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BAVU | Fuerza Bruta • Aesthetic Gymwear</title>
-    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Enlace al archivo CSS externo -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <nav class="fixed-nav">
-        <div class="logo">
-            <img src="img/BAVU_white.png" alt="Logo BAVU">
-        </div>
-        <div class="nav-links">
-            <a href="#categorias">Colecciones</a>
-            <a href="#proceso">Cómo Comprar</a>
-            <a href="https://instagram.com/tu_usuario" target="_blank">Instagram</a>
-        </div>
-    </nav>
+    <div id="header-container"></div>
 
    <header class="hero">
         <img href="index.html" src="img/BAVU_white.png" alt="BAVU Logo" class="hero-logo">
         <p>Fuerza Bruta • Diseño Minimalista</p>
     </header>
 
-    <!-- SECCIONES DIVIDIDAS (HOMBRE Y MUJER) -->
     <section class="split-sections" id="categorias">
-
-        <!-- COLUMNA MUJER -->
         <div class="category-col">
             <a href="products.html?cat=mujer" class="category-header header-women">
-                <h2>MUJER</h2>
+                <h2>ELLAS</h2>
+                <span>Ver colección</span>
             </a>
-            <div class="mini-grid">
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1549476464-37392f717541?q=80&w=600&auto=format&fit=crop" alt="Seamless Leggings" class="product-img">
-                    <div class="product-info">
-                        <h3>Seamless Legging - Onyx</h3>
-                        <span class="price">22.90 €</span>
-                        <a href="product.html?id=legging-onyx" class="btn-order">Ver Detalles</a>
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1571945153237-4929e783af4a?q=80&w=600&auto=format&fit=crop" alt="Sports Bra" class="product-img">
-                    <div class="product-info">
-                        <h3>Adapt Sports Bra - Onyx</h3>
-                        <span class="price">16.90 €</span>
-                        <a href="product.html?id=bra-onyx" class="btn-order">Ver Detalles</a>
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=600&auto=format&fit=crop" alt="Crop Top" class="product-img">
-                    <div class="product-info">
-                        <h3>Origin Crop Top - Ash</h3>
-                        <span class="price">14.90 €</span>
-                        <a href="product.html?id=crop-ash" class="btn-order">Ver Detalles</a>
-                    </div>
-                </div>
-            </div>
         </div>
-
-        <!-- COLUMNA HOMBRE -->
         <div class="category-col">
             <a href="products.html?cat=hombre" class="category-header header-men">
-                <h2>HOMBRE</h2>
+                <h2>ELLOS</h2>
+                <span>Ver colección</span>
             </a>
-            <div class="mini-grid">
-                <div class="product-card">
-                    <img src="img/camiseta-negra.jpg" alt="Origin Tee Blackout" class="product-img">
-                    <div class="product-info">
-                        <h3>Origin Tee - Blackout</h3>
-                        <span class="price">14.90 €</span>
-                        <a href="product.html?id=origin-blackout" class="btn-order">Ver Detalles</a>
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <img src="img/larga-negra.jpg" alt="Thermal Core" class="product-img">
-                    <div class="product-info">
-                        <h3>Thermal Core - Obsidian</h3>
-                        <span class="price">13.90 €</span>
-                        <a href="product.html?id=thermal-obsidian" class="btn-order">Ver Detalles</a>
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <img src="img/pantalones-negros.jpg" alt="Foundation Short" class="product-img">
-                    <div class="product-info">
-                        <h3>Foundation Short - Jet Black</h3>
-                        <span class="price">11.90 €</span>
-                        <a href="product.html?id=short-black" class="btn-order">Ver Detalles</a>
-                    </div>
-                </div>
-            </div>
         </div>
-
-    </section>
-
-    <section class="steps" id="proceso">
-        <h2 class="section-title">¿Cómo hacer tu pedido?</h2>
-        <div class="steps-grid">
-            <div class="step">
-                <i class="fab fa-whatsapp"></i>
-                <h4>1. Contacta</h4>
-                <p>Haz clic en el botón del producto y escríbenos por WhatsApp.</p>
-            </div>
-            <div class="step">
-                <i class="fas fa-check-circle"></i>
-                <h4>2. Reserva</h4>
-                <p>Confirmamos stock de tu talla y te pasamos datos de pago (Bizum/Paypal).</p>
-            </div>
-            <div class="step">
-                <i class="fas fa-truck"></i>
-                <h4>3. Envío</h4>
-                <p>Enviamos en 24/48h o entregamos en mano en Santander.</p>
-            </div>
+        <div class="category-col" style="grid-column: 1 / -1;">
+            <a href="products.html?cat=todo" class="category-header" style="height: 200px; background: #222;">
+                <h2>TODO</h2>
+                <span>Ver catálogo completo</span>
+            </a>
         </div>
     </section>
 
-    <footer>
-        <div class="social-links">
-            <a href="https://www.instagram.com/bavu.clothing"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.tiktok.com/@bavu.clothing"><i class="fab fa-tiktok"></i></a>
-        </div>
-        <p>© 2026 BAVU ATHLETICS</p>
-        <p class="location">Diseñado en Cantabria, España</p>
-    </footer>
+    <div id="footer-container"></div>
 
-    <a href="https://wa.me/34600000000" class="whatsapp-float" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-
+    <script src="components.js"></script>
+    <script>
+        // Renderizar componentes (isFixedNav: true, showBackBtn: false)
+        renderHeader('fixed-nav', false);
+        renderFooter();
+    </script>
 </body>
 </html>

@@ -4,52 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BAVU | Producto</title>
-    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <nav class="static-nav">
-         <div class="logo">
-            <a href="index.html">
-                <img src="img/BAVU_white.png" alt="Logo BAVU">
-            </a>
-        </div>
-        <a href="javascript:history.back()" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Volver</a>
-    </nav>
+    <div id="header-container"></div>
 
     <main class="product-container">
-        <!-- Galería de Imágenes -->
         <div class="gallery">
             <img src="" alt="Imagen de Producto" class="main-image" id="mainImage">
-            <div class="thumbnails">
-                <!-- Se rellena con JS -->
-            </div>
+            <div class="thumbnails"></div>
         </div>
 
         <div class="product-info">
-            <div class="breadcrumb" id="productBreadcrumb">Drop 01 / Colección Esencial</div>
-            <h1 class="product-title">Cargando producto...</h1>
+            <div class="breadcrumb" id="productBreadcrumb">Drop 01</div>
+            <h1 class="product-title">Cargando...</h1>
             <div class="product-price">-- €</div>
-            
-            <p class="product-description">
-                Un momento por favor.
-            </p>
+            <p class="product-description"></p>
 
-            <!-- Selector de Color Aesthetic -->
             <div class="color-section">
                 <h4>Color: <span class="color-name-label" id="colorLabel">-</span></h4>
-                <div class="colors">
-                    <!-- Se rellena con JS -->
-                </div>
+                <div class="colors"></div>
             </div>
 
-            <!-- Selector de Talla -->
             <div class="size-section">
                 <h4>Selecciona tu talla:</h4>
                 <div class="sizes">
@@ -57,175 +38,100 @@
                     <div class="size-box active">M</div>
                     <div class="size-box">L</div>
                     <div class="size-box">XL</div>
-                    <div class="size-box">2XL</div>
                 </div>
             </div>
 
-            <a href="#" class="btn-buy" target="_blank" id="btnBuy">
-                <i class="fab fa-whatsapp" style="font-size: 1.2rem;"></i>
-                Hacer Pedido por WhatsApp
+            <a href="#" class="btn-order" target="_blank" id="btnBuy" style="text-align: center; font-size: 1rem; padding: 15px;">
+                <i class="fab fa-whatsapp"></i> Hacer Pedido
             </a>
-
-            <!-- Detalles del Producto -->
-            <div class="details-list">
-                <!-- Cuidado de la Prenda -->
-                <div class="detail-item">
-                    <span>Cuidado de la Prenda</span>
-                    <i class="fa-solid fa-shirt"></i>
-                </div>
-                <div style="font-size: 0.85rem; color: #888; padding-bottom: 15px; line-height: 1.5;">
-                    Para maximizar la durabilidad del tejido y proteger el estampado DTF de alta densidad: Lavar siempre en frío (máx 30ºC) y del revés. Secar al aire. Nunca usar secadora ni planchar directamente sobre el logo.
-                </div>
-
-                <div class="detail-item">
-                    <span>Materiales Premium</span>
-                    <i class="fa-solid fa-layer-group"></i>
-                </div>
-                <div style="font-size: 0.85rem; color: #888; padding-bottom: 15px;">
-                    Tejidos técnicos de alto gramaje con retención de forma tras los entrenamientos pesados. Diseñados para durar.
-                </div>
-
-                <div class="detail-item">
-                    <span>Envíos y Entregas</span>
-                    <i class="fa-solid fa-box-open"></i>
-                </div>
-                <div style="font-size: 0.85rem; color: #888; padding-bottom: 15px;">
-                    Entrega en mano gratuita en Santander. Envíos nacionales 24/48h mediante operador logístico de confianza.
-                </div>
-            </div>
         </div>
     </main>
 
-    <!-- Lightbox -->
-    <div id="imageLightbox" class="lightbox">
-        <span class="close-lightbox" id="closeLightbox">&times;</span>
-        <img class="lightbox-content" id="lightboxImg">
-    </div>
-
-     <footer>
-        <div class="social-links">
-            <a href="https://www.instagram.com/bavu.clothing"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.tiktok.com/@bavu.clothing"><i class="fab fa-tiktok"></i></a>
+    <section class="related-section container" style="display: none;" id="relatedSection">
+        <h3>Completa tu fit</h3>
+        <div class="carousel-container">
+            <div class="carousel" id="relatedCarousel">
+                </div>
         </div>
-        <p>© 2026 BAVU ATHLETICS</p>
-        <p class="location">Diseñado en Cantabria, España</p>
-    </footer>
+    </section>
 
-    <a href="https://wa.me/34600000000" class="whatsapp-float" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+    <div id="footer-container"></div>
 
-    <!-- ARCHIVO CENTRALIZADO DE DATOS -->
+    <script src="components.js"></script>
     <script src="products-data.js"></script>
-
     <script>
-        // LEER EL ID DE LA URL
+        renderHeader('static-nav', true);
+        renderFooter();
+
         const urlParams = new URLSearchParams(window.location.search);
         const productId = urlParams.get('id');
-
-        // SELECCIONAR ELEMENTOS
-        const productTitle = document.querySelector('.product-title');
-        const productPrice = document.querySelector('.product-price');
-        const productDescription = document.querySelector('.product-description');
-        const productBreadcrumb = document.getElementById('productBreadcrumb');
-        const mainImage = document.getElementById('mainImage');
-        const thumbnailsContainer = document.querySelector('.thumbnails');
-        const colorsContainer = document.querySelector('.colors');
-        const colorLabel = document.getElementById('colorLabel');
-        const btnBuy = document.getElementById('btnBuy');
-
-        // RENDERIZADO DESDE LA BASE DE DATOS COMPARTIDA (BAVU_INVENTORY)
-        // Buscamos el producto en el array global que viene de products-data.js
         const product = BAVU_INVENTORY.find(p => p.id === productId);
 
-        if (productId && product) {
+        if (product) {
             document.title = product.title.replace('<br>', ' ') + ' | BAVU';
-            productTitle.innerHTML = product.title;
-            productPrice.textContent = product.price;
-            productDescription.textContent = product.description;
-            mainImage.src = product.mainImage;
-            btnBuy.href = `https://wa.me/34600000000?text=${encodeURIComponent(product.waMessage)}`;
+            document.querySelector('.product-title').innerHTML = product.title;
+            document.querySelector('.product-price').textContent = product.price;
+            document.querySelector('.product-description').textContent = product.description;
+            document.getElementById('mainImage').src = product.mainImage;
+            document.getElementById('btnBuy').href = `https://wa.me/34600000000?text=${encodeURIComponent(product.waMessage)}`;
 
-            // Modificar la miga de pan según las etiquetas booleanas
-            if (product.forMen && product.forWomen) productBreadcrumb.textContent = "Drop 01 / Unisex";
-            else if (product.forWomen) productBreadcrumb.textContent = "Drop 01 / Mujer";
-            else productBreadcrumb.textContent = "Drop 01 / Hombre";
-
-            // Generar Miniaturas
-            thumbnailsContainer.innerHTML = '';
-            product.thumbnails.forEach((imgUrl, index) => {
+            // Miniaturas
+            const thumbContainer = document.querySelector('.thumbnails');
+            product.thumbnails.forEach((imgUrl, idx) => {
                 const img = document.createElement('img');
                 img.src = imgUrl;
-                img.className = `thumb ${index === 0 ? 'active-thumb' : ''}`;
-                img.alt = `Vista ${index + 1}`;
-                
-                img.addEventListener('click', function() {
-                    mainImage.src = this.src;
+                img.className = `thumb ${idx === 0 ? 'active-thumb' : ''}`;
+                img.onclick = function() {
+                    document.getElementById('mainImage').src = this.src;
                     document.querySelectorAll('.thumb').forEach(t => t.classList.remove('active-thumb'));
                     this.classList.add('active-thumb');
-                });
-                thumbnailsContainer.appendChild(img);
+                };
+                thumbContainer.appendChild(img);
             });
 
-            // Generar Colores y asignarles enlaces url parametrizados
-            colorsContainer.innerHTML = '';
-            product.colors.forEach((color) => {
+            // Colores
+            const colorsContainer = document.querySelector('.colors');
+            product.colors.forEach(c => {
                 const circle = document.createElement('div');
-                const isActive = (color.id === productId);
-                
-                circle.className = `color-circle ${isActive ? 'active' : ''}`;
-                circle.style.backgroundColor = color.hex;
-                circle.setAttribute('data-name', color.name);
-                
-                if (isActive) {
-                    colorLabel.textContent = color.name;
-                }
-
-                circle.addEventListener('click', function() {
-                    if (!isActive) {
-                        window.location.href = `product.html?id=${color.id}`;
-                    }
-                });
+                circle.className = `color-circle ${c.id === productId ? 'active' : ''}`;
+                circle.style.backgroundColor = c.hex;
+                if (c.id === productId) document.getElementById('colorLabel').textContent = c.name;
+                circle.onclick = () => { if(c.id !== productId) window.location.href = `product.html?id=${c.id}`; };
                 colorsContainer.appendChild(circle);
             });
 
-        } else {
-            productTitle.textContent = "Producto no encontrado";
-            productDescription.textContent = "El artículo que buscas no existe o pertenece a un Drop anterior.";
-            document.querySelector('.size-section').style.display = 'none';
-            document.querySelector('.color-section').style.display = 'none';
-            btnBuy.style.display = 'none';
-            mainImage.style.display = 'none';
-        }
-
-        // LIGHTBOX
-        const lightbox = document.getElementById('imageLightbox');
-        const lightboxImg = document.getElementById('lightboxImg');
-        const closeLightbox = document.getElementById('closeLightbox');
-
-        mainImage.addEventListener('click', function() {
-            lightbox.classList.add('show');
-            lightboxImg.src = this.src;
-        });
-
-        closeLightbox.addEventListener('click', function() {
-            lightbox.classList.remove('show');
-        });
-
-        lightbox.addEventListener('click', function(e) {
-            if (e.target !== lightboxImg) {
-                lightbox.classList.remove('show');
-            }
-        });
-
-        // SELECCIÓN DE TALLAS
-        const sizeBoxes = document.querySelectorAll('.size-box');
-        sizeBoxes.forEach(box => {
-            box.addEventListener('click', function() {
-                sizeBoxes.forEach(b => b.classList.remove('active'));
-                this.classList.add('active');
+            // Tallas
+            const sizeBoxes = document.querySelectorAll('.size-box');
+            sizeBoxes.forEach(box => {
+                box.addEventListener('click', function() {
+                    sizeBoxes.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                });
             });
-        });
+
+            // PRODUCTOS RELACIONADOS
+            if (product.relatedProducts && product.relatedProducts.length > 0) {
+                document.getElementById('relatedSection').style.display = 'block';
+                const carousel = document.getElementById('relatedCarousel');
+                
+                product.relatedProducts.forEach(relId => {
+                    const relProduct = BAVU_INVENTORY.find(p => p.id === relId);
+                    if (relProduct) {
+                        const card = document.createElement('div');
+                        card.className = 'product-card';
+                        card.innerHTML = `
+                            <img src="${relProduct.mainImage}" alt="" class="product-img">
+                            <div class="product-info">
+                                <h3>${relProduct.title}</h3>
+                                <span class="price">${relProduct.price}</span>
+                                <a href="product.html?id=${relProduct.id}" class="btn-order">Ver Detalles</a>
+                            </div>
+                        `;
+                        carousel.appendChild(card);
+                    }
+                });
+            }
+        }
     </script>
 </body>
 </html>
