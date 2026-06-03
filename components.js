@@ -1,6 +1,6 @@
 // components.js - Plantilla global para BAVU
 
-function renderHeader(navClass = 'static-nav', showBackBtn = false) {
+function renderHeader(navClass = 'static-nav') {
     const headerHTML = `
         <nav class="${navClass}">
             <div class="logo">
@@ -8,7 +8,6 @@ function renderHeader(navClass = 'static-nav', showBackBtn = false) {
                     <img src="img/BAVU_white.png" alt="Logo BAVU">
                 </a>
             </div>
-            ${showBackBtn ? '<a href="javascript:history.back()" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Volver</a>' : ''}
             <div class="hamburger-menu" id="hamburgerMenu">
                 <i class="fa-solid fa-bars"></i>
             </div>
@@ -46,10 +45,9 @@ function renderHeader(navClass = 'static-nav', showBackBtn = false) {
         menuOverlay.classList.remove('active');
     }
 
-    // Eventos
     hamburger.addEventListener('click', openMenu);
     closeMenu.addEventListener('click', closeMenuAction);
-    menuOverlay.addEventListener('click', closeMenuAction); // Cierra al hacer clic fuera
+    menuOverlay.addEventListener('click', closeMenuAction);
 }
 
 function renderFooter() {

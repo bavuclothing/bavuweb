@@ -1,187 +1,665 @@
-// BAVU ATHLETICS - BASE DE DATOS CENTRALIZADA DE PRODUCTOS
-
 const BAVU_INVENTORY = [
     {
-        id: "origin-emerald",
-        title: "The Origin Tee<br>Emerald Edition",
-        price: "14.90 €",
-        description: "Diseñada estratégicamente para construir la V-Taper perfecta. Color verde esmeralda profundo con el logo central de la marca.",
-        mainImage: "img/muscle-tee-black.jpg",
-        thumbnails: ["img/muscle-tee-black.jpg"],
+        id: "taper_baselayer",
+        title: "Taper Baselayer<br>Charcoal",
+        price: "20.90 €",
+        description: `Una prenda de compresión técnica diseñada para ofrecer soporte muscular y optimizar la ventilación en los entrenamientos más exigentes. Su patrón estructurado combina estética underground y rendimiento funcional.
+
+​Ajuste Taper Pro: Patrón ceñido de alta elasticidad que se adapta al contorno del torso, proporcionando una compresión uniforme que asiste a la postura y reduce la vibración muscular en levantamientos pesados.
+
+​Paneles Hexagonales Activos: Zonas con textura micro-hexagonal integradas estratégicamente en el pecho y los hombros. Actúan como puntos de ventilación dinámica, acelerando la evaporación del sudor en las áreas de mayor acumulación de calor.
+
+​Tejido Interlock Premium: Confeccionada con un hilado de gramaje medio que ofrece un tacto ultra suave en la piel, alta retención de la forma tras los lavados y opacidad total frente a la tensión.
+
+​Costuras Flatlock Ergonómicas: Costuras planas reforzadas que siguen las líneas musculares para eliminar cualquier tipo de fricción o rozadura durante movimientos de recorrido completo.`,
+        mainImage: "img/taper_baselayer/1.jpg",
+        thumbnails: ["img/taper_baselayer/1.jpg"],
         colors: [
-            { hex: "#1a4231", name: "Forest Green", id: "origin-emerald" },
-            { hex: "#121212", name: "Obsidian Black", id: "origin-blackout" }
+            { hex: "#545c61", name: "Charcoal", id: "taper_baselayer" }
         ],
-        waMessage: "Hola equipo BAVU! Vengo de la web y quiero pedir The Origin Tee Emerald Edition.",
+        waMessage: "Hola equipo BAVU! Vengo de la web y quiero pedir Taper Baselayer Charcoal.",
         forMen: true,
         forWomen: false,
         order: 100,
-        relatedProducts: ["origin-blackout", "short-black", "tank-blackout"]
+        relatedProducts: ["taper-tee-shadow", "taper-tee-ash", "taper-tank-blackout"]
     },
     {
-        id: "origin-blackout",
-        title: "The Origin Tee<br>Blackout",
-        price: "14.90 €",
-        description: "Nuestra camiseta fundacional. Construye la V-Taper perfecta ajustándose en pecho y brazos.",
-        mainImage: "img/camiseta-negra.jpg",
-        thumbnails: ["img/camiseta-negra.jpg"],
+        id: "taper-tee-shadow",
+        title: "Taper Compression Tee<br>Shadow Grey",
+        price: "18.90 €",
+        description: `Una camiseta de compresión de manga corta desarrollada para entrenamientos de alta intensidad. Su diseño de paneles anatómicos en contraste ofrece un ajuste de tipo segunda piel que optimiza el confort térmico y realza la línea estructural del torso.
+
+Patrón V-Shape Estructurado: Corte técnico con paneles laterales y superiores en contraste que entallan visualmente la cintura y expanden la línea de los hombros, favoreciendo una silueta atlética sin restringir el rango de movimiento.
+
+Tejido de Compresión Ligera: Confeccionada con un compuesto elástico transpirable que ejerce una presión óptima sobre el tren superior, mejorando la propiocepción muscular y manteniendo el core activo durante la sesión.
+
+Mapeo de Ventilación Superior: La zona alta del pecho, trapecios y costados cuenta con un tramado microperforado de densidad variable que disipa el calor corporal rápidamente en los momentos de máximo esfuerzo.
+
+Ajuste en Bíceps Antideslizante: Terminado de manga ceñido de compresión elástica que se fija al brazo sin oprimir, evitando que la prenda se desplace o se enrolle hacia arriba durante movimientos de tracción o flexión.
+
+Costuras Flatlock Flexibles: Costuras planas reforzadas de perfil bajo que acompañan la elasticidad del tejido, eliminando por completo las rozaduras y la fricción sobre la piel.`,
+        mainImage: "img/taper-tee-shadow/1.jpg",
+        thumbnails: ["img/taper-tee-shadow/1.jpg"],
         colors: [
-            { hex: "#121212", name: "Obsidian Black", id: "origin-blackout" },
-            { hex: "#1a4231", name: "Forest Green", id: "origin-emerald" }
+            { hex: "#212224", name: "Shadow Grey", id: "taper-tee-shadow" },
+            { hex: "#BFC1C2", name: "Ash Grey", id: "taper-tee-ash" }
         ],
-        waMessage: "Hola equipo BAVU! Vengo de la web y quiero pedir The Origin Tee Blackout.",
+        waMessage: "Hola equipo BAVU! Vengo de la web y quiero pedir Taper Compression Tee Shadow Grey.",
         forMen: true,
         forWomen: false,
-        order: 90,
-        relatedProducts: ["origin-emerald", "short-grey", "thermal-obsidian"]
+        order: 200,
+        relatedProducts: ["taper-tee-ash"]
     },
     {
-        id: "thermal-obsidian",
-        title: "Thermal Core<br>Pullover Obsidian",
-        price: "13.90 €",
-        description: "Sudadera ligera de rendimiento con cremallera de 1/4. Ideal para calentamientos exigentes y mantener el pump.",
-        mainImage: "img/larga-negra.jpg",
-        thumbnails: ["img/larga-negra.jpg"],
+        id: "taper-tee-ash",
+        title: "Taper Compression Tee<br>Ash Grey",
+        price: "18.90 €",
+        description: `Una camiseta de compresión de manga corta desarrollada para entrenamientos de alta intensidad. Su diseño de paneles anatómicos en contraste ofrece un ajuste de tipo segunda piel que optimiza el confort térmico y realza la línea estructural del torso.
+
+Patrón V-Shape Estructurado: Corte técnico con paneles laterales y superiores en contraste que entallan visualmente la cintura y expanden la línea de los hombros, favoreciendo una silueta atlética sin restringir el rango de movimiento.
+
+Tejido de Compresión Ligera: Confeccionada con un compuesto elástico transpirable que ejerce una presión óptima sobre el tren superior, mejorando la propiocepción muscular y manteniendo el core activo durante la sesión.
+
+Mapeo de Ventilación Superior: La zona alta del pecho, trapecios y costados cuenta con un tramado microperforado de densidad variable que disipa el calor corporal rápidamente en los momentos de máximo esfuerzo.
+
+Ajuste en Bíceps Antideslizante: Terminado de manga ceñido de compresión elástica que se fija al brazo sin oprimir, evitando que la prenda se desplace o se enrolle hacia arriba durante movimientos de tracción o flexión.
+
+Costuras Flatlock Flexibles: Costuras planas reforzadas de perfil bajo que acompañan la elasticidad del tejido, eliminando por completo las rozaduras y la fricción sobre la piel.`,
+        mainImage: "img/taper-tee-ash/1.jpg",
+        thumbnails: ["img/taper-tee-ash/1.jpg"],
         colors: [
-            { hex: "#121212", name: "Obsidian Black", id: "thermal-obsidian" },
-            { hex: "#8c8f94", name: "Ash Grey", id: "thermal-ash" } // Asumimos que ash existirá
+            { hex: "#BFC1C2", name: "Ash Grey", id: "taper-tee-ash" },
+            { hex: "#212224", name: "Shadow Grey", id: "taper-tee-shadow" }
         ],
-        waMessage: "Hola equipo BAVU! Me interesa el Thermal Core Pullover Obsidian.",
+        waMessage: "Hola equipo BAVU! Vengo de la web y quiero pedir Taper Compression Tee Ash Grey.",
         forMen: true,
         forWomen: false,
-        order: 80,
-        relatedProducts: ["pump-cover-blackout", "origin-blackout"]
+        order: 300,
+        relatedProducts: ["taper-tee-shadow"]
     },
     {
-        id: "short-black",
-        title: "The Foundation Short<br>Jet Black",
+        id: "taper-tank-blackout",
+        title: "Ribbed Tank<br>Blackout",
         price: "11.90 €",
-        description: "Pantalón de entrenamiento híbrido. Tejido ligero y fluido para máxima movilidad en días pesados de pierna.",
-        mainImage: "img/pantalones-negros.jpg",
-        thumbnails: ["img/pantalones-negros.jpg"],
+        description: `Una camiseta de tirantes de corte atlético confeccionada en tejido acanalado de alta elasticidad. Su patrón está diseñado específicamente para liberar la articulación del hombro y acentuar la línea de la espalda en entrenamientos de tracción.
+
+Tejido Acanalado de Alta Recuperación: Confeccionada con un punto acanalado (rib) premium de gramaje medio. Su estructura elástica vertical permite que la prenda se ciña al cuerpo sin apretar y, lo más importante, recupera su forma original tras el lavado sin estirarse ni quedar holgada.
+
+Corte Dorsal Taper (Y-Back): El diseño de la espalda cuenta con un tirante central estrecho que deja libres las escápulas. Este patrón no solo elimina cualquier restricción al hacer remos o dominadas, sino que potencia visualmente la silueta en V del torso.
+
+Pectoral y Sisa Ajustados: Sisas con una caída limpia que evita bolsas de tela laterales bajo los brazos y un cuello redondo con la profundidad justa para ofrecer comodidad en días pesados de press de banca.
+
+Algodón Elástico Transpirable: Combinación de fibras que aporta un tacto suave y natural sobre la piel, absorbiendo la humedad de forma eficiente y manteniendo el cuerpo fresco durante toda la sesión.`,
+        mainImage: "img/taper-tank-blackout/1.jpg",
+        thumbnails: ["img/taper-tank-blackout/1.jpg"],
         colors: [
-            { hex: "#000000", name: "Jet Black", id: "short-black" },
-            { hex: "#4b4e53", name: "Iron Grey", id: "short-grey" }
+            { hex: "#121212", name: "Obsidian Black", id: "taper-tank-blackout" },
+            { hex: "#61131B", name: "Burgundy Wine", id: "taper-tank-burgundy" }
         ],
-        waMessage: "Buenas! Quería consultar el stock de The Foundation Short Jet Black.",
+        waMessage: "Hola equipo BAVU! Vengo de la web y quiero pedir Ribbed Tank Blackout.",
         forMen: true,
         forWomen: false,
-        order: 85,
-        relatedProducts: ["origin-blackout", "socks-white"]
+        order: 400,
+        relatedProducts: ["taper-tank-burgundy"]
     },
     {
-        id: "short-grey",
-        title: "The Foundation Short<br>Iron Grey",
+        id: "taper-tank-burgundy",
+        title: "Ribbed Tank<br>Oxblood",
         price: "11.90 €",
-        description: "Pantalón de entrenamiento técnico y versátil. Longitud estética ideal para lucir pierna sin sacrificar comodidad.",
-        mainImage: "img/pantalones-grises.jpg",
-        thumbnails: ["img/pantalones-grises.jpg"],
+        description: `Una camiseta de tirantes de corte atlético confeccionada en tejido acanalado de alta elasticidad. Su patrón está diseñado específicamente para liberar la articulación del hombro y acentuar la línea de la espalda en entrenamientos de tracción.
+
+Tejido Acanalado de Alta Recuperación: Confeccionada con un punto acanalado (rib) premium de gramaje medio. Su estructura elástica vertical permite que la prenda se ciña al cuerpo sin apretar y, lo más importante, recupera su forma original tras el lavado sin estirarse ni quedar holgada.
+
+Corte Dorsal Taper (Y-Back): El diseño de la espalda cuenta con un tirante central estrecho que deja libres las escápulas. Este patrón no solo elimina cualquier restricción al hacer remos o dominadas, sino que potencia visualmente la silueta en V del torso.
+
+Pectoral y Sisa Ajustados: Sisas con una caída limpia que evita bolsas de tela laterales bajo los brazos y un cuello redondo con la profundidad justa para ofrecer comodidad en días pesados de press de banca.
+
+Algodón Elástico Transpirable: Combinación de fibras que aporta un tacto suave y natural sobre la piel, absorbiendo la humedad de forma eficiente y manteniendo el cuerpo fresco durante toda la sesión.`,
+        mainImage: "img/taper-tank-burgundy/1.jpg",
+        thumbnails: ["img/taper-tank-burgundy/1.jpg"],
         colors: [
-            { hex: "#4b4e53", name: "Iron Grey", id: "short-grey" },
-            { hex: "#000000", name: "Jet Black", id: "short-black" }
+            { hex: "#121212", name: "Obsidian Black", id: "taper-tank-blackout" },
+            { hex: "#61131B", name: "Burgundy Wine", id: "taper-tank-burgundy" }
         ],
-        waMessage: "Hola equipo BAVU! Me interesa The Foundation Short Iron Grey.",
+        waMessage: "Hola equipo BAVU! Vengo de la web y quiero pedir Ribbed Tank Oxblood.",
         forMen: true,
         forWomen: false,
-        order: 84,
-        relatedProducts: ["origin-emerald", "socks-white"]
+        order: 500,
+        relatedProducts: ["taper-tank-blackout"]
     },
     {
-        id: "tank-blackout",
-        title: "Origin Ribbed Tank<br>Blackout",
-        price: "7.90 €",
-        description: "Camiseta de tirantes con tejido acanalado premium. Elasticidad y ajuste óptimo para marcar la espalda y hombros.",
-        mainImage: "img/tirantes.jpg",
-        thumbnails: ["img/tirantes.jpg"],
-        colors: [{ hex: "#121212", name: "Obsidian Black", id: "tank-blackout" }],
-        waMessage: "Buenas! Quería consultar disponibilidad de la Origin Ribbed Tank Blackout.",
+        id: "taper-halfzip-forest",
+        title: "Half-Zip<br>Forest Green",
+        price: "26.90 €",
+        description: `Una sudadera técnica de ajuste atlético que combina compresión ligera, aislamiento térmico y gestión eficiente de la humedad. Su patrón estructurado con media cremallera y capucha de perfil bajo la convierte en la prenda idónea para transiciones de temporada o fases de calentamiento intenso.
+
+Cierre de Media Cremallera (Half-Zip): Incorpora una cremallera frontal invertida con tirador reforzado que permite regular la ventilación de forma instantánea a medida que sube la intensidad del entrenamiento.
+
+Mapeo de Paneles Texturizados: Zonas en contraste Forest Green dispuestas estratégicamente en el pecho superior, hombros y antebrazos. Su entramado elástico texturizado favorece la elasticidad bidireccional y optimiza la transpiración en los puntos de mayor fricción.
+
+Capucha Anatómica de Perfil Bajo: Diseño ergonómico de tres paneles que se ciñe a la cabeza sin restringir la visión periférica y permanece fija durante movimientos dinámicos o carreras.
+
+Ajuste Taper de Confort Térmico: Confeccionada con un hilado técnico elástico de gramaje medio, ligeramente superior al de una camiseta base. Aporta retención de calor muscular sin añadir volumen ni limitar el rango de movimiento de los brazos.
+
+Costuras Activas Reforzadas: Costuras planas distribuidas de manera anatómica para reducir la resistencia al viento y eliminar cualquier riesgo de rozadura bajo tensión.`,
+        mainImage: "img/taper-halfzip-forest/1.jpg",
+        thumbnails: ["img/taper-halfzip-forest/1.jpg"],
+        colors: [
+            { hex: "#1a4231", name: "Forest Green", id: "taper-halfzip-forest" },
+            { hex: "#121212", name: "Obsidian Black", id: "taper-halfzip-blackout" }
+        ],
+        waMessage: "Hola equipo BAVU! Vengo de la web y quiero pedir Half Zip Forest Green.",
         forMen: true,
         forWomen: false,
-        order: 75,
-        relatedProducts: ["short-grey", "pump-cover-blackout"]
+        order: 600,
+        relatedProducts: ["taper_baselayer", "taper-tee-shadow", "taper-tee-ash"]
     },
     {
-        id: "pump-cover-blackout",
-        title: "Origin Pump Cover<br>Blackout",
-        price: "19.90 €",
-        description: "Sudadera oversize heavyweight. La capa inicial perfecta y gruesa para romper a sudar rápido y ocultar tu físico hasta el momento clave.",
-        mainImage: "img/sudadera.jpg",
-        thumbnails: ["img/sudadera.jpg"],
-        colors: [{ hex: "#121212", name: "Obsidian Black", id: "pump-cover-blackout" }],
-        waMessage: "Hola! Quisiera saber si tenéis stock del Origin Pump Cover Blackout.",
+        id: "split-short-black",
+        title: "Split Mesh Short<br>Jet Black",
+        price: "12.90 €",
+        description: `Un pantalón corto de entrenamiento técnico desarrollado específicamente para maximizar el rango de movimiento. Su estructura de malla ligera y su icónica apertura lateral lo convierten en la prenda definitiva para sesiones pesadas de pierna.
+
+Tejido Mesh de Alta Transpiración: Confeccionado con una malla microperforada de alta resistencia que permite un flujo de aire constante, manteniendo la prenda ligera, seca y libre de humedad incluso en entrenamientos intensos.
+
+Apertura Lateral Curva (Split Hem): Dobladillo redondeado con una sutil apertura en el lateral del muslo. Este diseño elimina la fricción del tejido contra el cuádriceps durante la flexión completa en sentadillas profundas o prensa.
+
+Cintura Elástica con Cordón Técnico: Banda elástica acanalada de ajuste firme que no se desplaza, complementada con un cordón plano exterior para personalizar la sujeción según tus necesidades.
+
+Bolsillos Laterales Funcionales: Dos bolsillos de corte vertical integrados en las costuras para guardar tus pertenencias básicas antes o después de la sesión, manteniendo una silueta limpia.`,
+        mainImage: "img/split-short-black/1.jpg",
+        thumbnails: ["img/split-short-black/1.jpg"],
+        colors: [
+            { hex: "#000000", name: "Jet Black", id: "split-short-black" },
+            { hex: "#4b4e53", name: "Iron Grey", id: "split-short-grey" }
+        ],
+        waMessage: "Hola equipo BAVU! Vengo de la web y quiero pedir Split Mesh Short Jet Black.",
         forMen: true,
         forWomen: false,
-        order: 95,
-        relatedProducts: ["tank-blackout", "compression-obsidian"]
+        order: 700,
+        relatedProducts: ["split-short-grey"]
     },
     {
-        id: "compression-obsidian",
-        title: "BAVU Second Skin<br>Obsidian",
-        price: "9.90 €",
-        description: "Camiseta técnica de compresión. Actúa como tu armadura personal, con costuras ranglán que realzan visualmente los hombros.",
-        mainImage: "img/compresion.jpg",
-        thumbnails: ["img/compresion.jpg"],
-        colors: [{ hex: "#121212", name: "Obsidian Black", id: "compression-obsidian" }],
-        waMessage: "Buenas! Quiero pedir la camiseta BAVU Second Skin Obsidian.",
+        id: "split-short-grey",
+        title: "Split Mesh Short<br>Iron Grey",
+        price: "12.90 €",
+        description: `Un pantalón corto de entrenamiento técnico desarrollado específicamente para maximizar el rango de movimiento. Su estructura de malla ligera y su icónica apertura lateral lo convierten en la prenda definitiva para sesiones pesadas de pierna.
+
+Tejido Mesh de Alta Transpiración: Confeccionado con una malla microperforada de alta resistencia que permite un flujo de aire constante, manteniendo la prenda ligera, seca y libre de humedad incluso en entrenamientos intensos.
+
+Apertura Lateral Curva (Split Hem): Dobladillo redondeado con una sutil apertura en el lateral del muslo. Este diseño elimina la fricción del tejido contra el cuádriceps durante la flexión completa en sentadillas profundas o prensa.
+
+Cintura Elástica con Cordón Técnico: Banda elástica acanalada de ajuste firme que no se desplaza, complementada con un cordón plano exterior para personalizar la sujeción según tus necesidades.
+
+Bolsillos Laterales Funcionales: Dos bolsillos de corte vertical integrados en las costuras para guardar tus pertenencias básicas antes o después de la sesión, manteniendo una silueta limpia.`,
+        mainImage: "img/split-short-grey/1.jpg",
+        thumbnails: ["img/split-short-grey/1.jpg"],
+        colors: [
+            { hex: "#4b4e53", name: "Iron Grey", id: "split-short-grey" },
+            { hex: "#000000", name: "Jet Black", id: "split-short-black" }
+        ],
+        waMessage: "Hola equipo BAVU! Vengo de la web y quiero pedir Split Mesh Short Iron Grey.",
         forMen: true,
         forWomen: false,
-        order: 70,
-        relatedProducts: ["short-black", "pump-cover-blackout"]
+        order: 800,
+        relatedProducts: ["split-short-black"]
     },
     {
-        id: "socks-white",
-        title: "Origin Crew Sock<br>Pure White (3)",
-        price: "8.90 €",
-        description: "Pack de 3 pares. Calcetines estéticos a media pantorrilla con zonas de compresión y tejido de alta densidad para máxima durabilidad.",
-        mainImage: "img/calcetines.jpg",
-        thumbnails: ["img/calcetines.jpg"],
-        colors: [{ hex: "#ffffff", name: "Pure White", id: "socks-white" }],
-        waMessage: "Hola equipo BAVU! Vengo de la web y quiero pedir el pack de calcetines Origin Crew Sock.",
+        id: "heavy-tee-blackout",
+        title: "Heavyweight Oversized Tee<br>Obsidian Black",
+        price: "15.90 €",
+        description: `Una camiseta de corte marcadamente oversize y silueta cuadrada (boxy fit), confeccionada en algodón pesado de máxima durabilidad. Diseñada para ofrecer comodidad total, volumen estético y una caída limpia que mantiene la forma en cualquier situación.
+
+Algodón Heavyweight Premium: Tejido de alto gramaje que aporta un tacto robusto, cuerpo a la prenda y una caída pesada excelente. Resiste el uso diario y los lavados intensivos sin perder su estructura.
+
+Corte Boxy con Hombros Caídos: Patrón holgado de estética urbana con costuras caídas en los hombros y mangas amplias que llegan cerca del codo, garantizando total libertad de movimiento en días de torso.
+
+Cuello Redondo Grueso y Cerrado: Remate de cuello acanalado (rib) de grosor ancho y ajuste ceñido. Este detalle técnico evita que el cuello se deforme o se "asombre" con el paso del tiempo, manteniendo un aspecto pulcro y estructurado.
+
+Opacidad y Densidad Total: Su trenzado denso asegura que la prenda sea completamente opaca en todos sus colores (incluido el Pure White), bloqueando transparencias bajo tensión o sudoración.`,
+        mainImage: "img/heavy-tee-blackout/1.jpg",
+        thumbnails: ["img/heavy-tee-blackout/1.jpg"],
+        colors: [
+            { hex: "#121212", name: "Obsidian Black", id: "heavy-tee-blackout" },
+            { hex: "#4B533F", name: "Olive Green", id: "heavy-tee-olive" },
+            { hex: "#ffffff", name: "Pure White", id: "heavy-tee-white" }
+        ],
+        waMessage: "Hola equipo BAVU! Vengo de la web y quiero pedir Heavyweight Oversized Tee Obsidian Black.",
+        forMen: true,
+        forWomen: false,
+        order: 900,
+        relatedProducts: ["heavy-tee-olive", "heavy-tee-white"]
+    },
+    {
+        id: "heavy-tee-olive",
+        title: "Heavyweight Oversized Tee<br>Olive Green",
+        price: "15.90 €",
+        description: `Una camiseta de corte marcadamente oversize y silueta cuadrada (boxy fit), confeccionada en algodón pesado de máxima durabilidad. Diseñada para ofrecer comodidad total, volumen estético y una caída limpia que mantiene la forma en cualquier situación.
+
+Algodón Heavyweight Premium: Tejido de alto gramaje que aporta un tacto robusto, cuerpo a la prenda y una caída pesada excelente. Resiste el uso diario y los lavados intensivos sin perder su estructura.
+
+Corte Boxy con Hombros Caídos: Patrón holgado de estética urbana con costuras caídas en los hombros y mangas amplias que llegan cerca del codo, garantizando total libertad de movimiento en días de torso.
+
+Cuello Redondo Grueso y Cerrado: Remate de cuello acanalado (rib) de grosor ancho y ajuste ceñido. Este detalle técnico evita que el cuello se deforme o se "asombre" con el paso del tiempo, manteniendo un aspecto pulcro y estructurado.
+
+Opacidad y Densidad Total: Su trenzado denso asegura que la prenda sea completamente opaca en todos sus colores (incluido el Pure White), bloqueando transparencias bajo tensión o sudoración.`,
+        mainImage: "img/heavy-tee-olive/1.jpg",
+        thumbnails: ["img/heavy-tee-olive/1.jpg"],
+        colors: [
+            { hex: "#4B533F", name: "Olive Green", id: "heavy-tee-olive" },
+            { hex: "#121212", name: "Obsidian Black", id: "heavy-tee-blackout" },
+            { hex: "#ffffff", name: "Pure White", id: "heavy-tee-white" }
+        ],
+        waMessage: "Hola equipo BAVU! Vengo de la web y quiero pedir Heavyweight Oversized Tee Olive Green.",
+        forMen: true,
+        forWomen: false,
+        order: 1000,
+        relatedProducts: ["heavy-tee-blackout", "heavy-tee-white"]
+    },
+    {
+        id: "heavy-tee-white",
+        title: "Heavyweight Oversized Tee<br>Pure White",
+        price: "15.90 €",
+        description: `Una camiseta de corte marcadamente oversize y silueta cuadrada (boxy fit), confeccionada en algodón pesado de máxima durabilidad. Diseñada para ofrecer comodidad total, volumen estético y una caída limpia que mantiene la forma en cualquier situación.
+
+Algodón Heavyweight Premium: Tejido de alto gramaje que aporta un tacto robusto, cuerpo a la prenda y una caída pesada excelente. Resiste el uso diario y los lavados intensivos sin perder su estructura.
+
+Corte Boxy con Hombros Caídos: Patrón holgado de estética urbana con costuras caídas en los hombros y mangas amplias que llegan cerca del codo, garantizando total libertad de movimiento en días de torso.
+
+Cuello Redondo Grueso y Cerrado: Remate de cuello acanalado (rib) de grosor ancho y ajuste ceñido. Este detalle técnico evita que el cuello se deforme o se "asombre" con el paso del tiempo, manteniendo un aspecto pulcro y estructurado.
+
+Opacidad y Densidad Total: Su trenzado denso asegura que la prenda sea completamente opaca en todos sus colores (incluido el Pure White), bloqueando transparencias bajo tensión o sudoración.`,
+        mainImage: "img/heavy-tee-white/1.jpg",
+        thumbnails: ["img/heavy-tee-white/1.jpg"],
+        colors: [
+            { hex: "#ffffff", name: "Pure White", id: "heavy-tee-white" },
+            { hex: "#121212", name: "Obsidian Black", id: "heavy-tee-blackout" },
+            { hex: "#4B533F", name: "Olive Green", id: "heavy-tee-olive" }
+        ],
+        waMessage: "Hola equipo BAVU! Vengo de la web y quiero pedir Heavyweight Oversized Tee Pure White.",
+        forMen: true,
+        forWomen: false,
+        order: 1100,
+        relatedProducts: ["heavy-tee-blackout", "heavy-tee-olive"]
+    },
+    {
+        id: "heavy-hoodie-blackout",
+        title: "Heavyweight Oversized Hoodie<br>Obsidian Black",
+        price: "29.90 €",
+        description: `Una sudadera con capucha de silueta marcadamente oversize y estructura cuadrada (boxy fit), confeccionada en felpa de algodón pesado de máximo gramaje. Desarrollada para ofrecer aislamiento térmico, un confort masivo y una caída rígida que mantiene el volumen estético de la prenda.
+
+Felpa Heavyweight de Alto Gramaje: Tejido interior cepillado de alta densidad que retiene el calor corporal de forma óptima y dota a la sudadera de un cuerpo robusto. Resiste lavados continuos sin perder su grosor ni su suavidad interna.<br>
+Capucha Anatómica Sin Cordones: Construcción limpia de doble panel textil con cuello cruzado alto. Al prescindir de cordones exteriores se elimina cualquier elemento de distracción en movimientos de gimnasio, logrando una estética minimalista.<br>
+Corte Boxy con Hombros Caídos: Patrón holgado de estilo urbano con sisa baja y volumen ampliado en el torso y las mangas, ideal para usar como capa exterior sobre camisetas oversize.
+<br>
+Bolsillo Canguro y Ajustes Reforzados: Amplio bolsillo frontal integrado para mantener las manos calientes o guardar elementos básicos. Los puños y la cintura cuentan con un canalé elástico grueso que ajusta de forma firme sin ceder con el uso.`,
+        mainImage: "img/heavy-hoodie-blackout/1.jpg",
+        thumbnails: ["img/heavy-hoodie-blackout/1.jpg"],
+        colors: [
+            { hex: "#121212", name: "Obsidian Black", id: "heavy-hoodie-blackout" }
+        ],
+        waMessage: "Hola equipo BAVU! Vengo de la web y quiero pedir Heavyweight Oversized Hoodie Obsidian Black.",
+        forMen: true,
+        forWomen: false,
+        order: 1200,
+        relatedProducts: ["taper_baselayer", "taper-tee-shadow", "taper-tee-ash"]
+    },
+    {
+        id: "essential-socks-white",
+        title: "Essential Crew Socks<br>Pure White",
+        price: "4.90 €",
+        description: `Calcetines deportivos de caña alta diseñados específicamente para el entrenamiento de fuerza. Su estructura combina un tejido de compresión superior que evita deslizamientos con una base amortiguada que protege el pie en cada levantamiento.
+
+Caña Acanalada Anti-Deslizamiento: Tejido elástico en canalé (ribbed) de ajuste firme que abraza la pantorrilla. Garantiza que el calcetín permanezca extendido en su posición superior durante toda la sesión, sin bajarse ni arrugarse.
+
+Suela Acolchada de Felpa (Cushioned Sole): Base inferior reforzada con un tramado de rizo interno que absorbe los impactos, reduce la fricción con la zapatilla y previene la aparición de ampollas en entrenamientos intensos.
+
+Soporte Elástico en el Arco: Banda elástica de compresión media que envuelve la zona del empeine. Aporta estabilidad al arco del pie y evita que el calcetín se mueva o se desplace dentro del calzado.
+
+Panel Superior Transpirable: Zona del empeine confeccionada con un punto texturizado más ligero que facilita la evacuación del calor y del sudor, manteniendo el pie fresco y seco.`,
+        mainImage: "img/essential-socks-white/1.jpg",
+        thumbnails: ["img/essential-socks-white/1.jpg"],
+        colors: [
+            { hex: "#ffffff", name: "Pure White", id: "essential-socks-white" }
+        ],
+        waMessage: "Hola equipo BAVU! Vengo de la web y quiero pedir Essential Crew Socks Pure White.",
         forMen: true,
         forWomen: true,
-        order: 60,
-        relatedProducts: ["short-black", "legging-onyx"]
+        order: 1300,
+        relatedProducts: ["taper_baselayer", "taper-tee-shadow", "taper-tee-ash"]
     },
     {
-        id: "legging-onyx",
-        title: "Seamless Legging<br>Onyx Black",
-        price: "22.90 €",
-        description: "Mallas de compresión sin costuras con efecto moldeador de alta sujeción. Cintura alta que no se desliza durante las sentadillas pesadas.",
-        mainImage: "img/shortsleeve-black.jpg", // Tienes que cambiar esto a una foto real de leggings
-        thumbnails: ["img/shortsleeve-black.jpg"],
-        colors: [{ hex: "#121212", name: "Onyx Black", id: "legging-onyx" }],
-        waMessage: "Hola BAVU! Me interesan los Seamless Leggings Onyx de mujer.",
+        id: "seamless-crop-onyx",
+        title: "Seamless Crop Tee<br>Onyx Black",
+        price: "14.90 €",
+        description: `Una camiseta corta de rendimiento técnico fabricada con tecnología sin costuras. Su estructura elástica de alta compresión proporciona un ajuste firme de tipo segunda piel, optimizando la sujeción y el confort en rutinas de torso o entrenamientos de alta intensidad.
+
+Construcción Seamless Inteligente: Confeccionada en un solo bloque cilíndrico de tejido sin costuras laterales. Elimina por completo cualquier tipo de fricción, rozadura o molestia sobre la piel durante movimientos repetitivos.
+
+Sombreado Anatómico Underbust: Tramado de compresión diferenciada integrado directamente bajo la línea del contorno del pecho. Actúa aportando una sujeción ligera y un efecto estético estilizado de forma natural.
+
+Corte Crop y Pretina Elástica: Longitud optimizada por encima de la cintura que combina perfectamente con mallas de tiro alto. Cuenta con una banda inferior reforzada de canalé sutil que fija la prenda en su sitio, evitando que se suba al elevar los brazos.
+
+Manga Ranglán con Mapeo de Transpiración: Microperforaciones estéticas en la zona de los hombros y la espalda que aceleran la disipación del calor corporal, manteniendo el cuerpo fresco y la prenda libre de humedad acumulada.`,
+        mainImage: "img/seamless-crop-onyx/1.jpg",
+        thumbnails: ["img/seamless-crop-onyx/1.jpg"],
+        colors: [
+            { hex: "#121212", name: "Onyx Black", id: "seamless-crop-onyx" },
+            { hex: "#7A2036", name: "Berry Wine", id: "seamless-crop-wine" },
+            { hex: "#B5A2B8", name: "Pastel Lilac", id: "seamless-crop-lilac" }
+        ],
+        waMessage: "Hola equipo BAVU! Vengo de la web y quiero pedir Seamless Crop Tee Onyx Black.",
         forMen: false,
         forWomen: true,
-        order: 100,
-        relatedProducts: ["bra-onyx", "crop-ash"]
+        order: 0,
+        relatedProducts: ["seamless-crop-wine", "seamless-crop-lilac", "seamless-short-onyx", "seamless-legging-onyx"]
+    },
+    {
+        id: "seamless-crop-wine",
+        title: "Seamless Crop Tee<br>Berry Wine",
+        price: "14.90 €",
+        description: `Una camiseta corta de rendimiento técnico fabricada con tecnología sin costuras. Su estructura elástica de alta compresión proporciona un ajuste firme de tipo segunda piel, optimizando la sujeción y el confort en rutinas de torso o entrenamientos de alta intensidad.
+
+Construcción Seamless Inteligente: Confeccionada en un solo bloque cilíndrico de tejido sin costuras laterales. Elimina por completo cualquier tipo de fricción, rozadura o molestia sobre la piel durante movimientos repetitivos.
+
+Sombreado Anatómico Underbust: Tramado de compresión diferenciada integrado directamente bajo la línea del contorno del pecho. Actúa aportando una sujeción ligera y un efecto estético estilizado de forma natural.
+
+Corte Crop y Pretina Elástica: Longitud optimizada por encima de la cintura que combina perfectamente con mallas de tiro alto. Cuenta con una banda inferior reforzada de canalé sutil que fija la prenda en su sitio, evitando que se suba al elevar los brazos.
+
+Manga Ranglán con Mapeo de Transpiración: Microperforaciones estéticas en la zona de los hombros y la espalda que aceleran la disipación del calor corporal, manteniendo el cuerpo fresco y la prenda libre de humedad acumulada.`,
+        mainImage: "img/seamless-crop-wine/1.jpg",
+        thumbnails: ["img/seamless-crop-wine/1.jpg"],
+        colors: [
+            { hex: "#7A2036", name: "Berry Wine", id: "seamless-crop-wine" },
+            { hex: "#121212", name: "Onyx Black", id: "seamless-crop-onyx" },
+            { hex: "#B5A2B8", name: "Pastel Lilac", id: "seamless-crop-lilac" }
+        ],
+        waMessage: "Hola equipo BAVU! Vengo de la web y quiero pedir Seamless Crop Tee Berry Wine.",
+        forMen: false,
+        forWomen: true,
+        order: 0,
+        relatedProducts: ["seamless-crop-onyx", "seamless-crop-lilac", "seamless-short-wine", "seamless-legging-wine"]
+    },
+    {
+        id: "seamless-crop-lilac",
+        title: "Seamless Crop Tee<br>Pastel Lilac",
+        price: "14.90 €",
+        description: `Una camiseta corta de rendimiento técnico fabricada con tecnología sin costuras. Su estructura elástica de alta compresión proporciona un ajuste firme de tipo segunda piel, optimizando la sujeción y el confort en rutinas de torso o entrenamientos de alta intensidad.
+
+Construcción Seamless Inteligente: Confeccionada en un solo bloque cilíndrico de tejido sin costuras laterales. Elimina por completo cualquier tipo de fricción, rozadura o molestia sobre la piel durante movimientos repetitivos.
+
+Sombreado Anatómico Underbust: Tramado de compresión diferenciada integrado directamente bajo la línea del contorno del pecho. Actúa aportando una sujeción ligera y un efecto estético estilizado de forma natural.
+
+Corte Crop y Pretina Elástica: Longitud optimizada por encima de la cintura que combina perfectamente con mallas de tiro alto. Cuenta con una banda inferior reforzada de canalé sutil que fija la prenda en su sitio, evitando que se suba al elevar los brazos.
+
+Manga Ranglán con Mapeo de Transpiración: Microperforaciones estéticas en la zona de los hombros y la espalda que aceleran la disipación del calor corporal, manteniendo el cuerpo fresco y la prenda libre de humedad acumulada.`,
+        mainImage: "img/seamless-crop-lilac/1.jpg",
+        thumbnails: ["img/seamless-crop-lilac/1.jpg"],
+        colors: [
+            { hex: "#B5A2B8", name: "Pastel Lilac", id: "seamless-crop-lilac" },
+            { hex: "#121212", name: "Onyx Black", id: "seamless-crop-onyx" },
+            { hex: "#7A2036", name: "Berry Wine", id: "seamless-crop-wine" }
+        ],
+        waMessage: "Hola equipo BAVU! Vengo de la web y quiero pedir Seamless Crop Tee Pastel Lilac.",
+        forMen: false,
+        forWomen: true,
+        order: 0,
+        relatedProducts: ["seamless-crop-onyx", "seamless-crop-wine", "seamless-short-lilac", "seamless-legging-lilac"]
+    },
+    {
+        id: "seamless-short-onyx",
+        title: "Seamless Biker Short<br>Onyx Black",
+        price: "15.90 €",
+        description: `Un pantalón corto de estilo ciclista desarrollado en tejido de compresión sin costuras. Su longitud intermedia y su pretina de alta sujeción garantizan que la prenda permanezca fija en su lugar durante entrenamientos dinámicos, ofreciendo total cobertura y confort térmico.
+
+Cintura Alta Anti-Deslizamiento (High-Waist): Pretina elástica de doble capa y compresión media-alta que abraza la zona abdominal de manera firme. Ofrece un soporte seguro que no se enrolla ni se desplaza hacia abajo al hacer ejercicio.
+
+Diseño de Contorno Glúteo Estilizado: Incorpora un tramado de sombreado anatómico bajo la zona posterior que define y realza la silueta de forma natural, adaptándose a las curvas del cuerpo sin recurrir a costuras incómodas.
+
+Largo Biker Funcional: Corte por encima de la rodilla con un dobladillo acanalado suave que fija la prenda en el muslo. Su longitud está optimizada para eliminar la fricción entre las piernas en caminatas, carreras o rutinas pesadas de pierna.
+
+Tejido Elástico Squat-Proof: Punto denso confeccionado en cuatro direcciones que asegura una opacidad completa. Bloquea las transparencias ante la máxima tensión durante sentadillas, pesos muertos o estiramientos intensos.`,
+        mainImage: "img/seamless-short-onyx/1.jpg",
+        thumbnails: ["img/seamless-short-onyx/1.jpg"],
+        colors: [
+            { hex: "#121212", name: "Onyx Black", id: "seamless-short-onyx" },
+            { hex: "#7A2036", name: "Berry Wine", id: "seamless-short-wine" },
+            { hex: "#B5A2B8", name: "Pastel Lilac", id: "seamless-short-lilac" }
+        ],
+        waMessage: "Hola equipo BAVU! Vengo de la web y quiero pedir Seamless Biker Short Onyx Black.",
+        forMen: false,
+        forWomen: true,
+        order: 0,
+        relatedProducts: ["seamless-short-wine", "seamless-short-lilac", "seamless-crop-onyx", "seamless-legging-onyx"]
+    },
+    {
+        id: "seamless-short-wine",
+        title: "Seamless Biker Short<br>Berry Wine",
+        price: "15.90 €",
+        description: `Un pantalón corto de estilo ciclista desarrollado en tejido de compresión sin costuras. Su longitud intermedia y su pretina de alta sujeción garantizan que la prenda permanezca fija en su lugar durante entrenamientos dinámicos, ofreciendo total cobertura y confort térmico.
+
+Cintura Alta Anti-Deslizamiento (High-Waist): Pretina elástica de doble capa y compresión media-alta que abraza la zona abdominal de manera firme. Ofrece un soporte seguro que no se enrolla ni se desplaza hacia abajo al hacer ejercicio.
+
+Diseño de Contorno Glúteo Estilizado: Incorpora un tramado de sombreado anatómico bajo la zona posterior que define y realza la silueta de forma natural, adaptándose a las curvas del cuerpo sin recurrir a costuras incómodas.
+
+Largo Biker Funcional: Corte por encima de la rodilla con un dobladillo acanalado suave que fija la prenda en el muslo. Su longitud está optimizada para eliminar la fricción entre las piernas en caminatas, carreras o rutinas pesadas de pierna.
+
+Tejido Elástico Squat-Proof: Punto denso confeccionado en cuatro direcciones que asegura una opacidad completa. Bloquea las transparencias ante la máxima tensión durante sentadillas, pesos muertos o estiramientos intensos.`,
+        mainImage: "img/seamless-short-wine/1.jpg",
+        thumbnails: ["img/seamless-short-wine/1.jpg"],
+        colors: [
+            { hex: "#7A2036", name: "Berry Wine", id: "seamless-short-wine" },
+            { hex: "#121212", name: "Onyx Black", id: "seamless-short-onyx" },
+            { hex: "#B5A2B8", name: "Pastel Lilac", id: "seamless-short-lilac" }
+        ],
+        waMessage: "Hola equipo BAVU! Vengo de la web y quiero pedir Seamless Biker Short Berry Wine.",
+        forMen: false,
+        forWomen: true,
+        order: 0,
+        relatedProducts: ["seamless-short-onyx", "seamless-short-lilac", "seamless-crop-wine", "seamless-legging-wine"]
+    },
+    {
+        id: "seamless-short-lilac",
+        title: "Seamless Biker Short<br>Pastel Lilac",
+        price: "15.90 €",
+        description: `Un pantalón corto de estilo ciclista desarrollado en tejido de compresión sin costuras. Su longitud intermedia y su pretina de alta sujeción garantizan que la prenda permanezca fija en su lugar durante entrenamientos dinámicos, ofreciendo total cobertura y confort térmico.
+
+Cintura Alta Anti-Deslizamiento (High-Waist): Pretina elástica de doble capa y compresión media-alta que abraza la zona abdominal de manera firme. Ofrece un soporte seguro que no se enrolla ni se desplaza hacia abajo al hacer ejercicio.
+
+Diseño de Contorno Glúteo Estilizado: Incorpora un tramado de sombreado anatómico bajo la zona posterior que define y realza la silueta de forma natural, adaptándose a las curvas del cuerpo sin recurrir a costuras incómodas.
+
+Largo Biker Funcional: Corte por encima de la rodilla con un dobladillo acanalado suave que fija la prenda en el muslo. Su longitud está optimizada para eliminar la fricción entre las piernas en caminatas, carreras o rutinas pesadas de pierna.
+
+Tejido Elástico Squat-Proof: Punto denso confeccionado en cuatro direcciones que asegura una opacidad completa. Bloquea las transparencias ante la máxima tensión durante sentadillas, pesos muertos o estiramientos intensos.`,
+        mainImage: "img/seamless-short-lilac/1.jpg",
+        thumbnails: ["img/seamless-short-lilac/1.jpg"],
+        colors: [
+            { hex: "#B5A2B8", name: "Pastel Lilac", id: "seamless-short-lilac" },
+            { hex: "#121212", name: "Onyx Black", id: "seamless-short-onyx" },
+            { hex: "#7A2036", name: "Berry Wine", id: "seamless-short-wine" }
+        ],
+        waMessage: "Hola equipo BAVU! Vengo de la web y quiero pedir Seamless Biker Short Pastel Lilac.",
+        forMen: false,
+        forWomen: true,
+        order: 0,
+        relatedProducts: ["seamless-short-onyx", "seamless-short-wine", "seamless-crop-lilac", "seamless-legging-lilac"]
+    },
+    {
+        id: "seamless-legging-onyx",
+        title: "Seamless Leggings<br>Onyx Black",
+        price: "22.90 €",
+        description: `Mallas técnicas de compresión y largo completo desarrolladas con tecnología sin costuras. Diseñadas para actuar como una segunda piel protectora, combinan una estructura de alta sujeción abdominal con un tejido flexible que acompaña el movimiento en levantamientos pesados.
+
+Pretina Compresiva de Tiro Alto: Banda elástica de doble grosor que ciñe la zona del abdomen medio, garantizando una sujeción firme y segura. Su estructura técnica evita que la prenda se deslice o se enrolle durante zancadas, carreras o saltos.
+
+Tramado de Contorno Glúteo Sutil: Incorpora líneas de sombreado anatómico de compresión diferenciada bajo la zona trasera. Este diseño textil moldea y realza la silueta de manera natural y estética, prescindiendo por completo de costuras internas molestas.
+
+Tejido Interlock Squat-Proof: Punto elástico multidireccional de densidad media-alta que garantiza una opacidad absoluta. Bloquea de forma eficaz cualquier transparencia bajo máxima tensión (flexión profunda de cadera en sentadillas o peso muerto).
+
+Ajuste Ergonómico Sin Costuras Laterales: Construcción cilíndrica limpia que elimina las uniones en los costados de las piernas. Minimiza los puntos de fricción sobre la piel, reduciendo el riesgo de rozaduras y maximizando el confort en sesiones de entrenamiento prolongadas.`,
+        mainImage: "img/seamless-legging-onyx/1.jpg",
+        thumbnails: ["img/seamless-legging-onyx/1.jpg"],
+        colors: [
+            { hex: "#121212", name: "Onyx Black", id: "seamless-legging-onyx" },
+            { hex: "#7A2036", name: "Berry Wine", id: "seamless-legging-wine" },
+            { hex: "#B5A2B8", name: "Pastel Lilac", id: "seamless-legging-lilac" }
+        ],
+        waMessage: "Hola equipo BAVU! Vengo de la web y quiero pedir Seamless Leggings Onyx Black.",
+        forMen: false,
+        forWomen: true,
+        order: 0,
+        relatedProducts: ["seamless-legging-wine", "seamless-legging-lilac", "seamless-crop-onyx", "seamless-short-onyx"]
+    },
+    {
+        id: "seamless-legging-wine",
+        title: "Seamless Leggings<br>Berry Wine",
+        price: "22.90 €",
+        description: `Mallas técnicas de compresión y largo completo desarrolladas con tecnología sin costuras. Diseñadas para actuar como una segunda piel protectora, combinan una estructura de alta sujeción abdominal con un tejido flexible que acompaña el movimiento en levantamientos pesados.
+
+Pretina Compresiva de Tiro Alto: Banda elástica de doble grosor que ciñe la zona del abdomen medio, garantizando una sujeción firme and segura. Su estructura técnica evita que la prenda se deslice o se enrolle durante zancadas, carreras o saltos.
+
+Tramado de Contorno Glúteo Sutil: Incorpora líneas de sombreado anatómico de compresión diferenciada bajo la zona trasera. Este diseño textil moldea y realza la silueta de manera natural y estética, prescindiendo por completo de costuras internas molestas.
+
+Tejido Interlock Squat-Proof: Punto elástico multidireccional de densidad media-alta que garantiza una opacidad absoluta. Bloquea de forma eficaz cualquier transparencia bajo máxima tensión (flexión profunda de cadera en sentadillas o peso muerto).
+
+Ajuste Ergonómico Sin Costuras Laterales: Construcción cilíndrica limpia que elimina las uniones en los costados de las piernas. Minimiza los puntos de fricción sobre la piel, reduciendo el riesgo de rozaduras y maximizando el confort en sesiones de entrenamiento prolongadas.`,
+        mainImage: "img/seamless-legging-wine/1.jpg",
+        thumbnails: ["img/seamless-legging-wine/1.jpg"],
+        colors: [
+            { hex: "#7A2036", name: "Berry Wine", id: "seamless-legging-wine" },
+            { hex: "#121212", name: "Onyx Black", id: "seamless-legging-onyx" },
+            { hex: "#B5A2B8", name: "Pastel Lilac", id: "seamless-legging-lilac" }
+        ],
+        waMessage: "Hola equipo BAVU! Vengo de la web y quiero pedir Seamless Leggings Berry Wine.",
+        forMen: false,
+        forWomen: true,
+        order: 0,
+        relatedProducts: ["seamless-legging-onyx", "seamless-legging-lilac", "seamless-crop-wine", "seamless-short-wine"]
+    },
+    {
+        id: "seamless-legging-lilac",
+        title: "Seamless Leggings<br>Pastel Lilac",
+        price: "22.90 €",
+        description: `Mallas técnicas de compresión y largo completo desarrolladas con tecnología sin costuras. Diseñadas para actuar como una segunda piel protectora, combinan una estructura de alta sujeción abdominal con un tejido flexible que acompaña el movimiento en levantamientos pesados.
+
+Pretina Compresiva de Tiro Alto: Banda elástica de doble grosor que ciñe la zona del abdomen medio, garantizando una sujeción firme and segura. Su estructura técnica evita que la prenda se deslice o se enrolle durante zancadas, carreras o saltos.
+
+Tramado de Contorno Glúteo Sutil: Incorpora líneas de sombreado anatómico de compresión diferenciada bajo la zona trasera. Este diseño textil moldea y realza la silueta de manera natural y estética, prescindiendo por completo de costuras internas molestas.
+
+Tejido Interlock Squat-Proof: Punto elástico multidireccional de densidad media-alta que garantiza una opacidad absoluta. Bloquea de forma eficaz cualquier transparencia bajo máxima tensión (flexión profunda de cadera en sentadillas o peso muerto).
+
+Ajuste Ergonómico Sin Costuras Laterales: Construcción cilíndrica limpia que elimina las uniones en los costados de las piernas. Minimiza los puntos de fricción sobre la piel, reduciendo el riesgo de rozaduras y maximizando el confort en sesiones de entrenamiento prolongadas.`,
+        mainImage: "img/seamless-legging-lilac/1.jpg",
+        thumbnails: ["img/seamless-legging-lilac/1.jpg"],
+        colors: [
+            { hex: "#B5A2B8", name: "Pastel Lilac", id: "seamless-legging-lilac" },
+            { hex: "#121212", name: "Onyx Black", id: "seamless-legging-onyx" },
+            { hex: "#7A2036", name: "Berry Wine", id: "seamless-legging-wine" }
+        ],
+        waMessage: "Hola equipo BAVU! Vengo de la web y quiero pedir Seamless Leggings Pastel Lilac.",
+        forMen: false,
+        forWomen: true,
+        order: 0,
+        relatedProducts: ["seamless-legging-onyx", "seamless-legging-wine", "seamless-crop-lilac", "seamless-short-lilac"]
     },
     {
         id: "bra-onyx",
         title: "Adapt Sports Bra<br>Onyx Black",
         price: "16.90 €",
-        description: "Sujetador deportivo de impacto medio-alto con tirantes cruzados ajustables. Espalda descubierta estética para lucir el dorsal.",
-        mainImage: "img/shortsleeve-wine.jpg", // Actualizar imagen
-        thumbnails: ["img/shortsleeve-wine.jpg"],
-        colors: [{ hex: "#121212", name: "Onyx Black", id: "bra-onyx" }],
-        waMessage: "Buenas! Quería consultar stock del Adapt Sports Bra de mujer.",
+        description: `Un sujetador deportivo de impacto medio-alto diseñado para ofrecer un soporte firme y una libertad de movimiento absoluta. Su patrón ergonómico destaca por una estructura trasera que optimiza la ventilación y realza la línea muscular de la espalda.
+
+Estructura de Tirantes Cruzados: Diseño de tirantes finos entrelazados en la espalda que distribuyen el peso de manera uniforme sobre los hombros, reduciendo la presión en la zona del cuello durante entrenamientos intensos.
+
+Apertura Lumbar Estética (Cut-Out): Escote trasero profundo y anatómico que deja al descubierto la zona del dorsal. Este detalle técnico no solo favorece una estética limpia y atlética, sino que actúa como una zona de máxima ventilación activa.
+
+Sujeción de Impacto Medio-Alto: Confeccionado con un tejido elástico de compresión que mantiene el ajuste firme en entrenamientos de fuerza, running ligero o rutinas de alta intensidad. Incluye copas extraíbles para una adaptación personalizada.
+
+Banda Inferior Reforzada: Pretina elástica ancha situada bajo el busto que fija la prenda en su posición exacta, evitando desplazamientos molestos o rozaduras al realizar movimientos de rango completo sobre la cabeza.`,
+        mainImage: "img/bra-onyx/1.jpg",
+        thumbnails: ["img/bra-onyx/1.jpg"],
+        colors: [
+            { hex: "#121212", name: "Onyx Black", id: "bra-onyx" },
+            { hex: "#1a4231", name: "Forest Green", id: "bra-emerald" }
+        ],
+        waMessage: "Hola equipo BAVU! Vengo de la web y quiero pedir Adapt Sports Bra Onyx Black.",
         forMen: false,
         forWomen: true,
-        order: 95,
-        relatedProducts: ["legging-onyx", "crop-ash"]
+        order: 0,
+        relatedProducts: ["bra-emerald", "seamless-legging-onyx", "seamless-short-onyx"]
     },
     {
-        id: "crop-ash",
-        title: "Origin Crop Top<br>Ash Grey",
-        price: "14.90 €",
-        description: "Crop top de ajuste ceñido fabricado en tejido acanalado ultra elástico. Transpirable, suave y de secado rápido.",
-        mainImage: "img/shortsleeve-lightpurple.jpg", // Actualizar imagen
-        thumbnails: ["img/shortsleeve-lightpurple.jpg"],
-        colors: [{ hex: "#8c8f94", name: "Ash Grey", id: "crop-ash" }],
-        waMessage: "Hola equipo BAVU! Quiero pedir el Origin Crop Top Ash de mujer.",
+        id: "bra-emerald",
+        title: "Adapt Sports Bra<br>Forest Green",
+        price: "16.90 €",
+        description: `Un sujetador deportivo de impacto medio-alto diseñado para ofrecer un soporte firme y una libertad de movimiento absoluta. Su patrón ergonómico destaca por una estructura trasera que optimiza la ventilación y realza la línea muscular de la espalda.
+
+Estructura de Tirantes Cruzados: Diseño de tirantes finos entrelazados en la espalda que distribuyen el peso de manera uniforme sobre los hombros, reduciendo la presión en la zona del cuello durante entrenamientos intensos.
+
+Apertura Lumbar Estética (Cut-Out): Escote trasero profundo y anatómico que deja al descubierto la zona del dorsal. Este detalle técnico no solo favorece una estética limpia y atlética, sino que actúa como una zona de máxima ventilación activa.
+
+Sujeción de Impacto Medio-Alto: Confeccionado con un tejido elástico de compresión que mantiene el ajuste firme en entrenamientos de fuerza, running ligero o rutinas de alta intensidad. Incluye copas extraíbles para una adaptación personalizada.
+
+Banda Inferior Reforzada: Pretina elástica ancha situada bajo el busto que fija la prenda en su posición exacta, evitando desplazamientos molestos o rozaduras al realizar movimientos de rango completo sobre la cabeza.`,
+        mainImage: "img/bra-emerald/1.jpg",
+        thumbnails: ["img/bra-emerald/1.jpg"],
+        colors: [
+            { hex: "#1a4231", name: "Forest Green", id: "bra-emerald" },
+            { hex: "#121212", name: "Onyx Black", id: "bra-onyx" }
+        ],
+        waMessage: "Hola equipo BAVU! Vengo de la web y quiero pedir Adapt Sports Bra Forest Green.",
         forMen: false,
         forWomen: true,
-        order: 90,
-        relatedProducts: ["legging-onyx", "bra-onyx"]
+        order: 0,
+        relatedProducts: ["bra-onyx"]
+    },
+    {
+        id: "bra-longline-onyx",
+        title: "Essence Longline Bra<br>Onyx Black",
+        price: "16.90 €",
+        description: `Un sujetador deportivo de silueta alargada y soporte de impacto medio. Diseñado con un patrón limpio y minimalista, su estructura ofrece una cobertura ampliada que permite utilizarlo de forma independiente como un top corto de entrenamiento.
+
+Silueta Longline de Cobertura Ampliada: Banda inferior ensanchada que se extiende hacia la boca del estómago. Aporta una sujeción uniforme en todo el contorno del torso, distribuye la presión de manera eficiente y evita que la prenda se suba durante el movimiento.
+
+Tirantes Finos Minimalistas: Diseño de hombros despejados con tirantes de perfil bajo que reducen las marcas sobre la piel y garantizan una total libertad de rotación en la articulación del hombro.
+
+Escote Redondo Ergonómico (Scoop Neck): Línea de cuello con la profundidad justa para ofrecer un ajuste estético y seguro, manteniendo todo en su sitio en ejercicios de flexión o saltos. Incluye almohadillas protectoras extraíbles.
+
+Tejido Técnico Ultra-Suave: Confeccionado con un hilado de tacto aterciopelado que maximiza el confort térmico. Absorbe y evapora el sudor de forma acelerada para mantener la piel seca de principio a fin de la sesión.`,
+        mainImage: "img/bra-longline-onyx/1.jpg",
+        thumbnails: ["img/bra-longline-onyx/1.jpg"],
+        colors: [
+            { hex: "#121212", name: "Onyx Black", id: "bra-longline-onyx" },
+            { hex: "#B5A2B8", name: "Pastel Lilac", id: "bra-longline-lilac" }
+        ],
+        waMessage: "Hola equipo BAVU! Vengo de la web y quiero pedir Essence Longline Bra Onyx Black.",
+        forMen: false,
+        forWomen: true,
+        order: 0,
+        relatedProducts: ["bra-longline-lilac", "seamless-legging-onyx", "seamless-short-onyx"]
+    },
+    {
+        id: "bra-longline-lilac",
+        title: "Essence Longline Bra<br>Pastel Lilac",
+        price: "16.90 €",
+        description: `Un sujetador deportivo de silueta alargada y soporte de impacto medio. Diseñado con un patrón limpio y minimalista, su estructura ofrece una cobertura ampliada que permite utilizarlo de forma independiente como un top corto de entrenamiento.
+
+Silueta Longline de Cobertura Ampliada: Banda inferior ensanchada que se extiende hacia la boca del estómago. Aporta una sujeción uniforme en todo el contorno del torso, distribuye la presión de manera eficiente y evita que la prenda se suba durante el movimiento.
+
+Tirantes Finos Minimalistas: Diseño de hombros despejados con tirantes de perfil bajo que reducen las marcas sobre la piel y garantizan una total libertad de rotación en la articulación del hombro.
+
+Escote Redondo Ergonómico (Scoop Neck): Línea de cuello con la profundidad justa para ofrecer un ajuste estético y seguro, manteniendo todo en su sitio en ejercicios de flexión o saltos. Incluye almohadillas protectoras extraíbles.
+
+Tejido Técnico Ultra-Suave: Confeccionado con un hilado de tacto aterciopelado que maximiza el confort térmico. Absorbe y evapora el sudor de forma acelerada para mantener la piel seca de principio a fin de la sesión.`,
+        mainImage: "img/bra-longline-lilac/1.jpg",
+        thumbnails: ["img/bra-longline-lilac/1.jpg"],
+        colors: [
+            { hex: "#B5A2B8", name: "Pastel Lilac", id: "bra-longline-lilac" },
+            { hex: "#121212", name: "Onyx Black", id: "bra-longline-onyx" }
+        ],
+        waMessage: "Hola equipo BAVU! Vengo de la web y quiero pedir Essence Longline Bra Pastel Lilac.",
+        forMen: false,
+        forWomen: true,
+        order: 0,
+        relatedProducts: ["bra-longline-onyx", "seamless-legging-lilac", "seamless-short-lilac"]
     }
 ];

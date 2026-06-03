@@ -54,8 +54,8 @@
             filteredProducts = BAVU_INVENTORY;
         }
 
-        // ORDENAR DE MAYOR A MENOR SEGÚN EL CAMPO "order"
-        filteredProducts.sort((a, b) => (b.order || 0) - (a.order || 0));
+        // ORDENAR DE MENOR A MAYOR SEGÚN EL CAMPO "order" (Ascendente)
+        filteredProducts.sort((a, b) => (parseInt(a.order) || 0) - (parseInt(b.order) || 0));
 
         if (filteredProducts.length === 0) {
             productsGrid.innerHTML = '<p style="text-align:center; grid-column: 1/-1; color:#666;">Próximamente disponibles.</p>';
