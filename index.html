@@ -14,83 +14,110 @@
 
     <div id="header-container"></div>
 
-    <header class="hero">
-        <img src="img/BAVU_white.png" alt="BAVU Logo" class="hero-logo">
-        <p>Fuerza Bruta • Diseño Minimalista</p>
+    <!-- 1. Texto de bienvenida limpio sin imagen hero de fondo -->
+    <header class="welcome-block">
+        <h1>¡Bienvenido a BAVU!</h1>
     </header>
 
-    <!-- Sección de Categorías Clásicas -->
-    <section class="split-sections" id="categorias">
-        <div class="category-col">
-            <a href="products.html?cat=mujer" class="category-header header-women">
-                <h2>ELLAS</h2>
-                <span>Ver colección</span>
-            </a>
-        </div>
-        <div class="category-col">
-            <a href="products.html?cat=hombre" class="category-header header-men">
-                <h2>ELLOS</h2>
-                <span>Ver colección</span>
-            </a>
-        </div>
-        <div class="category-col" style="grid-column: 1 / -1;">
-            <a href="products.html?cat=todo" class="category-header" style="height: 200px; background: #222;">
-                <h2>TODO</h2>
-                <span>Ver catálogo completo</span>
-            </a>
-        </div>
-    </section>
+    <main class="home-section-container">
 
-    <!-- NUEVA SECCIÓN: Carrusel de Productos Destacados en Home -->
-    <section class="related-section container" id="featuredSection" style="margin-top: 20px; padding-top: 40px;">
-        <h3>Productos Destacados</h3>
-        <div class="carousel-container">
-            <div class="carousel" id="featuredCarousel"></div>
-        </div>
-    </section>
+        <!-- 2. Carrusel General Editable -->
+        <section class="carousel-section" style="margin-bottom: 40px;">
+            <h2 class="section-block-title" style="font-size: 1.1rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 20px; border-left: 3px solid var(--accent); padding-left: 12px;">Destacados de la marca</h2>
+            <div class="carousel-container">
+                <div class="carousel" id="carouselHomeGeneral"></div>
+            </div>
+        </section>
+
+        <!-- 3. Header de ELLAS (Tamaño reducido) -->
+        <a href="products.html?cat=mujer" class="category-header header-women small-header">
+            <h2>ELLAS</h2>
+            <span>Ver colección</span>
+        </a>
+
+        <!-- 4. Carrusel de Productos para Mujeres -->
+        <section class="carousel-section" style="margin-bottom: 40px;">
+            <div class="carousel-container">
+                <div class="carousel" id="carouselHomeWomen"></div>
+            </div>
+        </section>
+
+        <!-- 5. Header de ELLOS (Tamaño reducido) -->
+        <a href="products.html?cat=hombre" class="category-header header-men small-header">
+            <h2>ELLOS</h2>
+            <span>Ver colección</span>
+        </a>
+
+        <!-- 6. Carrusel de Productos para Hombres -->
+        <section class="carousel-section" style="margin-bottom: 50px;">
+            <div class="carousel-container">
+                <div class="carousel" id="carouselHomeMen"></div>
+            </div>
+        </section>
+
+        <!-- 7. Lista Final en Rejilla (2 columnas en móvil / 4 columnas en PC) -->
+        <section class="grid-section" style="margin-top: 60px;">
+            <h2 class="section-block-title" style="font-size: 1.1rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 25px; border-left: 3px solid var(--accent); padding-left: 12px;">Colección Completa</h2>
+            <div class="products-responsive-grid" id="gridHomeFinal"></div>
+        </section>
+
+    </main>
 
     <div id="footer-container"></div>
 
-    <!-- Scripts de Datos y Componentes -->
-    <script src="products-data.js"></script>
     <script src="components.js"></script>
+    <script src="products-data.js"></script>
     <script>
-        // Renderizar elementos comunes globales
+        // Renderizar componentes de cabecera fija y pie de página[cite: 17]
         renderHeader('fixed-nav');
         renderFooter();
 
-        // 🎯 TU LISTA CONFIGURABLE DE ID'S DESTACADOS:
-        // Modifica estos strings con los ID's exactos que quieras resaltar en la Home
-        const featuredProductIds = [
-            "taper-tee-shadow"
-        ];
+        // 🎯 PANEL DE CONTROL DE LA HOME POR ID
+        // Configura las prendas que deseas mostrar en cada bloque específico:
 
-        const carouselContainer = document.getElementById('featuredCarousel');
+        // IDs para el primer carrusel general superior:
+        const idsGeneral = ["heavy-hoodie-blackout", "taper-halfzip-forest", "bra-longline-lilac"];
 
-        // Procesar e inyectar las tarjetas dinámicamente en el Slider
-        featuredProductIds.forEach(id => {
-            const product = BAVU_INVENTORY.find(p => p.id === id);
-            if (product) {
-                const card = document.createElement('div');
-                card.className = 'product-card';
-                const cleanTitle = product.title.replace('<br>', ' ');
-                
-                card.innerHTML = `
-                    <img src="${product.mainImage}" alt="${cleanTitle}" class="product-img">
-                    <div class="product-info">
-                        <h3>${product.title}</h3>
-                        <span class="price">${product.price}</span>
-                        <a href="product.html?id=${product.id}" class="btn-order">Ver Detalles</a>
-                    </div>
-                `;
-                carouselContainer.appendChild(card);
-            }
-        });
+        // IDs para el carrusel de prendas de mujer (debajo del banner ELLAS):
+        const idsWomen = ["seamless-crop-onyx", "seamless-short-onyx", "seamless-legging-onyx", "bra-onyx"];
 
-        // Ocultar la sección automáticamente si no se configuran ID's válidos
-        if (carouselContainer.children.length === 0) {
-            document.getElementById('featuredSection').style.display = 'none';
+        // IDs para el carrusel de prendas de hombre (debajo del banner ELLOS):
+        const idsMen = ["taper_baselayer", "taper-tee-shadow", "taper-tee-ash", "taper-tank-blackout"];
+
+        // IDs para la cuadrícula final responsiva inferior:
+        const idsGridFinal = ["heavy-tee-blackout", "heavy-tee-olive", "heavy-tee-white", "split-short-black", "split-short-grey", "essential-socks-white"];
+
+
+        // 🛠️ Función inyectora automatizada de tarjetas de producto
+        function injectProductsToHome(idArray, targetContainerId) {
+            const container = document.getElementById(targetContainerId);
+            if (!container) return;
+
+            idArray.forEach(id => {
+                const product = BAVU_INVENTORY.find(p => p.id === id);
+                if (product) {
+                    const card = document.createElement('div');
+                    card.className = 'product-card';
+                    const cleanTitle = product.title.replace('<br>', ' ');
+                    card.innerHTML = `
+                        <img src="${product.mainImage}" alt="${cleanTitle}" class="product-img">
+                        <div class="product-info">
+                            <h3>${product.title}</h3>
+                            <span class="price">${product.price}</span>
+                            <a href="product.html?id=${product.id}" class="btn-order">Ver Detalles</a>
+                        </div>
+                    `;
+                    container.appendChild(card);
+                }
+            });
         }
+
+        // 🚀 Despliegue masivo de datos en la interfaz de la Home
+        injectProductsToHome(idsGeneral, "carouselHomeGeneral");
+        injectProductsToHome(idsWomen, "carouselHomeWomen");
+        injectProductsToHome(idsMen, "carouselHomeMen");
+        injectProductsToHome(idsGridFinal, "gridHomeFinal");
+
     </script>
 </body>
 </html>

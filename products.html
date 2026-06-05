@@ -25,48 +25,46 @@
             color: var(--text-body);
         }
         
-        /* Contenedor optimizado para el catálogo híbrido */
+        /* Contenedor de la estructura híbrida modular */
         .catalog-hybrid-layout {
             width: 90%;
             max-width: 1400px;
             margin: 0 auto 60px;
         }
 
-        /* Títulos de las secciones */
+        /* Títulos de los bloques de secciones */
         .section-block-title {
             font-size: 1.1rem;
             font-weight: 700;
             letter-spacing: 3px;
             text-transform: uppercase;
-            margin: 40px 0 20px 0;
+            margin: 45px 0 20px 0;
             color: var(--text-body);
             border-left: 3px solid var(--accent);
             padding-left: 12px;
         }
 
-        /* 🎯 LA REJILLA RESPONSIVA REQUERIDA (2 columnas móvil / 4 columnas PC) */
+        /* Rejillas responsivas (2 columnas en móvil / 4 columnas en PC) */
         .products-responsive-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr); /* 2 columnas reales por fila en móvil */
-            gap: 15px; /* Espaciado ajustado para pantallas pequeñas */
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
             width: 100%;
         }
 
-        /* Adaptación a ordenadores (Desktop) */
         @media (min-width: 900px) {
             .products-responsive-grid {
-                grid-template-columns: repeat(4, 1fr); /* 4 columnas reales por fila en PC */
-                gap: 30px; /* Espaciado más amplio y premium en escritorio */
+                grid-template-columns: repeat(4, 1fr);
+                gap: 30px;
             }
         }
 
-        /* Ajuste estético menor para que las tarjetas se adapten bien al formato de 2 columnas en móvil */
         @media (max-width: 600px) {
             .products-responsive-grid .product-card {
-                max-width: 100% !important; /* Anula el max-width de 320px del CSS global para que encajen dos */
+                max-width: 100% !important;
             }
             .products-responsive-grid .product-card .product-info h3 {
-                font-size: 0.8rem; /* Texto un pelín más compacto para evitar saltos feos en móvil */
+                font-size: 0.8rem;
             }
             .products-responsive-grid .product-card .btn-order {
                 font-size: 0.7rem;
@@ -84,19 +82,39 @@
     </header>
 
     <main class="catalog-hybrid-layout">
-        <!-- 1. BLOQUE SUPERIOR: Carrusel Horizontal -->
-        <section id="carouselSectionContainer">
-            <h2 class="section-block-title">Novedades Destacadas</h2>
+        
+        <!-- 1. Carrusel de 'En descuento' -->
+        <section id="saleCarouselContainer">
+            <!-- 🌟 Añadido id="titleSale" -->
+            <h2 class="section-block-title" id="titleSale">En Descuento</h2>
             <div class="carousel-container">
-                <div class="carousel" id="carouselWrapper"></div>
+                <div class="carousel" id="saleCarouselWrapper"></div>
             </div>
         </section>
 
-        <!-- 2. BLOQUE INFERIOR: Rejilla Responsiva (2xMóvil / 4xPC) -->
-        <section id="gridSectionContainer">
-            <h2 class="section-block-title"></h2>
-            <div class="products-responsive-grid" id="gridWrapper"></div>
+        <!-- 2. Primera Lista en Rejilla -->
+        <section id="grid1Container">
+            <!-- 🌟 Añadido id="titleGrid1" -->
+            <h2 class="section-block-title" id="titleGrid1">Línea Técnica</h2>
+            <div class="products-responsive-grid" id="grid1Wrapper"></div>
         </section>
+
+        <!-- 3. Carrusel de 'Destacados' -->
+        <section id="featuredCarouselContainer">
+            <!-- 🌟 Añadido id="titleFeatured" -->
+            <h2 class="section-block-title" id="titleFeatured">Destacados</h2>
+            <div class="carousel-container">
+                <div class="carousel" id="featuredCarouselWrapper"></div>
+            </div>
+        </section>
+
+        <!-- 4. Segunda Lista en Rejilla -->
+        <section id="grid2Container">
+            <!-- 🌟 Añadido id="titleGrid2" -->
+            <h2 class="section-block-title" id="titleGrid2">Básicos Esenciales</h2>
+            <div class="products-responsive-grid" id="grid2Wrapper"></div>
+        </section>
+
     </main>
 
     <div id="footer-container"></div>
@@ -110,100 +128,94 @@
         const urlParams = new URLSearchParams(window.location.search);
         const category = urlParams.get('cat');
         const catalogTitle = document.getElementById('catalogTitle');
-        const carouselWrapper = document.getElementById('carouselWrapper');
-        const gridWrapper = document.getElementById('gridWrapper');
 
-        // Modificación del título según la categoría activa de la web
+        // 🧠 DEFINICIÓN DE TÍTULOS PREDETERMINADOS (Si entran desde "TODO")
+        let sectionTitles = {
+            sale: "Ofertas Especiales",
+            grid1: "Línea de Compresión",
+            featured: "Novedades Drop 01",
+            grid2: "Colección Completa"
+        };
+
+        // Cambiar títulos y configuraciones según el género activo
         if (category === 'hombre') {
             document.title = "BAVU | Colección Hombre";
             catalogTitle.textContent = "COLECCIÓN HOMBRE";
+            
+            // 🎯 Títulos específicos para ELLOS
+            sectionTitles.sale = "Liquidación de Temporada";
+            sectionTitles.grid1 = "Compresión Taper Pro";
+            sectionTitles.featured = "Top Ventas Masculino";
+            sectionTitles.grid2 = "Camisetas & Sudaderas Heavyweight";
+
         } else if (category === 'mujer') {
             document.title = "BAVU | Colección Mujer";
             catalogTitle.textContent = "COLECCIÓN MUJER";
+            
+            // 🎯 Títulos específicos para ELLAS
+            sectionTitles.sale = "Promociones Exclusivas";
+            sectionTitles.grid1 = "Conjuntos Seamless / Sin Costuras";
+            sectionTitles.featured = "Sujetadores & Tops Esenciales";
+            sectionTitles.grid2 = "Mallas & Shorts Deportivos";
         } else {
             catalogTitle.textContent = "CATÁLOGO COMPLETO";
         }
 
-        // Función inteligente para verificar si el producto pertenece a la sección activa
+        // ⚡ INYECCIÓN DE LOS TÍTULOS DINÁMICOS EN EL HTML
+        document.getElementById('titleSale').textContent = sectionTitles.sale;
+        document.getElementById('titleGrid1').textContent = sectionTitles.grid1;
+        document.getElementById('titleFeatured').textContent = sectionTitles.featured;
+        document.getElementById('titleGrid2').textContent = sectionTitles.grid2;
+
+        // Filtro de validación cruzada por género
         const productMatchesCategory = (product) => {
             if (category === 'hombre') return product.forMen;
             if (category === 'mujer') return product.forWomen;
-            return true; // Si es 'todo' o no hay filtro, entran todos[cite: 19]
+            return true;
         };
 
-        // 🎯 PANEL DE CONTROL: SELECCIÓN DE PRODUCTOS POR ID
-        // Cambia estos IDs por los que tú quieras mostrar en cada zona:
+        // 🎯 PANEL DE CONTROL GENERAL DE TU CATÁLOGO POR ID
+        const chosenForSaleCarousel = ["taper-tank-blackout", "taper-tank-burgundy", "split-short-grey"];
+        const chosenForGrid1 = ["taper_baselayer", "taper-tee-shadow", "taper-tee-ash", "taper-halfzip-forest"];
+        const chosenForFeaturedCarousel = ["heavy-hoodie-blackout", "bra-longline-lilac", "seamless-short-lilac"];
+        const chosenForGrid2 = ["heavy-tee-blackout", "heavy-tee-olive", "heavy-tee-white", "essential-socks-white", "seamless-crop-onyx", "seamless-legging-onyx", "bra-onyx"];
 
-        // 1. IDs elegidos para el CARRUSEL horizontal superior:
-        const chosenForCarousel = [
-            "taper_baselayer",
-            "taper-tee-shadow",
-            "taper-tee-ash",
-            "taper-tank-blackout",
-            "split-short-black",
-            "heavy-tee-blackout",
-            "seamless-crop-onyx",
-            "bra-onyx"
-        ];
+        // 🛠️ Función Helper para inyectar tarjetas de forma controlada[cite: 19]
+        function renderSectionProducts(idArray, targetWrapperId, sectionContainerId) {
+            const wrapper = document.getElementById(targetWrapperId);
+            const container = document.getElementById(sectionContainerId);
+            let activeItemsCount = 0;
 
-        // 2. IDs elegidos para la LISTA EN REJILLA (2 en móvil / 4 en PC) inferior:
-        const chosenForGrid = [
-            "taper-halfzip-forest",
-            "heavy-hoodie-blackout",
-            "bra-longline-lilac",
-            "seamless-short-onyx"
-        ];
+            idArray.forEach(id => {
+                const product = BAVU_INVENTORY.find(p => p.id === id);
+                if (product && productMatchesCategory(product)) {
+                    activeItemsCount++;
+                    const card = document.createElement('div');
+                    card.className = 'product-card';
+                    const cleanTitle = product.title.replace('<br>', ' ');
+                    card.innerHTML = `
+                        <img src="${product.mainImage}" alt="${cleanTitle}" class="product-img">
+                        <div class="product-info">
+                            <h3>${product.title}</h3>
+                            <span class="price">${product.price}</span>
+                            <a href="product.html?id=${product.id}" class="btn-order">Ver Detalles</a>
+                        </div>
+                    `;
+                    wrapper.appendChild(card);
+                }
+            });
 
-        // 🛠️ RENDERIZADO 1: Carrusel Superior
-        let carouselCount = 0;
-        chosenForCarousel.forEach(id => {
-            const product = BAVU_INVENTORY.find(p => p.id === id);
-            // Solo se muestra si el ID existe y además coincide con el género seleccionado (Ellos/Ellas)
-            if (product && productMatchesCategory(product)) {
-                carouselCount++;
-                const card = document.createElement('div');
-                card.className = 'product-card';
-                const cleanTitle = product.title.replace('<br>', ' ');
-                card.innerHTML = `
-                    <img src="${product.mainImage}" alt="${cleanTitle}" class="product-img">
-                    <div class="product-info">
-                        <h3>${product.title}</h3>
-                        <span class="price">${product.price}</span>
-                        <a href="product.html?id=${product.id}" class="btn-order">Ver Detalles</a>
-                    </div>
-                `;
-                carouselWrapper.appendChild(card);
+            if (activeItemsCount === 0 && container) {
+                container.style.display = 'none';
             }
-        });
-        // Si no hay ningún producto válido en el carrusel para este género, ocultamos la sección entera
-        if (carouselCount === 0) {
-            document.getElementById('carouselSectionContainer').style.display = 'none';
         }
 
-        // 🛠️ RENDERIZADO 2: Rejilla Inferior (Filas de 2 en móvil / 4 en PC)
-        let gridCount = 0;
-        chosenForGrid.forEach(id => {
-            const product = BAVU_INVENTORY.find(p => p.id === id);
-            if (product && productMatchesCategory(product)) {
-                gridCount++;
-                const card = document.createElement('div');
-                card.className = 'product-card';
-                const cleanTitle = product.title.replace('<br>', ' ');
-                card.innerHTML = `
-                    <img src="${product.mainImage}" alt="${cleanTitle}" class="product-img">
-                    <div class="product-info">
-                        <h3>${product.title}</h3>
-                        <span class="price">${product.price}</span>
-                        <a href="product.html?id=${product.id}" class="btn-order">Ver Detalles</a>
-                    </div>
-                `;
-                gridWrapper.appendChild(card);
-            }
-        });
-        // Si no hay productos en la rejilla o la lista está vacía, mostramos un aviso
-        if (gridCount === 0) {
-            gridWrapper.parentNode.innerHTML = '<p style="text-align:center; color:#666; padding: 30px 0;">Próximamente disponibles nuevos artículos en esta sección.</p>';
-        }
+        // 🚀 Ejecución del mapeo dinámico de las 4 secciones
+        renderSectionProducts(chosenForSaleCarousel, "saleCarouselWrapper", "saleCarouselContainer");
+        renderSectionProducts(chosenForGrid1, "grid1Wrapper", "grid1Container");
+        renderSectionProducts(chosenForFeaturedCarousel, "featuredCarouselWrapper", "featuredCarouselContainer");
+        renderSectionProducts(chosenForGrid2, "grid2Wrapper", "grid2Container");
+
     </script>
 </body>
 </html>

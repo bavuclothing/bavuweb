@@ -3,11 +3,11 @@
 function renderHeader(navClass = 'static-nav') {
     const headerHTML = `
         <nav class="${navClass}">
-            <div class="logo">
-                <a href="index.html">
-                    <img src="img/BAVU_white.png" alt="Logo BAVU">
-                </a>
-            </div>
+<div class="logo">
+    <a href="index.html">
+        <img src="img/BAVU_dark.png" alt="Logo BAVU">
+    </a>
+</div>
             <div class="hamburger-menu" id="hamburgerMenu">
                 <i class="fa-solid fa-bars"></i>
             </div>
