@@ -14,11 +14,12 @@
 
     <div id="header-container"></div>
 
-   <header class="hero">
-        <img href="index.html" src="img/BAVU_white.png" alt="BAVU Logo" class="hero-logo">
+    <header class="hero">
+        <img src="img/BAVU_white.png" alt="BAVU Logo" class="hero-logo">
         <p>Fuerza Bruta • Diseño Minimalista</p>
     </header>
 
+    <!-- Sección de Categorías Clásicas -->
     <section class="split-sections" id="categorias">
         <div class="category-col">
             <a href="products.html?cat=mujer" class="category-header header-women">
@@ -40,13 +41,56 @@
         </div>
     </section>
 
+    <!-- NUEVA SECCIÓN: Carrusel de Productos Destacados en Home -->
+    <section class="related-section container" id="featuredSection" style="margin-top: 20px; padding-top: 40px;">
+        <h3>Productos Destacados</h3>
+        <div class="carousel-container">
+            <div class="carousel" id="featuredCarousel"></div>
+        </div>
+    </section>
+
     <div id="footer-container"></div>
 
+    <!-- Scripts de Datos y Componentes -->
+    <script src="products-data.js"></script>
     <script src="components.js"></script>
     <script>
-        // Renderizar componentes (isFixedNav: true, showBackBtn: false)
-        renderHeader('fixed-nav', false);
+        // Renderizar elementos comunes globales
+        renderHeader('fixed-nav');
         renderFooter();
+
+        // 🎯 TU LISTA CONFIGURABLE DE ID'S DESTACADOS:
+        // Modifica estos strings con los ID's exactos que quieras resaltar en la Home
+        const featuredProductIds = [
+            "taper-tee-shadow"
+        ];
+
+        const carouselContainer = document.getElementById('featuredCarousel');
+
+        // Procesar e inyectar las tarjetas dinámicamente en el Slider
+        featuredProductIds.forEach(id => {
+            const product = BAVU_INVENTORY.find(p => p.id === id);
+            if (product) {
+                const card = document.createElement('div');
+                card.className = 'product-card';
+                const cleanTitle = product.title.replace('<br>', ' ');
+                
+                card.innerHTML = `
+                    <img src="${product.mainImage}" alt="${cleanTitle}" class="product-img">
+                    <div class="product-info">
+                        <h3>${product.title}</h3>
+                        <span class="price">${product.price}</span>
+                        <a href="product.html?id=${product.id}" class="btn-order">Ver Detalles</a>
+                    </div>
+                `;
+                carouselContainer.appendChild(card);
+            }
+        });
+
+        // Ocultar la sección automáticamente si no se configuran ID's válidos
+        if (carouselContainer.children.length === 0) {
+            document.getElementById('featuredSection').style.display = 'none';
+        }
     </script>
 </body>
 </html>
