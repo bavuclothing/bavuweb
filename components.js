@@ -18,8 +18,8 @@ function renderHeader(navClass = 'static-nav') {
         <div class="side-menu" id="sideMenu">
             <span class="close-menu" id="closeMenu">&times;</span>
             <div class="side-menu-content">
-                <a href="products.html?cat=mujer">ELLAS</a>
-                <a href="products.html?cat=hombre">ELLOS</a>
+                <a href="products-ellas.html?cat=mujer">ELLAS</a>
+                <a href="products-ellos.html?cat=hombre">ELLOS</a>
                 <a href="products.html?cat=todo">TODO</a>
                 <a href="como-comprar.html">CÓMO COMPRAR</a>
                 <a href="conocenos.html">CONÓCENOS</a>

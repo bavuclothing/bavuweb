@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BAVU | Catálogo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Cabecera limpia y ultracompacta */
+        .catalog-clean-header {
+            padding: 50px 5% 15px;
+            text-align: center;
+            background: transparent;
+        }
+        .catalog-clean-header h1 {
+            font-size: 2rem;
+            font-weight: 900;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            margin: 0;
+            color: var(--text-body);
+        }
+        
+        /* Contenedor de la estructura híbrida modular */
+        .catalog-hybrid-layout {
+            width: 90%;
+            max-width: 1400px;
+            margin: 0 auto 60px;
+        }
+
+        /* Títulos de los bloques de secciones */
+        .section-block-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin: 45px 0 20px 0;
+            color: var(--text-body);
+            border-left: 3px solid var(--accent);
+            padding-left: 12px;
+        }
+
+        /* Rejillas responsivas (2 columnas en móvil / 4 columnas en PC) */
+        .products-responsive-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            width: 100%;
+        }
+
+        @media (min-width: 900px) {
+            .products-responsive-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .products-responsive-grid .product-card {
+                max-width: 100% !important;
+            }
+            .products-responsive-grid .product-card .product-info h3 {
+                font-size: 0.8rem;
+            }
+            .products-responsive-grid .product-card .btn-order {
+                font-size: 0.7rem;
+                padding: 8px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="header-container"></div>
+
+    <header class="catalog-clean-header">
+        <h1 id="catalogTitle">COLECCIÓN</h1>
+    </header>
+
+    <main class="catalog-hybrid-layout">
+        
+        <!-- 1. Carrusel de 'En descuento' -->
+        <section id="saleCarouselContainer">
+            <!-- 🌟 Añadido id="titleSale" -->
+            <h2 class="section-block-title" id="titleSale">En Descuento</h2>
+            <div class="carousel-container">
+                <div class="carousel" id="saleCarouselWrapper"></div>
+            </div>
+        </section>
+
+        <!-- 2. Primera Lista en Rejilla -->
+        <section id="grid1Container">
+            <!-- 🌟 Añadido id="titleGrid1" -->
+            <h2 class="section-block-title" id="titleGrid1">Línea Técnica</h2>
+            <div class="products-responsive-grid" id="grid1Wrapper"></div>
+        </section>
+
+        <!-- 3. Carrusel de 'Destacados' -->
+        <section id="featuredCarouselContainer">
+            <!-- 🌟 Añadido id="titleFeatured" -->
+            <h2 class="section-block-title" id="titleFeatured">Destacados</h2>
+            <div class="carousel-container">
+                <div class="carousel" id="featuredCarouselWrapper"></div>
+            </div>
+        </section>
+
+        <!-- 4. Segunda Lista en Rejilla -->
+        <section id="grid2Container">
+            <!-- 🌟 Añadido id="titleGrid2" -->
+            <h2 class="section-block-title" id="titleGrid2">Básicos Esenciales</h2>
+            <div class="products-responsive-grid" id="grid2Wrapper"></div>
+        </section>
+
+    </main>
+
+    <div id="footer-container"></div>
+
+    <script src="components.js"></script>
+    <script src="products-data.js"></script>
+    <script>
+        renderHeader('static-nav', true);
+        renderFooter();
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const category = urlParams.get('cat');
+        const catalogTitle = document.getElementById('catalogTitle');
+
+        // 🧠 DEFINICIÓN DE TÍTULOS PREDETERMINADOS (Si entran desde "TODO")
+        let sectionTitles = {
+            sale: "Ofertas Especiales",
+            grid1: "Línea de Compresión",
+            featured: "Novedades Drop 01",
+            grid2: "Colección Completa"
+        };
+
+        // Cambiar títulos y configuraciones según el género activo
+        if (category === 'hombre') {
+            document.title = "BAVU | Colección Hombre";
+            catalogTitle.textContent = "COLECCIÓN HOMBRE";
+            
+            // 🎯 Títulos específicos para ELLOS
+            sectionTitles.sale = "Liquidación de Temporada";
+            sectionTitles.grid1 = "Compresión Taper Pro";
+            sectionTitles.featured = "Top Ventas Masculino";
+            sectionTitles.grid2 = "Camisetas & Sudaderas Heavyweight";
+
+        } else if (category === 'mujer') {
+            document.title = "BAVU | Colección Mujer";
+            catalogTitle.textContent = "COLECCIÓN MUJER";
+            
+            // 🎯 Títulos específicos para ELLAS
+            sectionTitles.sale = "Promociones Exclusivas";
+            sectionTitles.grid1 = "Conjuntos Seamless / Sin Costuras";
+            sectionTitles.featured = "Sujetadores & Tops Esenciales";
+            sectionTitles.grid2 = "Mallas & Shorts Deportivos";
+        } else {
+            catalogTitle.textContent = "CATÁLOGO COMPLETO";
+        }
+
+        // ⚡ INYECCIÓN DE LOS TÍTULOS DINÁMICOS EN EL HTML
+        document.getElementById('titleSale').textContent = sectionTitles.sale;
+        document.getElementById('titleGrid1').textContent = sectionTitles.grid1;
+        document.getElementById('titleFeatured').textContent = sectionTitles.featured;
+        document.getElementById('titleGrid2').textContent = sectionTitles.grid2;
+
+        // Filtro de validación cruzada por género
+        const productMatchesCategory = (product) => {
+            if (category === 'hombre') return product.forMen;
+            if (category === 'mujer') return product.forWomen;
+            return true;
+        };
+
+        // 🎯 PANEL DE CONTROL GENERAL DE TU CATÁLOGO POR ID
+        const chosenForSaleCarousel = ["taper-tank-blackout", "taper-tank-burgundy", "split-short-grey"];
+        const chosenForGrid1 = ["taper_baselayer", "taper-tee-shadow", "taper-tee-ash", "taper-halfzip-forest"];
+        const chosenForFeaturedCarousel = ["heavy-hoodie-blackout", "bra-longline-lilac", "seamless-short-lilac"];
+        const chosenForGrid2 = ["heavy-tee-blackout", "heavy-tee-olive", "heavy-tee-white", "essential-socks-white", "seamless-crop-onyx", "seamless-legging-onyx", "bra-onyx"];
+
+        // 🛠️ Función Helper para inyectar tarjetas de forma controlada[cite: 19]
+        function renderSectionProducts(idArray, targetWrapperId, sectionContainerId) {
+            const wrapper = document.getElementById(targetWrapperId);
+            const container = document.getElementById(sectionContainerId);
+            let activeItemsCount = 0;
+
+            idArray.forEach(id => {
+                const product = BAVU_INVENTORY.find(p => p.id === id);
+                if (product && productMatchesCategory(product)) {
+                    activeItemsCount++;
+                    const card = document.createElement('div');
+                    card.className = 'product-card';
+                    const cleanTitle = product.title.replace('<br>', ' ');
+                    card.innerHTML = `
+                        <img src="${product.mainImage}" alt="${cleanTitle}" class="product-img">
+                        <div class="product-info">
+                            <h3>${product.title}</h3>
+                            <span class="price">${product.price}</span>
+                            <a href="product.html?id=${product.id}" class="btn-order">Ver Detalles</a>
+                        </div>
+                    `;
+                    wrapper.appendChild(card);
+                }
+            });
+
+            if (activeItemsCount === 0 && container) {
+                container.style.display = 'none';
+            }
+        }
+
+        // 🚀 Ejecución del mapeo dinámico de las 4 secciones
+        renderSectionProducts(chosenForSaleCarousel, "saleCarouselWrapper", "saleCarouselContainer");
+        renderSectionProducts(chosenForGrid1, "grid1Wrapper", "grid1Container");
+        renderSectionProducts(chosenForFeaturedCarousel, "featuredCarouselWrapper", "featuredCarouselContainer");
+        renderSectionProducts(chosenForGrid2, "grid2Wrapper", "grid2Container");
+
+    </script>
+</body>
+</html>

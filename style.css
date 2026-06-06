@@ -8,7 +8,7 @@
 
     /* Tema por Defecto (Modo Oscuro) */
     --bg-body: var(--black);
-    --text-body: var(--white);
+    --text-body: #b5b5b5;
     --bg-card: var(--dark-gray);
     --border-color: #222222;
     --border-spec: #1a1a1a;
@@ -830,11 +830,10 @@ nav {
 
 /* Bloque de Bienvenida */
 .welcome-block {
-    text-align: center;
     padding: 130px 5% 20px; /* Margen superior amplio para salvar el menú fijo */
 }
 .welcome-block h1 {
-    font-size: 2.2rem;
+    font-size: 1.2rem;
     font-weight: 900;
     letter-spacing: 4px;
     text-transform: uppercase;
