@@ -897,3 +897,50 @@ nav {
         padding: 8px 10px !important;
     }
 }
+
+/* ==========================================================================
+   MEJORAS DE STOCK (TALLAS AGOTADAS) Y BOTÓN DE ACCESO
+   ========================================================================== */
+
+/* Cajas de talla sin stock */
+.size-box.out-of-stock {
+    position: relative;
+    color: #555555 !important;
+    border-color: var(--border-color) !important;
+    cursor: not-allowed !important;
+    opacity: 0.3;
+    background: transparent !important;
+    text-decoration: line-through; /* Tapa el carácter con una línea horizontal limpia */
+}
+
+@media (prefers-color-scheme: light) {
+    .size-box.out-of-stock {
+        color: #b0b0b0 !important;
+    }
+}
+
+/* Envoltura y Estilos del Botón 'Ver todo el catálogo' */
+.view-all-container {
+    text-align: center;
+    margin-top: 45px;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.btn-view-all {
+    display: inline-block;
+    color: var(--text-body);
+    text-decoration: underline;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.85rem;
+    /* border: 1px solid var(--text-body); */
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    border-radius: 2px;
+}
+
+.btn-view-all:hover {
+    background: transparent;
+    color: var(--text-body);
+}

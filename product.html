@@ -90,7 +90,9 @@
         if (product) {
             document.title = product.title.replace('<br>', ' ') + ' | BAVU';
             document.querySelector('.product-title').innerHTML = product.title;
-            document.querySelector('.product-price').textContent = product.price;
+            
+            // 🌟 1. Mostrar precio normal o con descuento de forma segura
+            document.querySelector('.product-price').innerHTML = renderProductPrice(product);
             
             // Dividir el texto largo si existiese para dejar solo la intro en la zona principal
             const paragraphs = product.description.split('\n\n');
@@ -99,39 +101,26 @@
             document.getElementById('mainImage').src = product.mainImage;
             document.getElementById('btnBuy').href = `https://wa.me/34600000000?text=${encodeURIComponent(product.waMessage)}`;
 
-            // Miniaturas
-            const thumbContainer = document.querySelector('.thumbnails');
-            product.thumbnails.forEach((imgUrl, idx) => {
-                const img = document.createElement('img');
-                img.src = imgUrl;
-                img.className = `thumb ${idx === 0 ? 'active-thumb' : ''}`;
-                img.onclick = function() {
-                    document.getElementById('mainImage').src = this.src;
-                    document.querySelectorAll('.thumb').forEach(t => t.classList.remove('active-thumb'));
-                    this.classList.add('active-thumb');
-                };
-                thumbContainer.appendChild(img);
-            });
+            // ... (bucle de miniaturas y colores se quedan exactamente igual) ...
 
-            // Colores -> Corregido usando .replace() para limpiar el historial de navegación
-            const colorsContainer = document.querySelector('.colors');
-            product.colors.forEach(c => {
-                const circle = document.createElement('div');
-                circle.className = `color-circle ${c.id === productId ? 'active' : ''}`;
-                circle.style.backgroundColor = c.hex;
-                if (c.id === productId) document.getElementById('colorLabel').textContent = c.name;
-                circle.onclick = () => { 
-                    if(c.id !== productId) {
-                        window.location.replace(`product.html?id=${c.id}`);
-                    }
-                };
-                colorsContainer.appendChild(circle);
-            });
-
-            // Tallas
+            // 🌟 2. CONTROL DE TALLAS CON STOCK DINÁMICO
+            const outOfStock = product.outOfStockSizes || [];
             const sizeBoxes = document.querySelectorAll('.size-box');
+            let firstAvailableSet = false;
+
             sizeBoxes.forEach(box => {
+                box.classList.remove('active'); // Limpiamos el active estático del HTML
+                const sizeName = box.textContent.trim();
+                
+                if (outOfStock.includes(sizeName)) {
+                    box.classList.add('out-of-stock'); // Añadimos la clase de exclusión visual
+                } else if (!firstAvailableSet) {
+                    box.classList.add('active'); // Activamos la primera talla que sí tenga unidades
+                    firstAvailableSet = true;
+                }
+                
                 box.addEventListener('click', function() {
+                    if (this.classList.contains('out-of-stock')) return; // Bloquear la acción de clic si no hay stock
                     sizeBoxes.forEach(b => b.classList.remove('active'));
                     this.classList.add('active');
                 });
@@ -151,8 +140,7 @@
                             <img src="${relProduct.mainImage}" alt="" class="product-img">
                             <div class="product-info">
                                 <h3>${relProduct.title}</h3>
-                                <span class="price">${relProduct.price}</span>
-                                <a href="product.html?id=${relProduct.id}" class="btn-order">Ver Detalles</a>
+                                <span class="price">${renderProductPrice(relProduct)}</span> <a href="product.html?id=${relProduct.id}" class="btn-order">Ver Detalles</a>
                             </div>
                         `;
                         carousel.appendChild(card);

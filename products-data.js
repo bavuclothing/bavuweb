@@ -3,6 +3,8 @@ const BAVU_INVENTORY = [
         id: "taper_baselayer",
         title: "Taper Baselayer<br>Charcoal",
         price: "20.90 €",
+        discount: 0, 
+        outOfStockSizes: [],
         description: `Una prenda de compresión técnica diseñada para ofrecer soporte muscular y optimizar la ventilación en los entrenamientos más exigentes. Su patrón estructurado combina estética underground y rendimiento funcional.
 
 ​Ajuste Taper Pro: Patrón ceñido de alta elasticidad que se adapta al contorno del torso, proporcionando una compresión uniforme que asiste a la postura y reduce la vibración muscular en levantamientos pesados.
@@ -27,6 +29,8 @@ const BAVU_INVENTORY = [
         id: "taper-tee-shadow",
         title: "Taper Compression Tee<br>Shadow Grey",
         price: "18.90 €",
+        discount: 0, 
+        outOfStockSizes: [],
         description: `Una camiseta de compresión de manga corta desarrollada para entrenamientos de alta intensidad. Su diseño de paneles anatómicos en contraste ofrece un ajuste de tipo segunda piel que optimiza el confort térmico y realza la línea estructural del torso.
 
 Patrón V-Shape Estructurado: Corte técnico con paneles laterales y superiores en contraste que entallan visualmente la cintura y expanden la línea de los hombros, favoreciendo una silueta atlética sin restringir el rango de movimiento.
@@ -54,6 +58,8 @@ Costuras Flatlock Flexibles: Costuras planas reforzadas de perfil bajo que acomp
         id: "taper-tee-ash",
         title: "Taper Compression Tee<br>Ash Grey",
         price: "18.90 €",
+        discount: 0, 
+        outOfStockSizes: [],
         description: `Una camiseta de compresión de manga corta desarrollada para entrenamientos de alta intensidad. Su diseño de paneles anatómicos en contraste ofrece un ajuste de tipo segunda piel que optimiza el confort térmico y realza la línea estructural del torso.
 
 Patrón V-Shape Estructurado: Corte técnico con paneles laterales y superiores en contraste que entallan visualmente la cintura y expanden la línea de los hombros, favoreciendo una silueta atlética sin restringir el rango de movimiento.
@@ -81,6 +87,8 @@ Costuras Flatlock Flexibles: Costuras planas reforzadas de perfil bajo que acomp
         id: "taper-tank-blackout",
         title: "Ribbed Tank<br>Blackout",
         price: "11.90 €",
+        discount: 10, 
+        outOfStockSizes: ["M","XL"],
         description: `Una camiseta de tirantes de corte atlético confeccionada en tejido acanalado de alta elasticidad. Su patrón está diseñado específicamente para liberar la articulación del hombro y acentuar la línea de la espalda en entrenamientos de tracción.
 
 Tejido Acanalado de Alta Recuperación: Confeccionada con un punto acanalado (rib) premium de gramaje medio. Su estructura elástica vertical permite que la prenda se ciña al cuerpo sin apretar y, lo más importante, recupera su forma original tras el lavado sin estirarse ni quedar holgada.
@@ -106,6 +114,8 @@ Algodón Elástico Transpirable: Combinación de fibras que aporta un tacto suav
         id: "taper-tank-burgundy",
         title: "Ribbed Tank<br>Oxblood",
         price: "11.90 €",
+        discount: 0, 
+        outOfStockSizes: [],
         description: `Una camiseta de tirantes de corte atlético confeccionada en tejido acanalado de alta elasticidad. Su patrón está diseñado específicamente para liberar la articulación del hombro y acentuar la línea de la espalda en entrenamientos de tracción.
 
 Tejido Acanalado de Alta Recuperación: Confeccionada con un punto acanalado (rib) premium de gramaje medio. Su estructura elástica vertical permite que la prenda se ciña al cuerpo sin apretar y, lo más importante, recupera su forma original tras el lavado sin estirarse ni quedar holgada.
@@ -131,6 +141,8 @@ Algodón Elástico Transpirable: Combinación de fibras que aporta un tacto suav
         id: "taper-halfzip-forest",
         title: "Half-Zip<br>Forest Green",
         price: "26.90 €",
+        discount: 25, 
+        outOfStockSizes: ["S"],
         description: `Una sudadera técnica de ajuste atlético que combina compresión ligera, aislamiento térmico y gestión eficiente de la humedad. Su patrón estructurado con media cremallera y capucha de perfil bajo la convierte en la prenda idónea para transiciones de temporada o fases de calentamiento intenso.
 
 Cierre de Media Cremallera (Half-Zip): Incorpora una cremallera frontal invertida con tirador reforzado que permite regular la ventilación de forma instantánea a medida que sube la intensidad del entrenamiento.
@@ -158,6 +170,8 @@ Costuras Activas Reforzadas: Costuras planas distribuidas de manera anatómica p
         id: "split-short-black",
         title: "Split Mesh Short<br>Jet Black",
         price: "12.90 €",
+        discount: 0, 
+        outOfStockSizes: [],
         description: `Un pantalón corto de entrenamiento técnico desarrollado específicamente para maximizar el rango de movimiento. Su estructura de malla ligera y su icónica apertura lateral lo convierten en la prenda definitiva para sesiones pesadas de pierna.
 
 Tejido Mesh de Alta Transpiración: Confeccionado con una malla microperforada de alta resistencia que permite un flujo de aire constante, manteniendo la prenda ligera, seca y libre de humedad incluso en entrenamientos intensos.
@@ -183,6 +197,8 @@ Bolsillos Laterales Funcionales: Dos bolsillos de corte vertical integrados en l
         id: "split-short-grey",
         title: "Split Mesh Short<br>Iron Grey",
         price: "12.90 €",
+        discount: 0, 
+        outOfStockSizes: [],
         description: `Un pantalón corto de entrenamiento técnico desarrollado específicamente para maximizar el rango de movimiento. Su estructura de malla ligera y su icónica apertura lateral lo convierten en la prenda definitiva para sesiones pesadas de pierna.
 
 Tejido Mesh de Alta Transpiración: Confeccionado con una malla microperforada de alta resistencia que permite un flujo de aire constante, manteniendo la prenda ligera, seca y libre de humedad incluso en entrenamientos intensos.
@@ -208,6 +224,8 @@ Bolsillos Laterales Funcionales: Dos bolsillos de corte vertical integrados en l
         id: "heavy-tee-blackout",
         title: "Heavyweight Oversized Tee<br>Obsidian Black",
         price: "15.90 €",
+        discount: 0, 
+        outOfStockSizes: [],
         description: `Una camiseta de corte marcadamente oversize y silueta cuadrada (boxy fit), confeccionada en algodón pesado de máxima durabilidad. Diseñada para ofrecer comodidad total, volumen estético y una caída limpia que mantiene la forma en cualquier situación.
 
 Algodón Heavyweight Premium: Tejido de alto gramaje que aporta un tacto robusto, cuerpo a la prenda y una caída pesada excelente. Resiste el uso diario y los lavados intensivos sin perder su estructura.
@@ -234,6 +252,8 @@ Opacidad y Densidad Total: Su trenzado denso asegura que la prenda sea completam
         id: "heavy-tee-olive",
         title: "Heavyweight Oversized Tee<br>Olive Green",
         price: "15.90 €",
+        discount: 0, 
+        outOfStockSizes: [],
         description: `Una camiseta de corte marcadamente oversize y silueta cuadrada (boxy fit), confeccionada en algodón pesado de máxima durabilidad. Diseñada para ofrecer comodidad total, volumen estético y una caída limpia que mantiene la forma en cualquier situación.
 
 Algodón Heavyweight Premium: Tejido de alto gramaje que aporta un tacto robusto, cuerpo a la prenda y una caída pesada excelente. Resiste el uso diario y los lavados intensivos sin perder su estructura.
@@ -260,6 +280,8 @@ Opacidad y Densidad Total: Su trenzado denso asegura que la prenda sea completam
         id: "heavy-tee-white",
         title: "Heavyweight Oversized Tee<br>Pure White",
         price: "15.90 €",
+        discount: 0, 
+        outOfStockSizes: [],
         description: `Una camiseta de corte marcadamente oversize y silueta cuadrada (boxy fit), confeccionada en algodón pesado de máxima durabilidad. Diseñada para ofrecer comodidad total, volumen estético y una caída limpia que mantiene la forma en cualquier situación.
 
 Algodón Heavyweight Premium: Tejido de alto gramaje que aporta un tacto robusto, cuerpo a la prenda y una caída pesada excelente. Resiste el uso diario y los lavados intensivos sin perder su estructura.
@@ -286,6 +308,8 @@ Opacidad y Densidad Total: Su trenzado denso asegura que la prenda sea completam
         id: "heavy-hoodie-blackout",
         title: "Heavyweight Oversized Hoodie<br>Obsidian Black",
         price: "29.90 €",
+        discount: 0, 
+        outOfStockSizes: [],
         description: `Una sudadera con capucha de silueta marcadamente oversize y estructura cuadrada (boxy fit), confeccionada en felpa de algodón pesado de máximo gramaje. Desarrollada para ofrecer aislamiento térmico, un confort masivo y una caída rígida que mantiene el volumen estético de la prenda.
 
 Felpa Heavyweight de Alto Gramaje: Tejido interior cepillado de alta densidad que retiene el calor corporal de forma óptima y dota a la sudadera de un cuerpo robusto. Resiste lavados continuos sin perder su grosor ni su suavidad interna.<br>
@@ -308,6 +332,8 @@ Bolsillo Canguro y Ajustes Reforzados: Amplio bolsillo frontal integrado para ma
         id: "essential-socks-white",
         title: "Essential Crew Socks<br>Pure White",
         price: "4.90 €",
+        discount: 0, 
+        outOfStockSizes: [],
         description: `Calcetines deportivos de caña alta diseñados específicamente para el entrenamiento de fuerza. Su estructura combina un tejido de compresión superior que evita deslizamientos con una base amortiguada que protege el pie en cada levantamiento.
 
 Caña Acanalada Anti-Deslizamiento: Tejido elástico en canalé (ribbed) de ajuste firme que abraza la pantorrilla. Garantiza que el calcetín permanezca extendido en su posición superior durante toda la sesión, sin bajarse ni arrugarse.
@@ -332,6 +358,8 @@ Panel Superior Transpirable: Zona del empeine confeccionada con un punto texturi
         id: "seamless-crop-onyx",
         title: "Seamless Crop Tee<br>Onyx Black",
         price: "14.90 €",
+        discount: 0, 
+        outOfStockSizes: [],
         description: `Una camiseta corta de rendimiento técnico fabricada con tecnología sin costuras. Su estructura elástica de alta compresión proporciona un ajuste firme de tipo segunda piel, optimizando la sujeción y el confort en rutinas de torso o entrenamientos de alta intensidad.
 
 Construcción Seamless Inteligente: Confeccionada en un solo bloque cilíndrico de tejido sin costuras laterales. Elimina por completo cualquier tipo de fricción, rozadura o molestia sobre la piel durante movimientos repetitivos.
@@ -358,6 +386,8 @@ Manga Ranglán con Mapeo de Transpiración: Microperforaciones estéticas en la 
         id: "seamless-crop-wine",
         title: "Seamless Crop Tee<br>Berry Wine",
         price: "14.90 €",
+        discount: 0, 
+        outOfStockSizes: [],
         description: `Una camiseta corta de rendimiento técnico fabricada con tecnología sin costuras. Su estructura elástica de alta compresión proporciona un ajuste firme de tipo segunda piel, optimizando la sujeción y el confort en rutinas de torso o entrenamientos de alta intensidad.
 
 Construcción Seamless Inteligente: Confeccionada en un solo bloque cilíndrico de tejido sin costuras laterales. Elimina por completo cualquier tipo de fricción, rozadura o molestia sobre la piel durante movimientos repetitivos.
@@ -384,6 +414,8 @@ Manga Ranglán con Mapeo de Transpiración: Microperforaciones estéticas en la 
         id: "seamless-crop-lilac",
         title: "Seamless Crop Tee<br>Pastel Lilac",
         price: "14.90 €",
+        discount: 0, 
+        outOfStockSizes: [],
         description: `Una camiseta corta de rendimiento técnico fabricada con tecnología sin costuras. Su estructura elástica de alta compresión proporciona un ajuste firme de tipo segunda piel, optimizando la sujeción y el confort en rutinas de torso o entrenamientos de alta intensidad.
 
 Construcción Seamless Inteligente: Confeccionada en un solo bloque cilíndrico de tejido sin costuras laterales. Elimina por completo cualquier tipo de fricción, rozadura o molestia sobre la piel durante movimientos repetitivos.
@@ -410,6 +442,8 @@ Manga Ranglán con Mapeo de Transpiración: Microperforaciones estéticas en la 
         id: "seamless-short-onyx",
         title: "Seamless Biker Short<br>Onyx Black",
         price: "15.90 €",
+        discount: 0, 
+        outOfStockSizes: [],
         description: `Un pantalón corto de estilo ciclista desarrollado en tejido de compresión sin costuras. Su longitud intermedia y su pretina de alta sujeción garantizan que la prenda permanezca fija en su lugar durante entrenamientos dinámicos, ofreciendo total cobertura y confort térmico.
 
 Cintura Alta Anti-Deslizamiento (High-Waist): Pretina elástica de doble capa y compresión media-alta que abraza la zona abdominal de manera firme. Ofrece un soporte seguro que no se enrolla ni se desplaza hacia abajo al hacer ejercicio.
@@ -436,6 +470,8 @@ Tejido Elástico Squat-Proof: Punto denso confeccionado en cuatro direcciones qu
         id: "seamless-short-wine",
         title: "Seamless Biker Short<br>Berry Wine",
         price: "15.90 €",
+        discount: 0, 
+        outOfStockSizes: [],
         description: `Un pantalón corto de estilo ciclista desarrollado en tejido de compresión sin costuras. Su longitud intermedia y su pretina de alta sujeción garantizan que la prenda permanezca fija en su lugar durante entrenamientos dinámicos, ofreciendo total cobertura y confort térmico.
 
 Cintura Alta Anti-Deslizamiento (High-Waist): Pretina elástica de doble capa y compresión media-alta que abraza la zona abdominal de manera firme. Ofrece un soporte seguro que no se enrolla ni se desplaza hacia abajo al hacer ejercicio.
@@ -462,6 +498,8 @@ Tejido Elástico Squat-Proof: Punto denso confeccionado en cuatro direcciones qu
         id: "seamless-short-lilac",
         title: "Seamless Biker Short<br>Pastel Lilac",
         price: "15.90 €",
+        discount: 0, 
+        outOfStockSizes: [],
         description: `Un pantalón corto de estilo ciclista desarrollado en tejido de compresión sin costuras. Su longitud intermedia y su pretina de alta sujeción garantizan que la prenda permanezca fija en su lugar durante entrenamientos dinámicos, ofreciendo total cobertura y confort térmico.
 
 Cintura Alta Anti-Deslizamiento (High-Waist): Pretina elástica de doble capa y compresión media-alta que abraza la zona abdominal de manera firme. Ofrece un soporte seguro que no se enrolla ni se desplaza hacia abajo al hacer ejercicio.
@@ -488,6 +526,8 @@ Tejido Elástico Squat-Proof: Punto denso confeccionado en cuatro direcciones qu
         id: "seamless-legging-onyx",
         title: "Seamless Leggings<br>Onyx Black",
         price: "22.90 €",
+        discount: 0, 
+        outOfStockSizes: [],
         description: `Mallas técnicas de compresión y largo completo desarrolladas con tecnología sin costuras. Diseñadas para actuar como una segunda piel protectora, combinan una estructura de alta sujeción abdominal con un tejido flexible que acompaña el movimiento en levantamientos pesados.
 
 Pretina Compresiva de Tiro Alto: Banda elástica de doble grosor que ciñe la zona del abdomen medio, garantizando una sujeción firme y segura. Su estructura técnica evita que la prenda se deslice o se enrolle durante zancadas, carreras o saltos.
@@ -514,6 +554,8 @@ Ajuste Ergonómico Sin Costuras Laterales: Construcción cilíndrica limpia que 
         id: "seamless-legging-wine",
         title: "Seamless Leggings<br>Berry Wine",
         price: "22.90 €",
+        discount: 0, 
+        outOfStockSizes: [],
         description: `Mallas técnicas de compresión y largo completo desarrolladas con tecnología sin costuras. Diseñadas para actuar como una segunda piel protectora, combinan una estructura de alta sujeción abdominal con un tejido flexible que acompaña el movimiento en levantamientos pesados.
 
 Pretina Compresiva de Tiro Alto: Banda elástica de doble grosor que ciñe la zona del abdomen medio, garantizando una sujeción firme and segura. Su estructura técnica evita que la prenda se deslice o se enrolle durante zancadas, carreras o saltos.
@@ -540,6 +582,8 @@ Ajuste Ergonómico Sin Costuras Laterales: Construcción cilíndrica limpia que 
         id: "seamless-legging-lilac",
         title: "Seamless Leggings<br>Pastel Lilac",
         price: "22.90 €",
+        discount: 0, 
+        outOfStockSizes: [],
         description: `Mallas técnicas de compresión y largo completo desarrolladas con tecnología sin costuras. Diseñadas para actuar como una segunda piel protectora, combinan una estructura de alta sujeción abdominal con un tejido flexible que acompaña el movimiento en levantamientos pesados.
 
 Pretina Compresiva de Tiro Alto: Banda elástica de doble grosor que ciñe la zona del abdomen medio, garantizando una sujeción firme and segura. Su estructura técnica evita que la prenda se deslice o se enrolle durante zancadas, carreras o saltos.
@@ -566,6 +610,8 @@ Ajuste Ergonómico Sin Costuras Laterales: Construcción cilíndrica limpia que 
         id: "bra-onyx",
         title: "Adapt Sports Bra<br>Onyx Black",
         price: "16.90 €",
+        discount: 0, 
+        outOfStockSizes: [],
         description: `Un sujetador deportivo de impacto medio-alto diseñado para ofrecer un soporte firme y una libertad de movimiento absoluta. Su patrón ergonómico destaca por una estructura trasera que optimiza la ventilación y realza la línea muscular de la espalda.
 
 Estructura de Tirantes Cruzados: Diseño de tirantes finos entrelazados en la espalda que distribuyen el peso de manera uniforme sobre los hombros, reduciendo la presión en la zona del cuello durante entrenamientos intensos.
@@ -591,6 +637,8 @@ Banda Inferior Reforzada: Pretina elástica ancha situada bajo el busto que fija
         id: "bra-emerald",
         title: "Adapt Sports Bra<br>Forest Green",
         price: "16.90 €",
+        discount: 0, 
+        outOfStockSizes: [],
         description: `Un sujetador deportivo de impacto medio-alto diseñado para ofrecer un soporte firme y una libertad de movimiento absoluta. Su patrón ergonómico destaca por una estructura trasera que optimiza la ventilación y realza la línea muscular de la espalda.
 
 Estructura de Tirantes Cruzados: Diseño de tirantes finos entrelazados en la espalda que distribuyen el peso de manera uniforme sobre los hombros, reduciendo la presión en la zona del cuello durante entrenamientos intensos.
@@ -616,6 +664,8 @@ Banda Inferior Reforzada: Pretina elástica ancha situada bajo el busto que fija
         id: "bra-longline-onyx",
         title: "Essence Longline Bra<br>Onyx Black",
         price: "16.90 €",
+        discount: 0, 
+        outOfStockSizes: [],
         description: `Un sujetador deportivo de silueta alargada y soporte de impacto medio. Diseñado con un patrón limpio y minimalista, su estructura ofrece una cobertura ampliada que permite utilizarlo de forma independiente como un top corto de entrenamiento.
 
 Silueta Longline de Cobertura Ampliada: Banda inferior ensanchada que se extiende hacia la boca del estómago. Aporta una sujeción uniforme en todo el contorno del torso, distribuye la presión de manera eficiente y evita que la prenda se suba durante el movimiento.
@@ -641,6 +691,8 @@ Tejido Técnico Ultra-Suave: Confeccionado con un hilado de tacto aterciopelado 
         id: "bra-longline-lilac",
         title: "Essence Longline Bra<br>Pastel Lilac",
         price: "16.90 €",
+        discount: 0, 
+        outOfStockSizes: [],
         description: `Un sujetador deportivo de silueta alargada y soporte de impacto medio. Diseñado con un patrón limpio y minimalista, su estructura ofrece una cobertura ampliada que permite utilizarlo de forma independiente como un top corto de entrenamiento.
 
 Silueta Longline de Cobertura Ampliada: Banda inferior ensanchada que se extiende hacia la boca del estómago. Aporta una sujeción uniforme en todo el contorno del torso, distribuye la presión de manera eficiente y evita que la prenda se suba durante el movimiento.
@@ -663,3 +715,18 @@ Tejido Técnico Ultra-Suave: Confeccionado con un hilado de tacto aterciopelado 
         relatedProducts: ["bra-longline-onyx", "seamless-legging-lilac", "seamless-short-lilac"]
     }
 ];
+
+
+// 🌟 FUNCIÓN GLOBAL DE RENDERIZADO DE PRECIOS CON DESCUENTOS AUTOMÁTICOS
+function renderProductPrice(product) {
+    if (product.discount && product.discount > 0) {
+        const originalPrice = parseFloat(product.price);
+        const finalPrice = originalPrice * (1 - product.discount / 100);
+        return `
+            <span class="price-original" style="text-decoration: line-through; opacity: 0.5; margin-right: 8px; font-size: 0.85em;">${product.price}</span>
+            <span class="price-discounted" style="font-weight: 700; color: #e53e3e;">${finalPrice.toFixed(2)} €</span>
+            <span class="discount-tag" style="background: #e53e3e; color: white; padding: 2px 5px; font-size: 0.7rem; font-weight: 900; margin-left: 4px; border-radius: 2px; display: inline-block; transform: translateY(-1px); text-transform: uppercase;">-${product.discount}%</span>
+        `;
+    }
+    return `<span class="price-normal">${product.price}</span>`;
+}

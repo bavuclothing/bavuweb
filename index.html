@@ -61,6 +61,12 @@
             <div class="products-responsive-grid" id="gridHomeFinal"></div>
         </section>
 
+        <section class="grid-section" style="margin-top: 60px;">            
+            <div class="view-all-container">
+                <a href="products.html?cat=todo" class="btn-view-all">Ver todo</a>
+            </div>
+        </section>
+
     </main>
 
     <div id="footer-container"></div>
@@ -103,8 +109,7 @@
                         <img src="${product.mainImage}" alt="${cleanTitle}" class="product-img">
                         <div class="product-info">
                             <h3>${product.title}</h3>
-                            <span class="price">${product.price}</span>
-                            <a href="product.html?id=${product.id}" class="btn-order">Ver Detalles</a>
+                            <span class="price">${renderProductPrice(product)}</span> <a href="product.html?id=${product.id}" class="btn-order">Ver Detalles</a>
                         </div>
                     `;
                     container.appendChild(card);
