@@ -154,6 +154,7 @@ body {
 @media (prefers-color-scheme: light) {
     .product-description, .step p, .spec-block p, .price, .category-header span {
         color: #4a5568 !important;
+        margin-top: 2.5vh;
     }
     .breadcrumb, .location {
         color: #718096 !important;
@@ -440,7 +441,7 @@ body {
 .breadcrumb { font-size: 0.8rem; color: #666; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px; }
 .product-title { font-size: 2.5rem; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; line-height: 1.1; }
 .product-price { font-size: 1.5rem; color: var(--accent); font-weight: 700; margin-bottom: 30px; }
-.product-description { color: #aaa; white-space: pre-line; font-size: 1rem; margin-bottom: 40px; font-weight: 300; }
+.product-description { color: #aaa; white-space: pre-line; font-size: 1rem; margin-bottom: 0px; margin-top: 2.5vh; font-weight: 300; }
 .color-section { margin-bottom: 25px; }
 .color-section h4 { text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; margin-bottom: 15px; }
 .color-name-label { color: var(--accent); font-weight: normal; }
@@ -614,7 +615,6 @@ footer {
 
 /* --- PRODUCTOS RELACIONADOS --- */
 .related-section {
-    margin-top: 80px;
     border-top: 1px solid #222;
     padding-top: 50px;
 }
