@@ -84,6 +84,10 @@
         color: var(--accent) !important;
         padding-left: 10px;
     }
+    .main-image{
+        background-color: #ffffff;
+        border-color: #ffffff;
+    }
 }
 
 * {
