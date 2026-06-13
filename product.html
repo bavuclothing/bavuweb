@@ -44,6 +44,10 @@
                 </div>
             </div>
 
+            <a href="#" class="btn-order" target="_blank" id="btnBuy" style="text-align: center; font-size: 1rem; padding: 15px;">
+                <i class="fab fa-whatsapp"></i> Hacer Pedido por WhatsApp
+            </a>
+            
             <p class="product-description" style="white-space: pre-line; margin-bottom: 25px; color: #bbb;"></p>
 
             <div class="product-spec-accordion">
@@ -60,10 +64,6 @@
                     <p>Haces el pedido directo vía WhatsApp con nosotros para confirmar tu talla y agilizar el despacho sin esperas.</p>
                 </div>
             </div>
-
-            <a href="#" class="btn-order" target="_blank" id="btnBuy" style="text-align: center; font-size: 1rem; padding: 15px;">
-                <i class="fab fa-whatsapp"></i> Hacer Pedido por WhatsApp
-            </a>
         </div>
     </main>
 
@@ -79,7 +79,7 @@
     <script src="components.js"></script>
     <script src="products-data.js"></script>
     <script>
-        // Eliminado el parámetro true para borrarlo del medio del Header global
+        // Renderizado de cabecera limpia y pie de página
         renderHeader('static-nav'); 
         renderFooter();
 
@@ -91,42 +91,93 @@
             document.title = product.title.replace('<br>', ' ') + ' | BAVU';
             document.querySelector('.product-title').innerHTML = product.title;
             
-            // 🌟 1. Mostrar precio normal o con descuento de forma segura
+            // 1. Mostrar precio normal o con descuento de forma automatizada
             document.querySelector('.product-price').innerHTML = renderProductPrice(product);
             
-            // Dividir el texto largo si existiese para dejar solo la intro en la zona principal
+            // Mostrar texto de la descripción principal
             const paragraphs = product.description.split('\n\n');
             document.querySelector('.product-description').textContent = paragraphs[0];
 
             document.getElementById('mainImage').src = product.mainImage;
-            document.getElementById('btnBuy').href = `https://wa.me/34600000000?text=${encodeURIComponent(product.waMessage)}`;
 
-            // ... (bucle de miniaturas y colores se quedan exactamente igual) ...
+            // 2. RENDERIZADO DE MINIATURAS
+            const thumbContainer = document.querySelector('.thumbnails');
+            if (product.thumbnails) {
+                product.thumbnails.forEach((imgUrl, idx) => {
+                    const img = document.createElement('img');
+                    img.src = imgUrl;
+                    img.className = `thumb ${idx === 0 ? 'active-thumb' : ''}`;
+                    img.onclick = function() {
+                        document.getElementById('mainImage').src = this.src;
+                        document.querySelectorAll('.thumb').forEach(t => t.classList.remove('active-thumb'));
+                        this.classList.add('active-thumb');
+                    };
+                    thumbContainer.appendChild(img);
+                });
+            }
 
-            // 🌟 2. CONTROL DE TALLAS CON STOCK DINÁMICO
+            // 3. 🌟 CORREGIDO: RENDERIZADO DE CÍRCULOS DE COLOR RECUPERADO
+            const colorsContainer = document.querySelector('.colors');
+            if (product.colors) {
+                product.colors.forEach(c => {
+                    const circle = document.createElement('div');
+                    circle.className = `color-circle ${c.id === productId ? 'active' : ''}`;
+                    circle.style.backgroundColor = c.hex;
+                    
+                    // Asignamos el nombre del color activo al label de texto
+                    if (c.id === productId) {
+                        document.getElementById('colorLabel').textContent = c.name;
+                    }
+                    
+                    // Al hacer clic, reemplazamos la URL para no romper el historial del botón atrás
+                    circle.onclick = () => { 
+                        if(c.id !== productId) {
+                            window.location.replace(`product.html?id=${c.id}`);
+                        }
+                    };
+                    colorsContainer.appendChild(circle);
+                });
+            }
+
+            // 4. CONTROL DE TALLAS CON COMPROBACIÓN DE STOCK
             const outOfStock = product.outOfStockSizes || [];
             const sizeBoxes = document.querySelectorAll('.size-box');
             let firstAvailableSet = false;
 
             sizeBoxes.forEach(box => {
-                box.classList.remove('active'); // Limpiamos el active estático del HTML
+                box.classList.remove('active'); // Limpiamos la selección predeterminada del HTML
                 const sizeName = box.textContent.trim();
                 
                 if (outOfStock.includes(sizeName)) {
-                    box.classList.add('out-of-stock'); // Añadimos la clase de exclusión visual
+                    box.classList.add('out-of-stock'); // Añade opacidad y línea de tachado
                 } else if (!firstAvailableSet) {
-                    box.classList.add('active'); // Activamos la primera talla que sí tenga unidades
+                    box.classList.add('active'); // Selecciona por defecto la primera talla útil con stock
                     firstAvailableSet = true;
                 }
                 
                 box.addEventListener('click', function() {
-                    if (this.classList.contains('out-of-stock')) return; // Bloquear la acción de clic si no hay stock
+                    if (this.classList.contains('out-of-stock')) return; // Bloquear clics en elementos sin stock
                     sizeBoxes.forEach(b => b.classList.remove('active'));
                     this.classList.add('active');
                 });
             });
 
-            // PRODUCTOS RELACIONADOS
+            // 5. ENLACE DINÁMICO DE WHATSAPP (Prenda + Color + Talla)
+            document.getElementById('btnBuy').addEventListener('click', function() {
+                const activeSizeBox = document.querySelector('.size-box.active');
+                const selectedSize = activeSizeBox ? activeSizeBox.textContent.trim() : 'No seleccionada';
+                const selectedColor = document.getElementById('colorLabel').textContent.trim();
+                const cleanTitle = product.title.replace('<br>', ' ');
+
+                const customMessage = `Hola equipo BAVU! Vengo de la web y quiero pedir:\n\n` +
+                                      `• Prenda: ${cleanTitle}\n` +
+                                      `• Color: ${selectedColor}\n` +
+                                      `• Talla: ${selectedSize}`;
+                
+                this.href = `https://wa.me/34600000000?text=${encodeURIComponent(customMessage)}`;
+            });
+
+            // 6. CARRUSEL DE PRODUCTOS RELACIONADOS (Completa tu fit)
             if (product.relatedProducts && product.relatedProducts.length > 0) {
                 document.getElementById('relatedSection').style.display = 'block';
                 const carousel = document.getElementById('relatedCarousel');
@@ -140,7 +191,8 @@
                             <img src="${relProduct.mainImage}" alt="" class="product-img">
                             <div class="product-info">
                                 <h3>${relProduct.title}</h3>
-                                <span class="price">${renderProductPrice(relProduct)}</span> <a href="product.html?id=${relProduct.id}" class="btn-order">Ver Detalles</a>
+                                <span class="price">${renderProductPrice(relProduct)}</span>
+                                <a href="product.html?id=${relProduct.id}" class="btn-order">Ver Detalles</a>
                             </div>
                         `;
                         carousel.appendChild(card);
