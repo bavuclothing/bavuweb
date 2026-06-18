@@ -79,29 +79,38 @@
     <script src="components.js"></script>
     <script src="products-data.js"></script>
     <script>
-        // Renderizado de cabecera limpia y pie de página
+        // Renderizado inicial de elementos estructurales fijos
         renderHeader('static-nav'); 
         renderFooter();
 
+        // Capturamos el parámetro inicial de la URL
         const urlParams = new URLSearchParams(window.location.search);
-        const productId = urlParams.get('id');
-        const product = BAVU_INVENTORY.find(p => p.id === productId);
+        const initialProductId = urlParams.get('id');
 
-        if (product) {
+        // 🌟 FUNCIÓN MAESTRA: Carga y renderiza cualquier variante de producto de forma instantánea
+        function loadProductVariant(id) {
+            const product = BAVU_INVENTORY.find(p => p.id === id);
+            if (!product) return;
+
+            // Cambiar el ID en la barra de navegación en silencio sin recargar la página
+            window.history.replaceState(null, '', `?id=${id}`);
+
+            // Actualizar textos y metas de la página principal
             document.title = product.title.replace('<br>', ' ') + ' | BAVU';
             document.querySelector('.product-title').innerHTML = product.title;
-            
-            // 1. Mostrar precio normal o con descuento de forma automatizada
             document.querySelector('.product-price').innerHTML = renderProductPrice(product);
             
-            // Mostrar texto de la descripción principal
+            // Sustituir el texto estático por el campo 'collection' del data
+            document.getElementById('productBreadcrumb').textContent = product.collection || 'DROP 01';
+            
+            // Renderizar la introducción de la descripción
             const paragraphs = product.description.split('\n\n');
             document.querySelector('.product-description').textContent = paragraphs[0];
-
             document.getElementById('mainImage').src = product.mainImage;
 
-            // 2. RENDERIZADO DE MINIATURAS
+            // 1. RENDERIZADO DE MINIATURAS (Limpieza e Inyección)
             const thumbContainer = document.querySelector('.thumbnails');
+            thumbContainer.innerHTML = ''; // Evita duplicados al cambiar de variante
             if (product.thumbnails) {
                 product.thumbnails.forEach((imgUrl, idx) => {
                     const img = document.createElement('img');
@@ -116,54 +125,52 @@
                 });
             }
 
-            // 3. 🌟 CORREGIDO: RENDERIZADO DE CÍRCULOS DE COLOR RECUPERADO
+            // 2. RENDERIZADO DE SELECTORES DE COLOR DINÁMICOS
             const colorsContainer = document.querySelector('.colors');
+            colorsContainer.innerHTML = '';
             if (product.colors) {
                 product.colors.forEach(c => {
                     const circle = document.createElement('div');
-                    circle.className = `color-circle ${c.id === productId ? 'active' : ''}`;
+                    circle.className = `color-circle ${c.id === id ? 'active' : ''}`;
                     circle.style.backgroundColor = c.hex;
                     
-                    // Asignamos el nombre del color activo al label de texto
-                    if (c.id === productId) {
+                    if (c.id === id) {
                         document.getElementById('colorLabel').textContent = c.name;
                     }
                     
-                    // Al hacer clic, reemplazamos la URL para no romper el historial del botón atrás
                     circle.onclick = () => { 
-                        if(c.id !== productId) {
-                            window.location.replace(`product.html?id=${c.id}`);
+                        if (c.id !== id) {
+                            loadProductVariant(c.id);
                         }
                     };
                     colorsContainer.appendChild(circle);
                 });
             }
 
-            // 4. CONTROL DE TALLAS CON COMPROBACIÓN DE STOCK
+            // 3. CONTROL Y REINICIO DE TALLAS CON COMPROBACIÓN DE STOCK
             const outOfStock = product.outOfStockSizes || [];
             const sizeBoxes = document.querySelectorAll('.size-box');
             let firstAvailableSet = false;
 
             sizeBoxes.forEach(box => {
-                box.classList.remove('active'); // Limpiamos la selección predeterminada del HTML
+                // Reseteamos el estado base eliminando selecciones previas de otra variante
+                box.className = 'size-box'; 
                 const sizeName = box.textContent.trim();
                 
                 if (outOfStock.includes(sizeName)) {
-                    box.classList.add('out-of-stock'); // Añade opacidad y línea de tachado
+                    box.classList.add('out-of-stock');
                 } else if (!firstAvailableSet) {
-                    box.classList.add('active'); // Selecciona por defecto la primera talla útil con stock
+                    box.classList.add('active'); 
                     firstAvailableSet = true;
                 }
-                
-                box.addEventListener('click', function() {
-                    if (this.classList.contains('out-of-stock')) return; // Bloquear clics en elementos sin stock
-                    sizeBoxes.forEach(b => b.classList.remove('active'));
-                    this.classList.add('active');
-                });
             });
 
-            // 5. ENLACE DINÁMICO DE WHATSAPP (Prenda + Color + Talla)
-            document.getElementById('btnBuy').addEventListener('click', function() {
+            // 4. REASIGNACIÓN DEL EVENTO DEL BOTÓN DE WHATSAPP (Clonación para limpiar listeners viejos)
+            const oldBtn = document.getElementById('btnBuy');
+            const newBtn = oldBtn.cloneNode(true);
+            oldBtn.parentNode.replaceChild(newBtn, oldBtn);
+
+            newBtn.addEventListener('click', function(e) {
                 const activeSizeBox = document.querySelector('.size-box.active');
                 const selectedSize = activeSizeBox ? activeSizeBox.textContent.trim() : 'No seleccionada';
                 const selectedColor = document.getElementById('colorLabel').textContent.trim();
@@ -177,11 +184,13 @@
                 this.href = `https://wa.me/34600000000?text=${encodeURIComponent(customMessage)}`;
             });
 
-            // 6. CARRUSEL DE PRODUCTOS RELACIONADOS (Completa tu fit)
+            // 5. RENDERIZADO DEL CARRUSEL DE PRODUCTOS RELACIONADOS
+            const relatedSection = document.getElementById('relatedSection');
+            const carousel = document.getElementById('relatedCarousel');
+            carousel.innerHTML = ''; 
+            
             if (product.relatedProducts && product.relatedProducts.length > 0) {
-                document.getElementById('relatedSection').style.display = 'block';
-                const carousel = document.getElementById('relatedCarousel');
-                
+                relatedSection.style.display = 'block';
                 product.relatedProducts.forEach(relId => {
                     const relProduct = BAVU_INVENTORY.find(p => p.id === relId);
                     if (relProduct) {
@@ -198,8 +207,23 @@
                         carousel.appendChild(card);
                     }
                 });
+            } else {
+                relatedSection.style.display = 'none';
             }
         }
+
+        // 🌟 NUEVO: RECUPERACIÓN ASIGNACIÓN DE CLICS GLOBAL PARA LAS TALLAS (Evita duplicados)
+        const sizeBoxes = document.querySelectorAll('.size-box');
+        sizeBoxes.forEach(box => {
+            box.addEventListener('click', function() {
+                if (this.classList.contains('out-of-stock')) return; // Bloquear interacción si está agotada
+                sizeBoxes.forEach(b => b.classList.remove('active'));
+                this.classList.add('active'); // Mueve el fondo negro invertido a la casilla clicada
+            });
+        });
+
+        // Lanzamiento de la primera carga con el ID procedente del catálogo
+        loadProductVariant(initialProductId);
     </script>
 </body>
 </html>

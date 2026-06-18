@@ -1,7 +1,9 @@
 const BAVU_INVENTORY = [
     {
         id: "taper_baselayer",
-        title: "Taper Baselayer<br>Charcoal",
+        title: "Taper Baselayer",
+        color: "Charcoal",
+        collection: "Drop 1",
         price: "20.90 €",
         discount: 0, 
         outOfStockSizes: [],
@@ -27,7 +29,9 @@ const BAVU_INVENTORY = [
     },
     {
         id: "taper-tee-shadow",
-        title: "Taper Compression Tee<br>Shadow Grey",
+        title: "Taper Compression Tee",
+        color: "Shadow Grey",
+        collection: "Drop 1",
         price: "18.90 €",
         discount: 0, 
         outOfStockSizes: [],
@@ -56,7 +60,9 @@ Costuras Flatlock Flexibles: Costuras planas reforzadas de perfil bajo que acomp
     },
     {
         id: "taper-tee-ash",
-        title: "Taper Compression Tee<br>Ash Grey",
+        title: "Taper Compression Tee",
+        color: "Ash Grey",
+        collection: "Drop 1",
         price: "18.90 €",
         discount: 0, 
         outOfStockSizes: [],
@@ -85,7 +91,9 @@ Costuras Flatlock Flexibles: Costuras planas reforzadas de perfil bajo que acomp
     },
     {
         id: "taper-tank-blackout",
-        title: "Ribbed Tank<br>Blackout",
+        title: "Ribbed Tank",
+        color: "Blackout",
+        collection: "Drop 1",
         price: "11.90 €",
         discount: 10, 
         outOfStockSizes: ["M","XL"],
@@ -112,7 +120,9 @@ Algodón Elástico Transpirable: Combinación de fibras que aporta un tacto suav
     },
     {
         id: "taper-tank-burgundy",
-        title: "Ribbed Tank<br>Oxblood",
+        title: "Ribbed Tank",
+        color: "Oxblood",
+        collection: "Drop 1",
         price: "11.90 €",
         discount: 0, 
         outOfStockSizes: [],
@@ -139,7 +149,9 @@ Algodón Elástico Transpirable: Combinación de fibras que aporta un tacto suav
     },
     {
         id: "taper-halfzip-forest",
-        title: "Half-Zip<br>Forest Green",
+        title: "Half-Zip",
+        color: "Forest Green",
+        collection: "Drop 1",
         price: "26.90 €",
         discount: 25, 
         outOfStockSizes: ["S"],
@@ -168,7 +180,9 @@ Costuras Activas Reforzadas: Costuras planas distribuidas de manera anatómica p
     },
     {
         id: "split-short-black",
-        title: "Split Mesh Short<br>Jet Black",
+        title: "Split Mesh Short",
+        color: "Jet Black",
+        collection: "Drop 1",
         price: "12.90 €",
         discount: 0, 
         outOfStockSizes: [],
@@ -195,7 +209,9 @@ Bolsillos Laterales Funcionales: Dos bolsillos de corte vertical integrados en l
     },
     {
         id: "split-short-grey",
-        title: "Split Mesh Short<br>Iron Grey",
+        title: "Split Mesh Short",
+        color: "Iron Grey",
+        collection: "Drop 1",
         price: "12.90 €",
         discount: 0, 
         outOfStockSizes: [],
@@ -222,7 +238,9 @@ Bolsillos Laterales Funcionales: Dos bolsillos de corte vertical integrados en l
     },
     {
         id: "heavy-tee-blackout",
-        title: "Heavyweight Oversized Tee<br>Obsidian Black",
+        title: "Heavyweight Oversized Tee",
+        color: "Obsidian Black",
+        collection: "Drop 1",
         price: "15.90 €",
         discount: 0, 
         outOfStockSizes: [],
@@ -250,7 +268,9 @@ Opacidad y Densidad Total: Su trenzado denso asegura que la prenda sea completam
     },
     {
         id: "heavy-tee-olive",
-        title: "Heavyweight Oversized Tee<br>Olive Green",
+        title: "Heavyweight Oversized Tee",
+        color: "Olive Green",
+        collection: "Drop 1",
         price: "15.90 €",
         discount: 0, 
         outOfStockSizes: [],
@@ -278,7 +298,9 @@ Opacidad y Densidad Total: Su trenzado denso asegura que la prenda sea completam
     },
     {
         id: "heavy-tee-white",
-        title: "Heavyweight Oversized Tee<br>Pure White",
+        title: "Heavyweight Oversized Tee",
+        color: "Pure White",
+        collection: "Drop 1",
         price: "15.90 €",
         discount: 0, 
         outOfStockSizes: [],
@@ -306,16 +328,18 @@ Opacidad y Densidad Total: Su trenzado denso asegura que la prenda sea completam
     },
     {
         id: "heavy-hoodie-blackout",
-        title: "Heavyweight Oversized Hoodie<br>Obsidian Black",
+        title: "Heavyweight Oversized Hoodie",
+        color: "Obsidian Black",
+        collection: "Drop 01",
         price: "29.90 €",
         discount: 0, 
         outOfStockSizes: [],
         description: `Una sudadera con capucha de silueta marcadamente oversize y estructura cuadrada (boxy fit), confeccionada en felpa de algodón pesado de máximo gramaje. Desarrollada para ofrecer aislamiento térmico, un confort masivo y una caída rígida que mantiene el volumen estético de la prenda.
 
-Felpa Heavyweight de Alto Gramaje: Tejido interior cepillado de alta densidad que retiene el calor corporal de forma óptima y dota a la sudadera de un cuerpo robusto. Resiste lavados continuos sin perder su grosor ni su suavidad interna.<br>
-Capucha Anatómica Sin Cordones: Construcción limpia de doble panel textil con cuello cruzado alto. Al prescindir de cordones exteriores se elimina cualquier elemento de distracción en movimientos de gimnasio, logrando una estética minimalista.<br>
+Felpa Heavyweight de Alto Gramaje: Tejido interior cepillado de alta densidad que retiene el calor corporal de forma óptima y dota a la sudadera de un cuerpo robusto. Resiste lavados continuos sin perder su grosor ni su suavidad interna.
+Capucha Anatómica Sin Cordones: Construcción limpia de doble panel textil con cuello cruzado alto. Al prescindir de cordones exteriores se elimina cualquier elemento de distracción en movimientos de gimnasio, logrando una estética minimalista.
 Corte Boxy con Hombros Caídos: Patrón holgado de estilo urbano con sisa baja y volumen ampliado en el torso y las mangas, ideal para usar como capa exterior sobre camisetas oversize.
-<br>
+
 Bolsillo Canguro y Ajustes Reforzados: Amplio bolsillo frontal integrado para mantener las manos calientes o guardar elementos básicos. Los puños y la cintura cuentan con un canalé elástico grueso que ajusta de forma firme sin ceder con el uso.`,
         mainImage: "img/heavy-hoodie-blackout/1.jpg",
         thumbnails: ["img/heavy-hoodie-blackout/1.jpg"],
@@ -330,7 +354,9 @@ Bolsillo Canguro y Ajustes Reforzados: Amplio bolsillo frontal integrado para ma
     },
     {
         id: "essential-socks-white",
-        title: "Essential Crew Socks<br>Pure White",
+        title: "Essential Crew Socks",
+        color: "Pure White",
+        collection: "Drop 1",
         price: "4.90 €",
         discount: 0, 
         outOfStockSizes: [],
@@ -356,7 +382,9 @@ Panel Superior Transpirable: Zona del empeine confeccionada con un punto texturi
     },
     {
         id: "seamless-crop-onyx",
-        title: "Seamless Crop Tee<br>Onyx Black",
+        title: "Seamless Crop Tee",
+        color: "Onyx Black",
+        collection: "Drop 1",
         price: "14.90 €",
         discount: 0, 
         outOfStockSizes: [],
@@ -384,7 +412,9 @@ Manga Ranglán con Mapeo de Transpiración: Microperforaciones estéticas en la 
     },
     {
         id: "seamless-crop-wine",
-        title: "Seamless Crop Tee<br>Berry Wine",
+        title: "Seamless Crop Tee",
+        color: "Berry Wine",
+        collection: "Drop 1",
         price: "14.90 €",
         discount: 0, 
         outOfStockSizes: [],
@@ -412,7 +442,9 @@ Manga Ranglán con Mapeo de Transpiración: Microperforaciones estéticas en la 
     },
     {
         id: "seamless-crop-lilac",
-        title: "Seamless Crop Tee<br>Pastel Lilac",
+        title: "Seamless Crop Tee",
+        color: "Pastel Lilac",
+        collection: "Drop 1",
         price: "14.90 €",
         discount: 0, 
         outOfStockSizes: [],
@@ -440,7 +472,9 @@ Manga Ranglán con Mapeo de Transpiración: Microperforaciones estéticas en la 
     },
     {
         id: "seamless-short-onyx",
-        title: "Seamless Biker Short<br>Onyx Black",
+        title: "Seamless Biker Short",
+        color: "Onyx Black",
+        collection: "Drop 1",
         price: "15.90 €",
         discount: 0, 
         outOfStockSizes: [],
@@ -468,7 +502,9 @@ Tejido Elástico Squat-Proof: Punto denso confeccionado en cuatro direcciones qu
     },
     {
         id: "seamless-short-wine",
-        title: "Seamless Biker Short<br>Berry Wine",
+        title: "Seamless Biker Short",
+        color: "Berry Wine",
+        collection: "Drop 1",
         price: "15.90 €",
         discount: 0, 
         outOfStockSizes: [],
@@ -496,7 +532,9 @@ Tejido Elástico Squat-Proof: Punto denso confeccionado en cuatro direcciones qu
     },
     {
         id: "seamless-short-lilac",
-        title: "Seamless Biker Short<br>Pastel Lilac",
+        title: "Seamless Biker Short",
+        color: "Pastel Lilac",
+        collection: "Drop 1",
         price: "15.90 €",
         discount: 0, 
         outOfStockSizes: [],
@@ -524,7 +562,9 @@ Tejido Elástico Squat-Proof: Punto denso confeccionado en cuatro direcciones qu
     },
     {
         id: "seamless-legging-onyx",
-        title: "Seamless Leggings<br>Onyx Black",
+        title: "Seamless Leggings",
+        color: "Onyx Black",
+        collection: "Drop 1",
         price: "22.90 €",
         discount: 0, 
         outOfStockSizes: [],
@@ -552,7 +592,9 @@ Ajuste Ergonómico Sin Costuras Laterales: Construcción cilíndrica limpia que 
     },
     {
         id: "seamless-legging-wine",
-        title: "Seamless Leggings<br>Berry Wine",
+        title: "Seamless Leggings",
+        color: "Berry Wine",
+        collection: "Drop 1",
         price: "22.90 €",
         discount: 0, 
         outOfStockSizes: [],
@@ -580,7 +622,9 @@ Ajuste Ergonómico Sin Costuras Laterales: Construcción cilíndrica limpia que 
     },
     {
         id: "seamless-legging-lilac",
-        title: "Seamless Leggings<br>Pastel Lilac",
+        title: "Seamless Leggings",
+        color: "Pastel Lilac",
+        collection: "Drop 1",
         price: "22.90 €",
         discount: 0, 
         outOfStockSizes: [],
@@ -608,7 +652,9 @@ Ajuste Ergonómico Sin Costuras Laterales: Construcción cilíndrica limpia que 
     },
     {
         id: "bra-onyx",
-        title: "Adapt Sports Bra<br>Onyx Black",
+        title: "Adapt Sports Bra",
+        color: "Onyx Black",
+        collection: "Drop 1",
         price: "16.90 €",
         discount: 0, 
         outOfStockSizes: [],
@@ -635,7 +681,9 @@ Banda Inferior Reforzada: Pretina elástica ancha situada bajo el busto que fija
     },
     {
         id: "bra-emerald",
-        title: "Adapt Sports Bra<br>Forest Green",
+        title: "Adapt Sports Bra",
+        color: "Forest Green",
+        collection: "Drop 1",
         price: "16.90 €",
         discount: 0, 
         outOfStockSizes: [],
@@ -662,7 +710,9 @@ Banda Inferior Reforzada: Pretina elástica ancha situada bajo el busto que fija
     },
     {
         id: "bra-longline-onyx",
-        title: "Essence Longline Bra<br>Onyx Black",
+        title: "Essence Longline Bra",
+        color: "Onyx Black",
+        collection: "Drop 1",
         price: "16.90 €",
         discount: 0, 
         outOfStockSizes: [],
@@ -689,7 +739,9 @@ Tejido Técnico Ultra-Suave: Confeccionado con un hilado de tacto aterciopelado 
     },
     {
         id: "bra-longline-lilac",
-        title: "Essence Longline Bra<br>Pastel Lilac",
+        title: "Essence Longline Bra",
+        color: "Pastel Lilac",
+        collection: "Drop 1",
         price: "16.90 €",
         discount: 0, 
         outOfStockSizes: [],
