@@ -497,7 +497,7 @@ Tejido Elástico Squat-Proof: Punto denso confeccionado en cuatro direcciones qu
         waMessage: "Hola equipo BAVU! Vengo de la web y quiero pedir Seamless Biker Short Onyx Black.",
         forMen: false,
         forWomen: true,
-        order: 0,
+        order: 1000,
         relatedProducts: ["seamless-short-wine", "seamless-short-lilac", "seamless-crop-onyx", "seamless-legging-onyx"]
     },
     {
