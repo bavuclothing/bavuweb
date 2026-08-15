@@ -106,8 +106,8 @@ Corte Dorsal Taper (Y-Back): El diseño de la espalda cuenta con un tirante cent
 Pectoral y Sisa Ajustados: Sisas con una caída limpia que evita bolsas de tela laterales bajo los brazos y un cuello redondo con la profundidad justa para ofrecer comodidad en días pesados de press de banca.
 
 Algodón Elástico Transpirable: Combinación de fibras que aporta un tacto suave y natural sobre la piel, absorbiendo la humedad de forma eficiente y manteniendo el cuerpo fresco durante toda la sesión.`,
-        mainImage: "img/taper-tank-blackout/1.jpg",
-        thumbnails: ["img/taper-tank-blackout/1.jpg"],
+        mainImage: "img/taper-tank-blackout/1.png",
+        thumbnails: ["img/taper-tank-blackout/1.png","img/taper-tank-blackout/2.png"],
         colors: [
             { hex: "#121212", name: "Obsidian Black", id: "taper-tank-blackout" },
             { hex: "#61131B", name: "Burgundy Wine", id: "taper-tank-burgundy" }
