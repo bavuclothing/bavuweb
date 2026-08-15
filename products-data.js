@@ -427,8 +427,8 @@ Sombreado Anatómico Underbust: Tramado de compresión diferenciada integrado di
 Corte Crop y Pretina Elástica: Longitud optimizada por encima de la cintura que combina perfectamente con mallas de tiro alto. Cuenta con una banda inferior reforzada de canalé sutil que fija la prenda en su sitio, evitando que se suba al elevar los brazos.
 
 Manga Ranglán con Mapeo de Transpiración: Microperforaciones estéticas en la zona de los hombros y la espalda que aceleran la disipación del calor corporal, manteniendo el cuerpo fresco y la prenda libre de humedad acumulada.`,
-        mainImage: "img/seamless-crop-wine/1.jpg",
-        thumbnails: ["img/seamless-crop-wine/1.jpg"],
+        mainImage: "img/seamless-crop-wine/1.png",
+        thumbnails: ["img/seamless-crop-wine/1.png","img/seamless-crop-wine/2.png","img/seamless-crop-wine/3.png","img/seamless-crop-wine/4.png"],
         colors: [
             { hex: "#7A2036", name: "Berry Wine", id: "seamless-crop-wine" },
             { hex: "#121212", name: "Onyx Black", id: "seamless-crop-onyx" },
