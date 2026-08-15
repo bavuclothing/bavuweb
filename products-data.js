@@ -331,7 +331,7 @@ Opacidad y Densidad Total: Su trenzado denso asegura que la prenda sea completam
         title: "Heavyweight Oversized Hoodie",
         color: "Obsidian Black",
         collection: "Drop 01",
-        price: "29.90 €",
+        price: "29.90 €", 
         discount: 0, 
         outOfStockSizes: [],
         description: `Una sudadera con capucha de silueta marcadamente oversize y estructura cuadrada (boxy fit), confeccionada en felpa de algodón pesado de máximo gramaje. Desarrollada para ofrecer aislamiento térmico, un confort masivo y una caída rígida que mantiene el volumen estético de la prenda.
@@ -341,8 +341,8 @@ Capucha Anatómica Sin Cordones: Construcción limpia de doble panel textil con 
 Corte Boxy con Hombros Caídos: Patrón holgado de estilo urbano con sisa baja y volumen ampliado en el torso y las mangas, ideal para usar como capa exterior sobre camisetas oversize.
 
 Bolsillo Canguro y Ajustes Reforzados: Amplio bolsillo frontal integrado para mantener las manos calientes o guardar elementos básicos. Los puños y la cintura cuentan con un canalé elástico grueso que ajusta de forma firme sin ceder con el uso.`,
-        mainImage: "img/heavy-hoodie-blackout/1.jpg",
-        thumbnails: ["img/heavy-hoodie-blackout/1.jpg"],
+        mainImage: "img/heavy-hoodie-blackout/1.png",
+        thumbnails: ["img/heavy-hoodie-blackout/1.png","img/heavy-hoodie-blackout/2.png","img/heavy-hoodie-blackout/3.png","img/heavy-hoodie-blackout/4.png"],
         colors: [
             { hex: "#121212", name: "Obsidian Black", id: "heavy-hoodie-blackout" }
         ],
