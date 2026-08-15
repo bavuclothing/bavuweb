@@ -342,7 +342,7 @@ Corte Boxy con Hombros Caídos: Patrón holgado de estilo urbano con sisa baja y
 
 Bolsillo Canguro y Ajustes Reforzados: Amplio bolsillo frontal integrado para mantener las manos calientes o guardar elementos básicos. Los puños y la cintura cuentan con un canalé elástico grueso que ajusta de forma firme sin ceder con el uso.`,
         mainImage: "img/heavy-hoodie-blackout/1.png",
-        thumbnails: ["img/heavy-hoodie-blackout/1.png","img/heavy-hoodie-blackout/2.png","img/heavy-hoodie-blackout/3.png","img/heavy-hoodie-blackout/4.png"],
+        thumbnails: ["img/heavy-hoodie-blackout/1.png","img/heavy-hoodie-blackout/2.png","img/heavy-hoodie-blackout/3.png","img/heavy-hoodie-blackout/4.png","img/heavy-hoodie-blackout/5.png"],
         colors: [
             { hex: "#121212", name: "Obsidian Black", id: "heavy-hoodie-blackout" }
         ],
