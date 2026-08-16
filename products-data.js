@@ -195,8 +195,8 @@ Apertura Lateral Curva (Split Hem): Dobladillo redondeado con una sutil apertura
 Cintura Elástica con Cordón Técnico: Banda elástica acanalada de ajuste firme que no se desplaza, complementada con un cordón plano exterior para personalizar la sujeción según tus necesidades.
 
 Bolsillos Laterales Funcionales: Dos bolsillos de corte vertical integrados en las costuras para guardar tus pertenencias básicas antes o después de la sesión, manteniendo una silueta limpia.`,
-        mainImage: "img/split-short-black/1.jpg",
-        thumbnails: ["img/split-short-black/1.jpg"],
+        mainImage: "img/split-short-black/1.png",
+        thumbnails: ["img/split-short-black/1.png","img/split-short-black/2.png","img/split-short-black/3.png","img/split-short-black/4.png"],
         colors: [
             { hex: "#000000", name: "Jet Black", id: "split-short-black" },
             { hex: "#4b4e53", name: "Iron Grey", id: "split-short-grey" }
