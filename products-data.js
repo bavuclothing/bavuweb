@@ -254,7 +254,7 @@ Cuello Redondo Grueso y Cerrado: Remate de cuello acanalado (rib) de grosor anch
 
 Opacidad y Densidad Total: Su trenzado denso asegura que la prenda sea completamente opaca en todos sus colores (incluido el Pure White), bloqueando transparencias bajo tensión o sudoración.`,
         mainImage: "img/heavy-tee-blackout/1.png",
-        thumbnails: ["img/heavy-tee-blackout/1.png","img/heavy-tee-blackout/2.png","img/heavy-tee-blackout/3.png","img/heavy-tee-blackout/4.png"],
+        thumbnails: ["img/heavy-tee-blackout/1.png","img/heavy-tee-blackout/2.png","img/heavy-tee-blackout/3.png","img/heavy-tee-blackout/4.png","img/heavy-tee-blackout/5.png"],
         colors: [
             { hex: "#121212", name: "Obsidian Black", id: "heavy-tee-blackout" },
             { hex: "#4B533F", name: "Olive Green", id: "heavy-tee-olive" },
@@ -284,7 +284,7 @@ Cuello Redondo Grueso y Cerrado: Remate de cuello acanalado (rib) de grosor anch
 
 Opacidad y Densidad Total: Su trenzado denso asegura que la prenda sea completamente opaca en todos sus colores (incluido el Pure White), bloqueando transparencias bajo tensión o sudoración.`,
         mainImage: "img/heavy-tee-olive/1.png",
-        thumbnails: ["img/heavy-tee-olive/1.png","img/heavy-tee-olive/2.png","img/heavy-tee-olive/3.png","img/heavy-tee-olive/4.png"],
+        thumbnails: ["img/heavy-tee-olive/1.png","img/heavy-tee-olive/2.png","img/heavy-tee-olive/3.png","img/heavy-tee-olive/4.png","img/heavy-tee-olive/5.png"],
         colors: [
             { hex: "#4B533F", name: "Olive Green", id: "heavy-tee-olive" },
             { hex: "#121212", name: "Obsidian Black", id: "heavy-tee-blackout" },
@@ -314,7 +314,7 @@ Cuello Redondo Grueso y Cerrado: Remate de cuello acanalado (rib) de grosor anch
 
 Opacidad y Densidad Total: Su trenzado denso asegura que la prenda sea completamente opaca en todos sus colores (incluido el Pure White), bloqueando transparencias bajo tensión o sudoración.`,
         mainImage: "img/heavy-tee-white/1.png",
-        thumbnails: ["img/heavy-tee-white/1.png","img/heavy-tee-white/2.png","img/heavy-tee-white/3.png","img/heavy-tee-white/4.png"],
+        thumbnails: ["img/heavy-tee-white/1.png","img/heavy-tee-white/2.png","img/heavy-tee-white/3.png","img/heavy-tee-white/4.png","img/heavy-tee-white/5.png"],
         colors: [
             { hex: "#ffffff", name: "Pure White", id: "heavy-tee-white" },
             { hex: "#121212", name: "Obsidian Black", id: "heavy-tee-blackout" },
