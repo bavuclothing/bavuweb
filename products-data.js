@@ -46,8 +46,8 @@ Mapeo de Ventilación Superior: La zona alta del pecho, trapecios y costados cue
 Ajuste en Bíceps Antideslizante: Terminado de manga ceñido de compresión elástica que se fija al brazo sin oprimir, evitando que la prenda se desplace o se enrolle hacia arriba durante movimientos de tracción o flexión.
 
 Costuras Flatlock Flexibles: Costuras planas reforzadas de perfil bajo que acompañan la elasticidad del tejido, eliminando por completo las rozaduras y la fricción sobre la piel.`,
-        mainImage: "img/taper-tee-shadow/1.jpg",
-        thumbnails: ["img/taper-tee-shadow/1.jpg"],
+        mainImage: "img/taper-tee-shadow/1.png",
+        thumbnails: ["img/taper-tee-shadow/1.png","img/taper-tee-shadow/2.png"],
         colors: [
             { hex: "#212224", name: "Shadow Grey", id: "taper-tee-shadow" },
             { hex: "#BFC1C2", name: "Ash Grey", id: "taper-tee-ash" }
@@ -253,8 +253,8 @@ Corte Boxy con Hombros Caídos: Patrón holgado de estética urbana con costuras
 Cuello Redondo Grueso y Cerrado: Remate de cuello acanalado (rib) de grosor ancho y ajuste ceñido. Este detalle técnico evita que el cuello se deforme o se "asombre" con el paso del tiempo, manteniendo un aspecto pulcro y estructurado.
 
 Opacidad y Densidad Total: Su trenzado denso asegura que la prenda sea completamente opaca en todos sus colores (incluido el Pure White), bloqueando transparencias bajo tensión o sudoración.`,
-        mainImage: "img/heavy-tee-blackout/1.jpg",
-        thumbnails: ["img/heavy-tee-blackout/1.jpg"],
+        mainImage: "img/heavy-tee-blackout/1.png",
+        thumbnails: ["img/heavy-tee-blackout/1.png","img/heavy-tee-blackout/2.png","img/heavy-tee-blackout/3.png","img/heavy-tee-blackout/4.png"],
         colors: [
             { hex: "#121212", name: "Obsidian Black", id: "heavy-tee-blackout" },
             { hex: "#4B533F", name: "Olive Green", id: "heavy-tee-olive" },
@@ -283,8 +283,8 @@ Corte Boxy con Hombros Caídos: Patrón holgado de estética urbana con costuras
 Cuello Redondo Grueso y Cerrado: Remate de cuello acanalado (rib) de grosor ancho y ajuste ceñido. Este detalle técnico evita que el cuello se deforme o se "asombre" con el paso del tiempo, manteniendo un aspecto pulcro y estructurado.
 
 Opacidad y Densidad Total: Su trenzado denso asegura que la prenda sea completamente opaca en todos sus colores (incluido el Pure White), bloqueando transparencias bajo tensión o sudoración.`,
-        mainImage: "img/heavy-tee-olive/1.jpg",
-        thumbnails: ["img/heavy-tee-olive/1.jpg"],
+        mainImage: "img/heavy-tee-olive/1.png",
+        thumbnails: ["img/heavy-tee-olive/1.png","img/heavy-tee-olive/2.png","img/heavy-tee-olive/3.png","img/heavy-tee-olive/4.png"],
         colors: [
             { hex: "#4B533F", name: "Olive Green", id: "heavy-tee-olive" },
             { hex: "#121212", name: "Obsidian Black", id: "heavy-tee-blackout" },
@@ -313,8 +313,8 @@ Corte Boxy con Hombros Caídos: Patrón holgado de estética urbana con costuras
 Cuello Redondo Grueso y Cerrado: Remate de cuello acanalado (rib) de grosor ancho y ajuste ceñido. Este detalle técnico evita que el cuello se deforme o se "asombre" con el paso del tiempo, manteniendo un aspecto pulcro y estructurado.
 
 Opacidad y Densidad Total: Su trenzado denso asegura que la prenda sea completamente opaca en todos sus colores (incluido el Pure White), bloqueando transparencias bajo tensión o sudoración.`,
-        mainImage: "img/heavy-tee-white/1.jpg",
-        thumbnails: ["img/heavy-tee-white/1.jpg"],
+        mainImage: "img/heavy-tee-white/1.png",
+        thumbnails: ["img/heavy-tee-white/1.png","img/heavy-tee-white/2.png","img/heavy-tee-white/3.png","img/heavy-tee-white/4.png"],
         colors: [
             { hex: "#ffffff", name: "Pure White", id: "heavy-tee-white" },
             { hex: "#121212", name: "Obsidian Black", id: "heavy-tee-blackout" },
